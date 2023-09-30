@@ -1,6 +1,6 @@
 # MeteorDG
-Trabajo Final de Ciclo Formativo Grado Superior Desarrollo de Aplicaciones Web
-Nota Matrícula de Honor
+Proyecto de Desarrolo Web en Entorno Servido, módulo del Ciclo Formativo de Grado Superior de Desarrollo de Aplicaciones Web.
+Realizado por Marcos Almorox, Álvaro Barasona, Sergio Cáceres y David Murillo, alumnos del IES Juan de la Cierva.
 
 ## Módulos del ciclo relacionados con el proyecto
 - Lenguajes de Marcas y Sistemas de la Informacion
