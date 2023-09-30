@@ -12,3 +12,18 @@ Nota Matrícula de Honor
 - Despliegue de Aplicaciones Web
 - Desarrolo Web en Entorno Servidor
 - Desarrolo Web en Entorno Cliente
+
+## Descripción del proyecto:
+Se pretende proporcionar una web que controle la gestión de empresa de diferentes compañias. La página contaría con un muestreo de todas las empresas que contratan los servicios de la web, y que haciendo clic en cada una de ellas puedan verse todos los movimientos de esta.
+
+
+## Herramientas a proveer:
+### (Principales)
+-
+-
+-
+-
+### (Secundarias, opcionales)
+-
+-
+
