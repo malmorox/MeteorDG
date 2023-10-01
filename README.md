@@ -28,6 +28,5 @@ Se pretende proporcionar una web que controle la gestión de empresa de diferent
 -
 
 ## Tecnologías utilizadas:
+### (Framework)
 - React: https://es.react.dev/
--
-
