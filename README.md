@@ -1,5 +1,5 @@
 # MeteorDG
-Proyecto de Desarrolo Web en Entorno Servido, módulo del Ciclo Formativo de Grado Superior de Desarrollo de Aplicaciones Web.
+Proyecto de Desarrolo Web en Entorno Servidor, módulo del Ciclo Formativo de Grado Superior de Desarrollo de Aplicaciones Web.
 Realizado por Marcos Almorox, Álvaro Barasona, Sergio Cáceres y David Murillo, alumnos del IES Juan de la Cierva.
 
 ## Módulos del ciclo relacionados con el proyecto
