@@ -19,11 +19,11 @@ Se pretende proporcionar una web que controle la gestión de empresa de diferent
 
 ## Herramientas a proveer:
 ### (Principales)
--
+- Registro / login de empresas
 -
 -
 -
 ### (Secundarias, opcionales)
--
+- 
 -
 
