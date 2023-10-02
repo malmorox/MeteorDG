@@ -8,6 +8,7 @@ body {
     display: grid;
     grid-template-areas:
     "header" "header"
+    "nav" "nav"
     "footer" "footer";
 }
 
