@@ -22,20 +22,29 @@ header{
     font-weight: bold;
 }
 
+header .headerLogo{
+    width: 50px;
+    height: 50px;
+}
+
+header .headerMenu {
+    text-align: center;
+}
+
+header .headerMenu ul{
+    display: inline-block;
+    list-style-type: none;
+}
+
+header .headerMenu ul li{
+    float: left;
+}
+
 footer{
     grid-area: footer;
     background-color: #424242;
 }
 
-header .logoHeader{
-    width: 50px;
-    height: 50px;
-}
-
-header .menu ul{
-    display: flex;
-    list-style-type: none;
-}
 
 header .redesociales{
     border: 1px red solid;
