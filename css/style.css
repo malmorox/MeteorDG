@@ -1,22 +1,23 @@
 html {
     height: 100%;
+    width: 100%;
 }
 
 body {
     margin: 0;
+    min-height: 100%;
     display: grid;
     grid-template-areas:
-    "header"
-    "contenido"
-    "footer";
+    "header   header"
+    "content  content"
+    "footer   footer";
     grid-template-rows: auto 1fr auto;
-    min-height: 100vh;
 }
 
 header{
     grid-area: header;
     background-color: #757575;
-    display:flex;
+    display: flex;
     align-items: center;
     padding: 10px;
     color:white;
@@ -54,11 +55,10 @@ content {
 footer{
     grid-area: footer;
     background-color: #424242;
-    display: flex;
-    position: relative;
+    /*display: flex;
     justify-content: center;
     align-content: center;
-    align-items: center;
+    align-items: center;*/
 }
 
 
