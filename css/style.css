@@ -4,12 +4,17 @@ html {
 
 body {
     margin: 0;
+    min-height: 100%;
     display: grid;
-    grid-auto-columns: auto 1fr auto;
-    min-height: 100vh;
+    grid-template-areas:
+    "header"
+    "sidebar"
+    "footer";
+    grid-template-rows: auto 1fr auto;
 }
 
 header{
+    grid-area: header;
     background-color: #757575;
     display:flex;
     align-items: center;
@@ -36,7 +41,18 @@ header .headerMenu ul li{
     float: left;
 }
 
+@media (min-width: 600px) {
+    body {
+        background-color: aqua;
+    }
+}
+
+main {
+    grid-area: ;
+}
+
 footer{
+    grid-area: footer;
     background-color: #424242;
     display: flex;
     justify-content: center;
