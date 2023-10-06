@@ -47,8 +47,8 @@ header .headerMenu ul li{
     }
 }
 
-contenido {
-    grid-area: contenido;
+content {
+    grid-area: content;
 }
 
 footer{
