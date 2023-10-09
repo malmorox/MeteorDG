@@ -7,14 +7,14 @@ body {
     margin: 0;
     display: flex;
     flex-direction: column;
-    min-height: 100%;
+    min-height: 100vh;
 }
 
 header{
     background-color: #757575;
     display: flex;
     align-items: center;
-    padding: 10px;
+    padding: 15px;
     color:white;
     font-weight: bold;
 }
@@ -22,17 +22,19 @@ header{
 header .headerLogo{
     width: 50px;
     height: 50px;
+    border: 1px solid red;
 }
 
 header .headerMenu {
-    text-align: center;
+    border: 1px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
 }
 
 header .headerMenu ul{
-    display: flex;
     list-style-type: none;
-    justify-content: center;
-    align-items: center;
     padding: 0;
 }
 
@@ -47,17 +49,20 @@ header .headerLogin{
 
 @media (min-width: 600px) {
     body {
-        background-color: aqua;
+        background-color: #fff;
     }
 }
 
-content {
+.content {
+    display: flex;
 }
 
 footer{
-    background-color: #424242;
-    /*display: flex;
+    display: flex;
     justify-content: center;
     align-content: center;
-    align-items: center;*/
+    padding: 40px;
+    background-color: #424242;
+    color: #fff;
+    margin-top: auto;
 }
