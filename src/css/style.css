@@ -39,6 +39,7 @@ header .headerMenu ul{
 }
 
 header .headerMenu ul li{
+    border: 1px solid red;
     display: inline-block;
     margin-right: 20px;
 }
