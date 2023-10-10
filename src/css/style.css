@@ -1,13 +1,18 @@
+* {
+    box-sizing: border-box;
+}
+
 html {
     height: 100%;
-    width: 100%;
+
 }
 
 body {
+    border: 1px solid red;
     margin: 0;
-    min-height: 100%;
-    display: grid;
-    grid-template-rows: auto 1fr auto;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 header{
@@ -48,11 +53,11 @@ header .headerLogin{
 
 }
 
-@media (min-width: 600px) {
+/*@media (min-width: 600px) {
     body {
         background-color: #fff;
     }
-}
+}*/
 
 .content {
     display: flex;
@@ -60,10 +65,13 @@ header .headerLogin{
 }
 
 footer {
+    border: 1px solid red;
     display: flex;
     justify-content: center;
     align-content: center;
     padding: 40px;
     background-color: #424242;
     color: #fff;
+    position: fixed;
+    bottom: 0;
 }
