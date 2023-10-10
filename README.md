@@ -1,6 +1,6 @@
 # MeteorDG
 Proyecto de Desarrolo Web en Entorno Servidor, módulo del Ciclo Formativo de Grado Superior de Desarrollo de Aplicaciones Web.
-Realizado por [Marcos Almorox](https://github.com/malmorox), Álvaro Barasona, [Sergio Cáceres](https://github.com/Eracres) y David Murillo, alumnos del IES Juan de la Cierva.
+Realizado por [Marcos Almorox](https://github.com/malmorox), [Álvaro Barasona](https://github.com/alvarobarasona), [Sergio Cáceres](https://github.com/Eracres) y David Murillo, alumnos del IES Juan de la Cierva.
 
 ## Módulos del ciclo relacionados con el proyecto
 - Lenguajes de Marcas y Sistemas de la Informacion
