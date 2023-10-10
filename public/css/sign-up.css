@@ -16,7 +16,7 @@ body {
     background: #24303c;
     padding: 30px;
     margin: auto;
-    border-radius: 4px;
+    border-radius: 8px;
     font-family: 'calibri';
     color: white;
 }
@@ -39,26 +39,27 @@ body {
 }
 
 .form-register a:hover {
-    color: white;
+    color: #64B5F6;
     text-decoration: underline;
 }
 
 .form-register .buttons {
     width: 100%;
     background: #1f53c5;
-    border: none;
     padding: 12px;
-    color: white;
     margin: 16px 0;
+    border-radius: 4px;
+    border: none;
+    color: white;
     font-size: 16px;
 }
 
 .controls {
     width: 100%;
-    background: #24303c;
+    background: transparent;
     padding: 10px;
-    border-radius: 4px;
     margin-bottom: 16px;
+    border-radius: 4px;
     border: 1px solid #1f53c5;
     font-family: 'calibri';
     font-size: 18px;
