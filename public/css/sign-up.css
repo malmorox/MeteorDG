@@ -66,8 +66,8 @@ body {
     color: white;
 }
 
-.select-country {
-    tra
+img {
+    width: 20px;
 }
 
 .cif-container {
@@ -75,10 +75,10 @@ body {
 }
 
 #country {
-    width: 30%;
+    width: 35%;
     margin-right: 16px;
 }
 
 #cif {
-    width: 70%;
+    width: 65%;
 }
