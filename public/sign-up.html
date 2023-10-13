@@ -9,7 +9,7 @@
     <script src="js/sign-up.js" defer></script>
 </head>
 <body>
-<form method="get">
+<form method="post">
     <section class="form-register first-step">
         <h4> Datos de tu empresa </h4>
         <input type="text" class="fields" name="name" id="name" placeholder="Nombre">
@@ -23,20 +23,20 @@
                 <option value=""></option>
                 <option value=""></option>
             </select>
-        <input type="text" class="fields nif" name="nif" id="nif" placeholder="NIF" required>
+            <input type="text" class="fields nif" name="nif" id="nif" placeholder="NIF" required>
         </section>
         <input type="text" class="fields" name="location" id="location" placeholder="Dirección jurídica">
         <input type="tel" class="fields" name="phone" id="phone" pattern="[0-9]{9}" maxlength="9" placeholder="Teléfono">
-        <input class="buttons" type="submit" value="Siguiente">
+        <input type="button" class="buttons" value="Siguiente" id="continue">
         <p><a href="#">¿Ya tengo Cuenta?</a></p>
     </section>
-    <!-- <section class="form-register second-step">
+    <section class="form-register second-step" style="display: none;">
         <h4> Prueba </h4>
         <input type="email" class="fields" name="email" id="email" placeholder="Correo electrónico">
         <input type="password" class="fields" name="password" id="password" placeholder="Contraseña">
         <p><input type="checkbox"> Estoy de acuerdo con <a href="#">Terminos y Condiciones </a></p>
         <input class="buttons" type="submit" value="Ingresar">
-    </section> -->
+    </section>
 </form>
 </body>
 </html>
