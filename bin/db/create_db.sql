@@ -1,4 +1,4 @@
-------------------------------------TABLA EMPRESA------------------------------------
+------------------------------------TABLA COMPANY------------------------------------
 
 DROP TABLE EMPRESA CASCADE CONSTRAINT;
 
@@ -12,7 +12,7 @@ CREATE TABLE EMPRESA(
     CONSTRAINT PK_EMPRESA1 PRIMARY KEY (CIF)
 );
 
-------------------------------------TABLA GASTOS------------------------------------
+------------------------------------TABLA FACTURES------------------------------------
 
 DROP TABLE GASTOS CASCADE CONSTRAINT;
 
