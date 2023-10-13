@@ -18,8 +18,6 @@ button.addEventListener("click", function(event) {
     }
 });
 
-
-
 /*
 let form = document.querySelector('.form-register');
 let progressOptions = document.querySelectorAll('.progressbar__option');
