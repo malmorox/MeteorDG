@@ -40,7 +40,7 @@ header .meteordg-header-logo img {
     height: 100%;
 }
 
-header .headerMenu {
+header .meteordg-header-menu {
     border: 1px solid red;
     display: flex;
     justify-content: center;
@@ -48,18 +48,18 @@ header .headerMenu {
     flex-grow: 1;
 }
 
-header .headerMenu ul{
+header .meteordg-header-menu ul{
     list-style-type: none;
     padding: 0;
 }
 
-header .headerMenu ul li{
+header .meteordg-header-menu ul li{
     border: 1px solid red;
     display: inline-block;
     margin-right: 20px;
 }
 
-header .headerLogin{
+header .meteordg-header-signup{
 
 }
 
