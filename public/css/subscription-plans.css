@@ -5,6 +5,21 @@
      color: #59b6d9;
  }
 
+.meteordg-main-plans-container {
+     display: block;
+     justify-content: center;
+     align-items: center;
+}
+
+.meteordg-prices-section {
+    display: flex;
+}
+
 .meteordg-plans {
+    flex: 1;
     border: 1px solid #d5d5d5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
