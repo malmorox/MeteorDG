@@ -65,6 +65,7 @@ header .headerLogin{
 .content {
     display: flex;
     border: 1px solid red;
+    flex: 1;
 }
 
 footer {
@@ -75,4 +76,5 @@ footer {
     padding: 40px;
     background-color: #424242;
     color: #fff;
+    margin-top: 100vh;
 }
