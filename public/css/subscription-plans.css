@@ -1,7 +1,10 @@
 * {
    font-family: -apple-system;
 }
+ h1 {
+     color: #1f53c5;
+ }
 
 .meteordg-plans {
-    border: 1px solid grey;
+    border: 1px solid #d5d5d5;
 }
