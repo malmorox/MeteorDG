@@ -1,10 +1,10 @@
 * {
-   font-family: -apple-system;
+   font-family: 'Titillium';
 }
 
 @font-face {
-    font-family: 'Calculator';
-    src: url(../fonts/) format('truetype');
+    font-family: 'Titillium';
+    src: url(../fonts/Titillium-Regular.otf) format('truetype');
 }
 
 h1 {
