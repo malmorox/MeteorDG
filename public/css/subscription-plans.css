@@ -22,7 +22,11 @@
     src: url(../fonts/Poppins/Poppins-Regular.ttf) format('truetype');
 }
 
-header {
+body {
+    margin: 0;
+}
+
+.meteordg-header {
     background-color: #757575;
     padding: 5px;
     display: flex;
@@ -32,27 +36,27 @@ header {
     font-weight: bold;
 }
 
-header .meteordg-header-size-delimiter {
+.meteordg-header-size-delimiter {
     border: 1px solid red;
     display: flex;
     align-items: center;
     width: 1300px;
 }
 
-header .meteordg-header-logo{
+.meteordg-header-logo{
     width: 50px;
     height: 50px;
     border: 1px solid red;
     overflow: hidden;
 }
 
-header .meteordg-header-logo img {
+.meteordg-header-logo img {
     object-fit: cover;
     width: 100%;
     height: 100%;
 }
 
-header .meteordg-header-menu {
+.meteordg-header-menu {
     border: 1px solid red;
     display: flex;
     justify-content: center;
@@ -60,18 +64,18 @@ header .meteordg-header-menu {
     flex-grow: 1;
 }
 
-header .meteordg-header-menu ul{
+.meteordg-header-menu ul{
     list-style-type: none;
     padding: 0;
 }
 
-header .meteordg-header-menu ul li{
+.meteordg-header-menu ul li{
     border: 1px solid red;
     display: inline-block;
     margin-right: 20px;
 }
 
-header .meteordg-header-menu ul li a{
+.meteordg-header-menu ul li a{
     text-decoration: none;
 }
 
