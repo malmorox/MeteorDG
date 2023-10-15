@@ -19,16 +19,17 @@ body {
 
 .meteordg-header {
     background-color: #757575;
-    padding: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
     color: white;
     font-weight: bold;
+    width: 100%;
 }
 
 .meteordg-header-size-delimiter {
-    border: 1px solid red;
+    margin: 0 auto;
+    padding: 5px;
     display: flex;
     align-items: center;
     width: 1250px;

@@ -14,6 +14,11 @@
 }
 
 @font-face {
+    font-family: 'Ubuntu-Regular';
+    src: url(../fonts/Ubuntu/Ubuntu-Regular.ttf) format('truetype');
+}
+
+@font-face {
     font-family: 'Poppins-Medium';
     src: url(../fonts/Poppins/Poppins-Regular.ttf) format('truetype');
 }
@@ -41,11 +46,12 @@ body {
 }
 
 .meteordg-header-size-delimiter {
+    border: 1px solid red;
     margin: 0 auto;
     padding: 5px;
     display: flex;
     align-items: center;
-    width: 1250px;
+    width: 1220px;
 }
 
 .meteordg-header-logo{
@@ -79,6 +85,7 @@ body {
 
 .meteordg-header-menu ul li a{
     text-decoration: none;
+    font-family: 'Ubuntu-Light';
 }
 
 .meteordg-header-signup{
@@ -109,11 +116,12 @@ body {
 }
 
 .meteordg-plans-size-delimiter {
+    margin: 0 auto;
     padding: 0 5px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 1250px;
+    width: 1220px;
 }
 
 .meteordg-prices-section {
