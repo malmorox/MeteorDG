@@ -4,6 +4,16 @@
     box-sizing: border-box;
 }
 
+@font-face {
+    font-family: 'Titillium-Regular';
+    src: url(../fonts/Titillium/Titillium-Regular.otf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Titillium-Thin';
+    src: url(../fonts/Titillium/Titillium-Thin.otf) format('truetype');
+}
+
 body {
     display: flex;
     justify-content: center;
@@ -55,7 +65,7 @@ body {
     cursor: pointer;
 }
 
-#continue:hover {
+.meteordg-register-buttons:hover {
     background-color: #64B5F6;
     color: darkblue;
 }
@@ -67,7 +77,7 @@ body {
     margin-bottom: 16px;
     border-radius: 4px;
     border: 1px solid #1f53c5;
-    font-family: 'calibri';
+    font-family: 'Titillium-Thin';
     font-size: 18px;
     color: white;
 }
@@ -91,3 +101,4 @@ body {
 }
 
 /*<i class="fa-regular fa-eye" style="color: #163a79;"></i>*/
+
