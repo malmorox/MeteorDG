@@ -1,7 +1,3 @@
-* {
-   font-family: 'Titillium-Regular';
-}
-
 @font-face {
     font-family: 'Titillium-Regular';
     src: url(../fonts/Titillium/Titillium-Regular.otf) format('truetype');
@@ -22,24 +18,34 @@
     src: url(../fonts/Poppins/Poppins-Regular.ttf) format('truetype');
 }
 
+html {
+    height: 100%;
+    width: 100%;
+}
+
 body {
+    display: flex;
+    flex-direction: column;
     margin: 0;
+    flex: 1 1;
 }
 
 .meteordg-header {
     background-color: #757575;
-    padding: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
     color: white;
     font-weight: bold;
+    width: 100%;
 }
 
 .meteordg-header-size-delimiter {
+    margin: 0 auto;
+    padding: 5px;
     display: flex;
     align-items: center;
-    width: 1300px;
+    width: 1250px;
 }
 
 .meteordg-header-logo{
@@ -75,8 +81,13 @@ body {
     text-decoration: none;
 }
 
+.meteordg-header-signup{
+
+}
+
 #meteordg-plans-title {
     font-size: 45px;
+    font-family: 'Titillium-Regular';
     margin-top: 40px;
     margin-bottom: 0;
     color: #59b6d9;
@@ -98,10 +109,11 @@ body {
 }
 
 .meteordg-plans-size-delimiter {
+    padding: 0 5px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 1300px;
+    width: 1250px;
 }
 
 .meteordg-prices-section {
@@ -121,6 +133,7 @@ body {
 
 .meteordg-plans-title {
     font-size: 25px;
+    font-family: 'Titillium-Regular';
     margin-bottom: 0;
 }
 
@@ -152,6 +165,7 @@ body {
 .meteordg-plans-buttons {
     padding: 13px 33px;
     border-radius: 60px;
+    font-family: 'Titillium-Regular';
     background: transparent;
     cursor: pointer;
     transition: 0.2s;

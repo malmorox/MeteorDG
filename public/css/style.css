@@ -10,12 +10,11 @@ html {
 }
 
 body {
-    border: 1px solid red;
     display: flex;
     flex-direction: column;
     margin: 0;
     flex: 1 1;
-    min-height: 100vh;
+    min-height: 100%;
 }
 
 .meteordg-header {
@@ -32,13 +31,12 @@ body {
     border: 1px solid red;
     display: flex;
     align-items: center;
-    width: 1300px;
+    width: 1250px;
 }
 
 .meteordg-header-logo{
     width: 50px;
     height: 50px;
-    border: 1px solid red;
     overflow: hidden;
 }
 
@@ -49,7 +47,6 @@ body {
 }
 
 .meteordg-header-menu {
-    border: 1px solid red;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -62,7 +59,6 @@ body {
 }
 
 .meteordg-header-menu ul li{
-    border: 1px solid red;
     display: inline-block;
     margin-right: 20px;
 }
@@ -95,5 +91,5 @@ footer {
     padding: 40px;
     background-color: #424242;
     color: #fff;
-    margin-top: 100vh;
+    /*margin-top: 100vh;*/
 }
