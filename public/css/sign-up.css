@@ -11,7 +11,7 @@ body {
     min-height: 100vh;
 }
 
-.form-register {
+.meteordg-form-register {
     width: 410px;
     background: #24303c;
     padding: 30px;
@@ -21,29 +21,29 @@ body {
     color: white;
 }
 
-.form-register h4 {
+.meteordg-register-title {
     font-size: 22px;
     margin-bottom: 25px;
 }
 
-.form-register p {
+.meteordg-register-paragraph {
     height: 40px;
     text-align: center;
     font-size: 18px;
     line-height: 40px;
 }
 
-.form-register a {
+.meteordg-register-paragraph a {
     color: white;
     text-decoration: none;
 }
 
-.form-register a:hover {
+.meteordg-register-paragraph a:hover {
     color: #64B5F6;
     text-decoration: underline;
 }
 
-.form-register .buttons {
+.meteordg-register-buttons {
     width: 100%;
     background-color: #1f53c5;
     padding: 12px;
@@ -60,7 +60,7 @@ body {
     color: darkblue;
 }
 
-.fields {
+.meteordg-register-fields {
     width: 100%;
     background: transparent;
     padding: 10px;
@@ -72,20 +72,16 @@ body {
     color: white;
 }
 
-img {
-    width: 20px;
-}
-
-.cif-container {
+.meteordg-register-cif-container {
     display: flex;
 }
 
-#country {
+.meteordg-register-country-select {
     width: 35%;
     margin-right: 16px;
 }
 
-#cif {
+.meteordg-register-fields #cif {
     width: 65%;
 }
 

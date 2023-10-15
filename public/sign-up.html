@@ -10,11 +10,11 @@
 </head>
 <body>
 <form method="post">
-    <section class="form-register first-step">
-        <h4> Datos de tu empresa </h4>
-        <input type="text" class="fields" name="name" id="name" placeholder="Nombre">
-        <section class="cif-container">
-            <select class="select-country fields" id="country">
+    <section class="meteordg-form-register first-step">
+        <h4 class="meteordg-register-title"> Datos de tu empresa </h4>
+        <input type="text" class="meteordg-register-fields" name="name" id="name" placeholder="Nombre">
+        <section class="meteordg-register-cif-container">
+            <select class="meteordg-register-fields meteordg-register-country-select" id="country">
                 <option value="ESP"> ESP </option>
                 <option value="ARG"> ARG </option>
                 <option value=""></option>
@@ -23,19 +23,19 @@
                 <option value=""></option>
                 <option value=""></option>
             </select>
-            <input type="text" class="fields nif" name="nif" id="nif" placeholder="NIF" required>
+            <input type="text" class="meteordg-register-fields" name="nif" id="nif" placeholder="NIF" required>
         </section>
-        <input type="text" class="fields" name="location" id="location" placeholder="Dirección jurídica">
-        <input type="tel" class="fields" name="phone" id="phone" pattern="[0-9]{9}" maxlength="9" placeholder="Teléfono">
-        <input type="button" class="buttons" value="Siguiente" id="continue">
-        <p><a href="#">¿Ya tengo Cuenta?</a></p>
+        <input type="text" class="meteordg-register-fields" name="location" id="location" placeholder="Dirección jurídica">
+        <input type="tel" class="meteordg-register-fields" name="phone" id="phone" pattern="[0-9]{9}" maxlength="9" placeholder="Teléfono">
+        <input type="button" class="meteordg-register-buttons" value="Siguiente" id="continue">
+        <p class="meteordg-register-paragraph"><a href="#">¿Ya tengo Cuenta?</a></p>
     </section>
-    <section class="form-register second-step" style="display: none;">
-        <h4> Prueba </h4>
-        <input type="email" class="fields" name="email" id="email" placeholder="Correo electrónico">
-        <input type="password" class="fields" name="password" id="password" placeholder="Contraseña">
-        <p><input type="checkbox"> Estoy de acuerdo con <a href="#">Terminos y Condiciones </a></p>
-        <input class="buttons" type="submit" value="Ingresar">
+    <section class="meteordg-form-register second-step" style="display: none;">
+        <h4 class="meteordg-register-title"> Prueba </h4>
+        <input type="email" class="meteordg-register-fields" name="email" id="email" placeholder="Correo electrónico">
+        <input type="password" class="meteordg-register-fields" name="password" id="password" placeholder="Contraseña">
+        <p class="meteordg-register-paragraph"><input type="checkbox"> Estoy de acuerdo con <a href="#">Terminos y Condiciones </a></p>
+        <input type="submit" class="meteordg-register-buttons" value="Ingresar">
     </section>
 </form>
 </body>
