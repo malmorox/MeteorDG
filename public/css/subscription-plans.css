@@ -58,7 +58,7 @@
 .meteordg-plans {
     flex: 1;
     border: 1px solid #d5d5d5;
-    padding: 35px 60px 60px;
+    padding: 35px 60px 50px;
     text-align: center;
     display: flex;
     flex-direction: column;
