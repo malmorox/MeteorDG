@@ -21,6 +21,7 @@
 
 .meteordg-prices-section {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .meteordg-plans {
@@ -30,4 +31,35 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 30px;
+}
+
+.meteordg-plans-buttons {
+    padding: 17px 25px;
+    border-radius: 60px;
+    background: transparent;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.meteordg-button-basic-plan {
+    border: 2px solid green;
+    color: green;
+}
+
+.meteordg-button-basic-plan:hover {
+    background: green;
+    color: white;
+}
+
+.meteordg-button-pro-plan {
+
+}
+
+.meteordg-button-pro-plan:hover {
+
+}
+
+meteordg-button-plus-plan {
+
 }
