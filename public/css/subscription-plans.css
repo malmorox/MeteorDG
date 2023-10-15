@@ -58,6 +58,22 @@
     font-size: 25px;
 }
 
+.meteordg-basic-plan .meteordg-plans-title {
+    color: #2AB886;
+}
+
+.meteordg-pro-plan .meteordg-plans-title {
+    color: #20AFCE;
+}
+
+.meteordg-plus-plan .meteordg-plans-title {
+    color: #6E55DB;
+}
+
+.meteordg-plans-prices {
+    font-size: 35px;
+}
+
 .meteordg-plans-buttons {
     padding: 15px 33px;
     border-radius: 60px;
@@ -68,33 +84,38 @@
 }
 
 #meteordg-button-basic-plan {
-    border: 2px solid green;
-    color: green;
+    border: 2px solid #2AB886;
+    color: #2AB886;
 }
 
 #meteordg-button-basic-plan:hover {
-    background: green;
+    background: #2AB886;
     color: white;
 }
 
 #meteordg-button-pro-plan {
-
+    border: 2px solid #20AFCE;
+    color: #20AFCE;
 }
 
 #meteordg-button-pro-plan:hover {
-
+    background: #20AFCE;
+    color: white;
 }
 
 #meteordg-button-plus-plan {
-
+    border: 2px solid #6E55DB;
+    color: #6E55DB;
 }
 
 #meteordg-button-plus-plan:hover {
-
+    background: #6E55DB;
+    color: white;
 }
 
 .meteordg-plan-feature {
     margin-bottom: 15px;
+    font-family: 'Titillium-Thin';
 }
 
 .meteordg-plan-feature:last-child {
