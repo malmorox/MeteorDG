@@ -26,40 +26,53 @@
 
 .meteordg-plans {
     flex: 1;
+    padding: 40px;
     border: 1px solid #d5d5d5;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 30px;
 }
 
 .meteordg-plans-buttons {
-    padding: 17px 25px;
+    padding: 15px 25px;
     border-radius: 60px;
     background: transparent;
     cursor: pointer;
-    transition: 0.3s;
+    transition: 0.2s;
+    margin: 20px 0 30px;
 }
 
-.meteordg-button-basic-plan {
+#meteordg-button-basic-plan {
     border: 2px solid green;
     color: green;
 }
 
-.meteordg-button-basic-plan:hover {
+#meteordg-button-basic-plan:hover {
     background: green;
     color: white;
 }
 
-.meteordg-button-pro-plan {
+#meteordg-button-pro-plan {
 
 }
 
-.meteordg-button-pro-plan:hover {
+#meteordg-button-pro-plan:hover {
 
 }
 
-meteordg-button-plus-plan {
+#meteordg-button-plus-plan {
 
+}
+
+#meteordg-button-plus-plan:hover {
+
+}
+
+.meteordg-plan-feature {
+    margin-bottom: 15px;
+}
+
+.meteordg-plan-feature:last-child {
+    margin-bottom: 0;
 }
