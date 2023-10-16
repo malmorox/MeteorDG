@@ -75,23 +75,23 @@ body {
     flex-grow: 1;
 }
 
-.meteordg-header-menu ul {
+.meteordg-header-menu-list {
     list-style-type: none;
     padding: 0;
 }
 
-.meteordg-header-menu ul li {
+.meteordg-header-menu-list .list-element {
     display: inline-block;
     margin-right: 20px;
 }
 
-.meteordg-header-menu-element {
+.meteordg-header-menu-list .list-element .link {
     text-decoration: none;
     font-family: 'Ubuntu-Light';
     color: #4d4d4d;
 }
 
-.meteordg-header-menu-element:hover {
+.meteordg-header-menu-list .list-element .link:hover {
     transition: 0.3s;
     color: #0797b9;
 }
