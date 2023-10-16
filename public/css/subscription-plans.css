@@ -86,6 +86,7 @@ body {
 .meteordg-header-menu ul li a{
     text-decoration: none;
     font-family: 'Ubuntu-Light';
+    color: white;
 }
 
 .meteordg-header-signup{
