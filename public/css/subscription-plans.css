@@ -39,7 +39,7 @@ body {
 }
 
 @media (min-width: 768px) {
-    .meteordg-main-page-container {
+    .meteordg-main-plans-container {
         grid-template-areas:
             "header"
             "main"
