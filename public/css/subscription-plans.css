@@ -121,14 +121,19 @@ body {
     color: #0797b9;
 }
 
-.meteordg-header-signup {
+.meteordg-header-interactions {
+    display: flex;
+    flex-direction: row;
+}
+
+.meteordg-header-register-buttons {
 
 }
 
 #meteordg-plans-title {
     font-size: 45px;
     font-family: 'Titillium-Regular';
-    margin-top: 10px;
+    margin-top: 120px;
     margin-bottom: 0;
     color: #59b6d9;
 }
@@ -138,14 +143,6 @@ body {
     font-family: 'Ubuntu-Light';
     margin-top: 5px;
     margin-bottom: 60px;
-}
-
-.meteordg-main-plans-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
 }
 
 .meteordg-plans-size-delimiter {
@@ -255,10 +252,20 @@ body {
 }
 
 .meteordg-footer {
+    margin-top: 60px;
+    padding: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 40px;
     background-color: #424242;
     color: #fff;
+}
+
+.meteordg-footer-size-delimiter {
+    margin: 0 auto;
+    padding: 0 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1200px;
 }
