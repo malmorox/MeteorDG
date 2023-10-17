@@ -42,7 +42,7 @@ body {
     .meteordg-main-plans-container {
         grid-template-areas:
             "header"
-            "main"
+            "content"
             "footer";
     }
 
@@ -51,7 +51,7 @@ body {
     }
 
     .meteordg-plans-content {
-        grid-area: main;
+        grid-area: content;
     }
 
     .meteordg-footer {
