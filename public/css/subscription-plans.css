@@ -29,15 +29,34 @@ html {
 }
 
 body {
-    display: flex;
-    flex-direction: column;
     margin: 0;
-    flex: 1 1;
 }
 
 .meteordg-main-plans-container {
-    margin: 0;
-    padding: 0;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+}
+
+@media (min-width: 768px) {
+    .meteordg-main-page-container {
+        grid-template-areas:
+            "header"
+            "main"
+            "footer";
+    }
+
+    .meteordg-header {
+        grid-area: header;
+    }
+
+    .meteor-plans-content {
+        grid-area: content;
+    }
+
+    .meteordg-footer {
+        grid-area: footer;
+    }
 }
 
 .meteordg-header {
@@ -109,7 +128,7 @@ body {
 #meteordg-plans-title {
     font-size: 45px;
     font-family: 'Titillium-Regular';
-    margin-top: 100px;
+    margin-top: 10px;
     margin-bottom: 0;
     color: #59b6d9;
 }
@@ -233,4 +252,13 @@ body {
 
 .meteordg-plan-feature:last-child {
     margin-bottom: 0;
+}
+
+.meteordg-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    background-color: #424242;
+    color: #fff;
 }
