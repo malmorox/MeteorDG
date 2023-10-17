@@ -74,8 +74,9 @@ body {
 }
 
 .meteordg-header-menu {
+    margin-left: 40px;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     flex-grow: 1;
 }
