@@ -35,6 +35,11 @@ body {
     flex: 1 1;
 }
 
+.meteordg-main-plans-container {
+    margin: 0;
+    padding: 0;
+}
+
 .meteordg-header {
     background-color: #e1e1e1;
     position: fixed;
@@ -69,8 +74,9 @@ body {
 }
 
 .meteordg-header-menu {
+    margin-left: 40px;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     flex-grow: 1;
 }
