@@ -50,8 +50,8 @@ body {
         grid-area: header;
     }
 
-    .meteor-plans-content {
-        grid-area: content;
+    .meteordg-plans-content {
+        grid-area: main;
     }
 
     .meteordg-footer {
