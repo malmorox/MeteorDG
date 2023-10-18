@@ -32,14 +32,14 @@ body {
     margin: 0;
 }
 
-.meteordg-main-plans-container {
+.meteordg-main-page-container {
     display: grid;
     grid-template-rows: auto 1fr auto;
     min-height: 100vh;
 }
 
 @media (min-width: 768px) {
-    .meteordg-main-plans-container {
+    .meteordg-main-page-container {
         grid-template-areas:
             "header"
             "content"
@@ -50,7 +50,7 @@ body {
         grid-area: header;
     }
 
-    .meteordg-contact-content {
+    .meteordg-mainpage-content {
         grid-area: content;
     }
 
@@ -154,6 +154,15 @@ body {
 
 #start-now:hover {
     background: #068ca9;
+}
+
+.meteordg-mainpage-size-delimiter {
+    margin: 0 auto;
+    padding: 0 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 1200px;
 }
 
 .meteordg-footer {
