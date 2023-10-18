@@ -39,7 +39,7 @@ body {
 }
 
 @media (min-width: 768px) {
-    .meteordg-main-page-container {
+    .meteordg-main-home-container {
         grid-template-areas:
             "header"
             "content"
@@ -50,7 +50,7 @@ body {
         grid-area: header;
     }
 
-    .meteordg-mainpage-content {
+    .meteordg-home-content {
         grid-area: content;
     }
 
@@ -156,7 +156,7 @@ body {
     background: #068ca9;
 }
 
-.meteordg-mainpage-size-delimiter {
+.meteordg-home-size-delimiter {
     margin: 0 auto;
     padding: 0 5px;
     display: flex;
