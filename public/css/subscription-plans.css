@@ -60,7 +60,7 @@ body {
 }
 
 .meteordg-header {
-    background-color: #e1e1e1;
+    background: #e1e1e1;
     position: fixed;
     top: 0;
     display: flex;
@@ -127,7 +127,33 @@ body {
 }
 
 .meteordg-header-register-buttons {
+    font-size: 19px;
+    font-family: 'Ubuntu-Regular';
+    padding: 10px 20px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.25s;
+}
 
+#sign-up {
+    background: transparent;
+    border: 1px solid #9b9b9b;
+    color: #333333;
+}
+
+#sign-up:hover {
+    background: #d3d3d3;
+}
+
+#start-now {
+    margin-left: 5px;
+    background: #0797b9;
+    border: none;
+    color: white;
+}
+
+#start-now:hover {
+    background: #068ca9;
 }
 
 #meteordg-plans-title {
