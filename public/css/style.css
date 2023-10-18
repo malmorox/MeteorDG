@@ -32,7 +32,7 @@ body {
     margin: 0;
 }
 
-.meteordg-main-page-container {
+.meteordg-main-home-container {
     display: grid;
     grid-template-rows: auto 1fr auto;
     min-height: 100vh;
