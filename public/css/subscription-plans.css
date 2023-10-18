@@ -156,6 +156,15 @@ body {
     background: #068ca9;
 }
 
+.meteordg-plans-size-delimiter {
+    margin: 0 auto;
+    padding: 0 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 1200px;
+}
+
 #meteordg-plans-title {
     font-size: 45px;
     font-family: 'Titillium-Regular';
@@ -169,15 +178,6 @@ body {
     font-family: 'Ubuntu-Light';
     margin-top: 5px;
     margin-bottom: 60px;
-}
-
-.meteordg-plans-size-delimiter {
-    margin: 0 auto;
-    padding: 0 5px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 1200px;
 }
 
 .meteordg-prices-section {

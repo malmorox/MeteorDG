@@ -23,12 +23,6 @@
     src: url(../fonts/Poppins/Poppins-Regular.ttf) format('truetype');
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 html {
     height: 100%;
     width: 100%;
@@ -38,14 +32,14 @@ body {
     margin: 0;
 }
 
-.meteordg-main-page-container {
+.meteordg-main-plans-container {
     display: grid;
     grid-template-rows: auto 1fr auto;
     min-height: 100vh;
 }
 
 @media (min-width: 768px) {
-    .meteordg-main-page-container {
+    .meteordg-main-plans-container {
         grid-template-areas:
             "header"
             "content"
@@ -56,7 +50,7 @@ body {
         grid-area: header;
     }
 
-    .content {
+    .meteordg-contact-content {
         grid-area: content;
     }
 
@@ -66,7 +60,7 @@ body {
 }
 
 .meteordg-header {
-    background-color: #e1e1e1;
+    background: #e1e1e1;
     position: fixed;
     top: 0;
     display: flex;
@@ -127,19 +121,56 @@ body {
     color: #0797b9;
 }
 
-.meteordg-header-signup {
-
+.meteordg-header-interactions {
+    display: flex;
+    flex-direction: row;
 }
 
-.content {
-    /* Agrega estilos para el contenido si es necesario */
+.meteordg-header-register-buttons {
+    font-size: 19px;
+    font-family: 'Ubuntu-Regular';
+    padding: 10px 20px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+#sign-up {
+    background: transparent;
+    border: 1px solid #9b9b9b;
+    color: #333333;
+}
+
+#sign-up:hover {
+    background: #d3d3d3;
+}
+
+#start-now {
+    margin-left: 5px;
+    background: #0797b9;
+    border: none;
+    color: white;
+}
+
+#start-now:hover {
+    background: #068ca9;
 }
 
 .meteordg-footer {
+    margin-top: 60px;
+    padding: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 40px;
     background-color: #424242;
     color: #fff;
+}
+
+.meteordg-footer-size-delimiter {
+    margin: 0 auto;
+    padding: 0 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1200px;
 }
