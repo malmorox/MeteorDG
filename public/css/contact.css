@@ -136,6 +136,7 @@ body {
 }
 
 #sign-up {
+    margin-right: 5px;
     background: transparent;
     border: 1px solid #9b9b9b;
     color: #333333;
@@ -146,7 +147,6 @@ body {
 }
 
 #start-now {
-    margin-left: 5px;
     background: #0797b9;
     border: none;
     color: white;
@@ -156,13 +156,20 @@ body {
     background: #068ca9;
 }
 
-.meteordg-contact-size-delimiter {
-    margin: 0 auto;
+.meteordg-contact-content  {
+    margin: 70px auto 0;
     padding: 0 5px;
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.meteordg-contact-size-delimiter {
     width: 1200px;
+}
+
+.meteordg-contact-section-container {
+    display: flex;
 }
 
 .meteordg-footer {
