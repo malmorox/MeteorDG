@@ -218,6 +218,12 @@ body {
     color: white;
 }
 
+.meteordg-contact-form-helplist {
+    list-style: none;
+    padding: 0;
+
+}
+
 .meteordg-footer {
     margin-top: 60px;
     padding: 40px;
