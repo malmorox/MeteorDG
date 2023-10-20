@@ -181,6 +181,7 @@ body {
     align-items: center;
 }
 
+
 .meteordg-contact-section-container .section-containers {
     flex: 1;
 }
@@ -193,6 +194,16 @@ body {
 .meteordg-contact-main-form-zone {
     border: 1px solid red;
 
+}
+
+.meteordg-contact-form-section {
+    width: 410px;
+    background: #24303c;
+    padding: 30px;
+    margin: auto;
+    border-radius: 8px;
+    font-family: 'calibri';
+    color: white;
 }
 
 .meteordg-contact-form-fields {
