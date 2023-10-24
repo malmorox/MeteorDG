@@ -166,7 +166,7 @@ body {
     align-items: center;
 }
 
-.meteordg-home-size-delimiter {
+.meteordg-main-size-delimiter {
     width: 1200px;
 }
 
@@ -190,18 +190,6 @@ body {
 }
 
 /*PAGINA DE PLANES*/
-
-.meteordg-plans-content {
-    margin: 70px auto 0;
-    padding: 0 5px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.meteordg-plans-size-delimiter {
-    width: 1200px;
-}
 
 #meteordg-plans-title {
     font-size: 45px;
