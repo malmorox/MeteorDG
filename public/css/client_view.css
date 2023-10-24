@@ -131,14 +131,14 @@ body {
     background: #068ca9;
 }
 
-.meteordg-main-home-container {
+.meteordg-main-container {
     display: grid;
     grid-template-rows: auto 1fr auto;
     min-height: 100vh;
 }
 
 @media (min-width: 768px) {
-    .meteordg-main-home-container {
+    .meteordg-main-container {
         grid-template-areas:
             "header"
             "content"
@@ -149,7 +149,7 @@ body {
         grid-area: header;
     }
 
-    .meteordg-home-content {
+    .meteordg-main-content {
         grid-area: content;
     }
 
