@@ -23,6 +23,8 @@
     src: url(../fonts/Poppins/Poppins-Regular.ttf) format('truetype');
 }
 
+/*ESTRUCTURA BÁSICA*/
+
 html {
     height: 100%;
     width: 100%;
@@ -31,8 +33,6 @@ html {
 body {
     margin: 0;
 }
-
-/*ESTRUCTURA BÁSICA*/
 
 .meteordg-header {
     background: #e1e1e1;
@@ -303,18 +303,6 @@ body {
 }
 
 /*PAGINA DE CONTACTO*/
-
-.meteordg-contact-content  {
-    margin: 70px auto 0;
-    padding: 0 5px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.meteordg-contact-size-delimiter {
-    width: 1200px;
-}
 
 .meteordg-contact-section-container {
     border: 1px solid red;
