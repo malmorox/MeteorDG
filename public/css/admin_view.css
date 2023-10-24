@@ -1,3 +1,21 @@
+.meteordg-admin-content {
+    padding: 40px;
+}
+
+.meteordg-admin-companys-panel {
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid red;
+}
+
+.meteordg-company {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #d5d5d5;
+}
+
 .meteordg-company-logo img {
     width: 50px;
 }
