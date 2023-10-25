@@ -84,6 +84,11 @@
         flex-direction: column;
         align-items: center;
     }
+
+    .meteordg-company-country,
+    .meteordg-company-nif {
+        display: none;
+    }
 }
 
 .meteordg-company-logo {
