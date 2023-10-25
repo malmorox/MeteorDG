@@ -17,9 +17,7 @@
 .meteordg-admin-companys-panel {
     margin-top: 30px;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-    border: 1px solid red;
+    gap: 15px;
 }
 
 .meteordg-company {
@@ -36,6 +34,8 @@
 
 .meteordg-company:hover {
     transform: scale(1.05);
+    border: 1px solid deepskyblue;
+    box-shadow: 0 0 5px rgba(0, 159, 255, 0.41);
 }
 
 @media (max-width: 1000px) {
@@ -48,7 +48,6 @@
     }
 
     .meteordg-company-info-zone {
-        border: 1px solid red;
         display: flex;
         flex-direction: row;
         justify-content: flex-start;
@@ -68,13 +67,27 @@
     }
 }
 
-.meteordg-company-info-zone {
-    border-radius: 20px;
-    max-width: 100px;
-    max-height: 100px;
+@media (min-width: 1000px) {
+    .meteordg-admin-companys-panel {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .meteordg-company-info-zone {
+        border-radius: 20px;
+        max-height: min-content;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .meteordg-company-data-zone {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
 .meteordg-company-logo {
+    padding: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -84,6 +97,6 @@
 
 .meteordg-company-logo img {
     border-radius: 50%;
-    max-width: 100px;
-    max-height: 100px;
+    max-width: 80px;
+    max-height: 80px;
 }
