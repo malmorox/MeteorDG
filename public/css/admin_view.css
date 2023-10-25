@@ -15,46 +15,58 @@
 } */
 
 .meteordg-admin-companys-panel {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
     border: 1px solid red;
 }
 
 .meteordg-company {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background-color: #fff;
     border-radius: 10px;
-    margin: 10px;
-    padding: 10px;
-    flex: 1; /* Distribuye el espacio igualmente entre los divs */
+    flex: 1;
+    flex-basis: calc(25% - 20px);
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 
-.meteordg-company-logo img {
-    border-radius: 50%;
-    max-width: 100px;
-    max-height: 100px;
+.meteordg-company:hover {
+    transform: scale(1.05);
 }
 
+@media (max-width: 1000px) {
+    .meteordg-admin-companys-panel {
+        grid-template-columns: 1fr;
+    }
 
-@media (max-width: 1200px) {
     .meteordg-company {
-        max-width: calc(33.33% - 20px);
+        flex-direction: row;
+    }
+
+    .meteordg-company-info-zone {
+        border: 1px solid red;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+
+    .meteordg-company:hover {
+        transform: scale(1.03);
+        border: 1px solid deepskyblue;
+        box-shadow: 0 0 5px rgba(0, 159, 255, 0.41);
+    }
+
+    .meteordg-company-data-zone {
+        margin-left: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
     }
 }
-
-@media (max-width: 800px) {
-    .meteordg-company {
-        max-width: calc(50% - 20px);
-    }
-}
-
-@media (max-width: 600px) {
-    .meteordg-company {
-        max-width: 100%;
-    }
-}
-
 
 .meteordg-company-info-zone {
     border-radius: 20px;
@@ -71,5 +83,7 @@
 }
 
 .meteordg-company-logo img {
-    width: 150px;
+    border-radius: 50%;
+    max-width: 100px;
+    max-height: 100px;
 }
