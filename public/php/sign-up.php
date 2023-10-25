@@ -21,7 +21,8 @@ $phone = $_POST['phone'];
 
 
 // Inserta los datos en la base de datos
-$sql = "INSERT INTO COMPANY (CIF, NAME, COUNTRY, ADDRESS, PHONE, EMAIL) VALUES ('$NIF', $name, $country, $adress, $phone, '$email')";
+$sql = "INSERT INTO COMPANY (CIF, NAME, COUNTRY, ADDRESS, PHONE, EMAIL) 
+        VALUES ('$NIF', $name, $country, $adress, $phone, '$email')";
 
 if ($conn->query($sql) === TRUE) {
     echo "Datos insertados con éxito.";
