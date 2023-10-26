@@ -93,6 +93,7 @@
     flex: 1;
     flex-basis: calc(25% - 20px);
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
 }
 
 .meteordg-company:hover {
