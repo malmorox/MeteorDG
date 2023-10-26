@@ -20,9 +20,9 @@ Se pretende proporcionar una web que controle la gestión de empresa de diferent
 ## Herramientas a proveer:
 ### (Principales)
 - Registrar nuevas empresas
-- Listar los últimos movimientos de las empresas
+- Listar y los últimos movimientos de las empresas
 - Emitir facturas de una empresa a otra
-- 
+- Controlar los gastos y filtrar transacciones de las empresas
 ### (Secundarias, opcionales)
 - 
 -
