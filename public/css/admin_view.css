@@ -1,5 +1,31 @@
+@font-face {
+    font-family: 'Titillium-Regular';
+    src: url(../fonts/Titillium/Titillium-Regular.otf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Titillium-Thin';
+    src: url(../fonts/Titillium/Titillium-Thin.otf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Ubuntu-Light';
+    src: url(../fonts/Ubuntu/Ubuntu-Light.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Ubuntu-Regular';
+    src: url(../fonts/Ubuntu/Ubuntu-Regular.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Poppins-Medium';
+    src: url(../fonts/Poppins/Poppins-Regular.ttf) format('truetype');
+}
+
 .meteordg-admin-content {
     padding: 40px;
+    background: #f3f3f3;
 }
 
 /*
@@ -14,7 +40,7 @@
     padding: 10px;
 } */
 
-.meteordg-admin-companys-panel {
+.meteordg-admin-companies-panel {
     margin-top: 30px;
     display: grid;
     gap: 15px;
@@ -39,7 +65,7 @@
 }
 
 @media (max-width: 1000px) {
-    .meteordg-admin-companys-panel {
+    .meteordg-admin-companies-panel {
         grid-template-columns: 1fr;
     }
 
@@ -68,7 +94,7 @@
 }
 
 @media (min-width: 1000px) {
-    .meteordg-admin-companys-panel {
+    .meteordg-admin-companies-panel {
         grid-template-columns: repeat(4, 1fr);
     }
 
@@ -86,7 +112,7 @@
     }
 
     .meteordg-company-country,
-    .meteordg-company-nif {
+    .meteordg-company- {
         display: none;
     }
 }
@@ -96,12 +122,40 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    border: 1px solid #646464;
     border-radius: 10px;
-    background: #5c636a;
+}
+
+#bmw {
+    background: #bcd9ff;
+}
+
+#kfc {
+    background: #ffd1d1;
+}
+
+#ubisoft {
+    background: #eae1ff;
+}
+
+#microsoft {
+    background: #ddffe5;
+}
+
+#crunchyroll {
+    background: #ffebdf;
+}
+
+#intel {
+    background: #d6f2ff;
 }
 
 .meteordg-company-logo img {
-    border-radius: 50%;
+    min-width: 80px;
     max-width: 80px;
+    min-height: 80px;
     max-height: 80px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
 }
