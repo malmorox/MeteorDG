@@ -5,40 +5,42 @@ INSERT INTO COMPANY VALUES ("A28713642", "BMW SAU", "GERMANY", "Bremer Str. 6 80
 /*Ford*/
 INSERT INTO COMPANY VALUES ("B46066361", "FORD MOTOR COMPANY", "UNITED STATES", "The American Road Dearborn, MI 48126", "+1-800-392-3673", "support@ford.com");
 /*Ubisoft*/
-INSERT INTO COMPANY VALUES ("A60695814", "UBISOFT", "FRANCE", "", "", "AccountSupport@ubi.com");
+INSERT INTO COMPANY VALUES ("A60695814", "UBISOFT", "FRANCE", "28 Rue Armand Carrel, 93100 Montreuil, Francia", "+33148185000", "AccountSupport@ubi.com");
 /*Nintendo*/
-INSERT INTO COMPANY VALUES ("A78872082", "NINTENDO", "JAPAN", "", "", "");
+INSERT INTO COMPANY VALUES ("A78872082", "NINTENDO", "JAPAN", "Japón, 〒150-0042 Tokyo, Shibuya City, Udagawacho, 15−1 渋谷PARCO 6F", "+81367127155", "support@nintendo.com");
 /*NetFlix*/
-INSERT INTO COMPANY VALUES ("N0030907J", "NETFLIX", "UNITED STATES", "", "", "");
+INSERT INTO COMPANY VALUES ("N0030907J", "NETFLIX", "UNITED STATES", "5808 Sunset Blvd, Los Angeles, CA 90028, Estados Unidos", "+18777421335", "info@account.netflix.com");
 /*Crunchyroll*/
-INSERT INTO COMPANY VALUES ("", "CRUNCHYROLL", "UNITED STATES", "7th floor 865 Market St, San Francisco, CA 94103", "+1 415 796-3560", "press@crunchyrol.com");
+INSERT INTO COMPANY VALUES ("J86943263", "CRUNCHYROLL", "UNITED STATES", "7th floor 865 Market St, San Francisco, CA 94103", "+1 415 796-3560", "press@crunchyrol.com");
 /*Warner Bros*/
 INSERT INTO COMPANY VALUES ("B28860534", "WARNER BROS COMPANY", "UNITED STATES", "3400 Warner Blvd. Burbank, CA 91505", "+1 (818)-977-8687", "studio.tour@warnerbros.com");
 /*Universal Studio*/
-INSERT INTO COMPANY VALUES ("B83200519", "UNIVERSAL STUDIOS", "UNITED STATES", "1000 Universal Studios Plaza Orlando, Florida 32819-7610", "+1(407) 224-4233", "");
+INSERT INTO COMPANY VALUES ("B83200519", "UNIVERSAL STUDIOS", "UNITED STATES", "1000 Universal Studios Plaza Orlando, Florida 32819-7610", "+1(407) 224-4233", "GuestServices@UniversalOrlando.com");
 /*Microsoft*/
-INSERT INTO COMPANY VALUES ("B78603495", "MICROSOFT", "UNITED STATES", "Microsoft Corporation One Microsoft Way Redmond, Washington 98052-6399", "+1(800) 285-7772", "");
+INSERT INTO COMPANY VALUES ("B78603495", "MICROSOFT", "UNITED STATES", "Microsoft Corporation One Microsoft Way Redmond, Washington 98052-6399", "+1(800) 285-7772", "support@microsoft.com");
 /*Intel*/
-INSERT INTO COMPANY VALUES ("A28819381", "INTEL", "UNITED STATES", "2200 Mission College Blvd", "", "");
+INSERT INTO COMPANY VALUES ("A28819381", "INTEL", "UNITED STATES", "101 Innovation Dr, San Jose, CA 95134, Estados Unidos", "(+1) 408-765-8080", "investor.relations@intel.com");
 /*Spanair*/
-INSERT INTO COMPANY VALUES ("A07225154", "SPANAIR", "SPAIN", "Plaça d''Europa 54-56, 08902 L''Hospitalet de Llobrega", "(+34) 930 002 121", "");
+INSERT INTO COMPANY VALUES ("A07225154", "SPANAIR", "SPAIN", "Plaça d''Europa 54-56, 08902 L''Hospitalet de Llobrega", "(+34) 930 002 121", "reservas@spanair.com");
 /*Air France*/
-INSERT INTO COMPANY VALUES ("W0011056I ", "AIR FRANCE", "FRANCE", "45 Rue de Paris 95747 Roissy CDG", "+33 01 41 56 78 00", "");
+INSERT INTO COMPANY VALUES ("W0011056I ", "AIR FRANCE", "FRANCE", "45 Rue de Paris 95747 Roissy CDG", "+33 01 41 56 78 00", "contact@airfrance.fr");
 /*BBVA*/
-INSERT INTO COMPANY VALUES ("A48265169", "BBVA", "SPAIN", "C. Azul, 2, 28050 Madrid", "913 746 000", "");
+INSERT INTO COMPANY VALUES ("A48265169", "BBVA", "SPAIN", "C. Azul, 2, 28050 Madrid", "913 746 000", "servicioatencioncliente@grupobbva.com");
 /*Bank of America*/
-INSERT INTO COMPANY VALUES ("A08100356 ", "BANK OF AMERICA", "UNITED STATES", "100 North Tryon Street, Charlotte, NC 28255", "", "");
+INSERT INTO COMPANY VALUES ("A08100356 ", "BANK OF AMERICA", "UNITED STATES", "100 North Tryon Street, Charlotte, NC 28255", "+1 315-724-4022", "NSFinquiry@bofa.com");
 /*Hilton*/
-INSERT INTO COMPANY VALUES ("B28061976", "HILTON", "UNITED STATES", "7930 Jones Branch Drive McLean, Virginia 22102", "+1 703 883 1000", "");
+INSERT INTO COMPANY VALUES ("B28061976", "HILTON", "UNITED STATES", "7930 Jones Branch Drive McLean, Virginia 22102", "+1 703 883 1000", "HiltonHonors@hilton.com");
 /*Royal Caribian*/
-INSERT INTO COMPANY VALUES ("W8261585G ", "ROYAL CAREBBIAN", "UNITED STATES", "1050 Caribbean Way, Miami, Florida 33132", "+1(305) 539-6000", "");
+INSERT INTO COMPANY VALUES ("W8261585G ", "ROYAL CAREBBIAN", "UNITED STATES", "1050 Caribbean Way, Miami, Florida 33132", "+1(305) 539-6000", "reservaciones@rccl.com.mx");
 /*MC Donalds*/
-INSERT INTO COMPANY VALUES ("A28586097", "MC DONALDS", "UNITED STATES", "10 North Carpenter Street. One McDonald''s Plaza. Chicago, IL 60607", "", "");
+INSERT INTO COMPANY VALUES ("A28586097", "MC DONALDS", "UNITED STATES", "10 North Carpenter Street. One McDonald''s Plaza. Chicago, IL 60607", "+13058566770", "soporte.app@es.mcd.com");
 /*KFC*/
-INSERT INTO COMPANY VALUES ("B86281599", "KFC", "UNITED STATES", "1441 Gardiner Ln, Louisville, KY 40213", "", "");
+INSERT INTO COMPANY VALUES ("B86281599", "KFC", "UNITED STATES", "1441 Gardiner Ln, Louisville, KY 40213", "1-800-225-5532", "clientes@kfc.com");
 /*Studio Ghibli*/
-INSERT INTO COMPANY VALUES ("A39232764 ", "STUDIO GHIBLI", "JAPAN", " 1-chōme-4-25 Kajinochō, Koganei, Tokyo", "", "");
+INSERT INTO COMPANY VALUES ("A39232764 ", "STUDIO GHIBLI", "JAPAN", " 1-chōme-4-25 Kajinochō, Koganei, Tokyo", "+81 570 055 777", "info@ghiblicollection.com");
 /*New Line Cinema*/
-INSERT INTO COMPANY VALUES ("B65048217", "NEW LINE CINEMA", "UNITED STATES", "116 N Robertson Blvd, Los Ángeles, CA 90048", "", "");
+INSERT INTO COMPANY VALUES ("B65048217", "NEW LINE CINEMA", "UNITED STATES", "116 N Robertson Blvd, Los Ángeles, CA 90048", "+1 212-649-4900", "cathy.nam@newline.com");
+/*Lay's*/
+INSERT INTO COMPANY VALUES ("B83884973", "LAY'S", "UNITED STATES", "16102 Spence Rd #100, Houston, TX 77060, Estados Unidos", "+1-800-352-4477", "contacta@pepsico.com");
 
 /*Empresas a introducir manualmente*/
