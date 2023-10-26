@@ -11060,7 +11060,7 @@ body {
 .sb-sidenav-light .sb-sidenav-menu .nav-link.active {
     color: #0d6efd;
 }
-.sb-sidenav-light .sb-sidenav-menu .nav-link.active .sb-nav-link-icon {
+.sb-sidenav-light .sb-sidenav-menu .nav-link.active .nav-link {
     color: #0d6efd;
 }
 .sb-sidenav-light .sb-sidenav-footer {
