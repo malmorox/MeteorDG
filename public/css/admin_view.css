@@ -47,6 +47,14 @@
     --bs-navbar-toggler-border-color: rgba(255, 255, 255, 0.1);
 }
 
+.meteordg-admin-vertical-nav {
+    margin-top: 10px;
+}
+
+.nav-link {
+    font-family: Ubuntu-Regular;
+}
+
 .meteordg-admin-content {
     padding: 40px;
     height: 100%;
@@ -177,6 +185,10 @@
 
 #intel {
     background: #d6f2ff;
+}
+
+#lays {
+    background: #ffffa1;
 }
 
 .meteordg-company-logo img {

@@ -10941,7 +10941,7 @@ body {
     max-width: 20rem;
 }
 
-.nav .nav-link .sb-nav-link-icon,
+.meteordg-admin-header .nav-link .sb-nav-link-icon,
 .sb-sidenav-menu .nav-link .sb-nav-link-icon {
     margin-right: 0.5rem;
 }
@@ -10988,7 +10988,7 @@ body {
     padding-bottom: 0.75rem;
     position: relative;
 }
-.sb-sidenav .sb-sidenav-menu .nav .nav-link .sb-nav-link-icon {
+.meteordg-admin-header .sb-sidenav-menu .nav .nav-link .sb-nav-link-icon {
     font-size: 0.9rem;
 }
 .sb-sidenav .sb-sidenav-menu .nav .nav-link .sb-sidenav-collapse-arrow {
@@ -11018,7 +11018,7 @@ body {
 .sb-sidenav-dark .sb-sidenav-menu .nav-link {
     color: rgba(255, 255, 255, 0.5);
 }
-.sb-sidenav-dark .sb-sidenav-menu .nav-link .sb-nav-link-icon {
+.meteordg-admin-header .sb-sidenav-menu .nav-link .sb-nav-link-icon {
     color: rgba(255, 255, 255, 0.25);
 }
 .sb-sidenav-dark .sb-sidenav-menu .nav-link .sb-sidenav-collapse-arrow {
@@ -11030,7 +11030,7 @@ body {
 .sb-sidenav-dark .sb-sidenav-menu .nav-link.active {
     color: #fff;
 }
-.sb-sidenav-dark .sb-sidenav-menu .nav-link.active .sb-nav-link-icon {
+.meteordg-admin-header .sb-sidenav-menu .nav-link.active .sb-nav-link-icon {
     color: #fff;
 }
 .sb-sidenav-dark .sb-sidenav-footer {
@@ -11067,5 +11067,5 @@ body {
 }
 
 .navbar-brand img {
-    width: 40px;
-}
+     width: 40px;
+ }
