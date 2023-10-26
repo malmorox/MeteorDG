@@ -19,14 +19,14 @@ Se pretende proporcionar una web que controle la gestión de empresa de diferent
 
 ## Herramientas a proveer:
 ### (Principales)
-- Registro / login de empresas
--
--
--
+- Registrar nuevas empresas
+- Listar los últimos movimientos de las empresas
+- Emitir facturas de una empresa a otra
+- 
 ### (Secundarias, opcionales)
 - 
 -
 
 ## Tecnologías utilizadas:
 ### (Framework)
-- React: https://es.react.dev/
+- Bootstrap: https://startbootstrap.com/
