@@ -1,0 +1,107 @@
+.meteordg-admin-content {
+    padding: 40px;
+}
+
+/*
+.meteordg-company {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #ececec;
+    border: 1px solid #d5d5d5;
+    border-radius: 10px;
+    padding: 10px;
+} */
+
+.meteordg-admin-companys-panel {
+    margin-top: 30px;
+    display: grid;
+    gap: 15px;
+}
+
+.meteordg-company {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 10px;
+    flex: 1;
+    flex-basis: calc(25% - 20px);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.meteordg-company:hover {
+    transform: scale(1.05);
+    border: 1px solid deepskyblue;
+    box-shadow: 0 0 5px rgba(0, 159, 255, 0.41);
+}
+
+@media (max-width: 1000px) {
+    .meteordg-admin-companys-panel {
+        grid-template-columns: 1fr;
+    }
+
+    .meteordg-company {
+        flex-direction: row;
+    }
+
+    .meteordg-company-info-zone {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+
+    .meteordg-company:hover {
+        transform: scale(1.03);
+        border: 1px solid deepskyblue;
+        box-shadow: 0 0 5px rgba(0, 159, 255, 0.41);
+    }
+
+    .meteordg-company-data-zone {
+        margin-left: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (min-width: 1000px) {
+    .meteordg-admin-companys-panel {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .meteordg-company-info-zone {
+        border-radius: 20px;
+        max-height: min-content;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .meteordg-company-data-zone {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .meteordg-company-country,
+    .meteordg-company-nif {
+        display: none;
+    }
+}
+
+.meteordg-company-logo {
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background: #5c636a;
+}
+
+.meteordg-company-logo img {
+    border-radius: 50%;
+    max-width: 80px;
+    max-height: 80px;
+}

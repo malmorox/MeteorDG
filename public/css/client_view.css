@@ -23,6 +23,8 @@
     src: url(../fonts/Poppins/Poppins-Regular.ttf) format('truetype');
 }
 
+/*ESTRUCTURA BÁSICA*/
+
 html {
     height: 100%;
     width: 100%;
@@ -30,33 +32,6 @@ html {
 
 body {
     margin: 0;
-}
-
-.meteordg-main-plans-container {
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-    min-height: 100vh;
-}
-
-@media (min-width: 768px) {
-    .meteordg-main-plans-container {
-        grid-template-areas:
-            "header"
-            "content"
-            "footer";
-    }
-
-    .meteordg-header {
-        grid-area: header;
-    }
-
-    .meteordg-plans-content {
-        grid-area: content;
-    }
-
-    .meteordg-footer {
-        grid-area: footer;
-    }
 }
 
 .meteordg-header {
@@ -156,7 +131,34 @@ body {
     background: #068ca9;
 }
 
-.meteordg-plans-content {
+.meteordg-main-container {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+}
+
+@media (min-width: 768px) {
+    .meteordg-main-container {
+        grid-template-areas:
+            "header"
+            "content"
+            "footer";
+    }
+
+    .meteordg-header {
+        grid-area: header;
+    }
+
+    .meteordg-main-content {
+        grid-area: content;
+    }
+
+    .meteordg-footer {
+        grid-area: footer;
+    }
+}
+
+.meteordg-main-content {
     margin: 70px auto 0;
     padding: 0 5px;
     display: flex;
@@ -164,9 +166,30 @@ body {
     align-items: center;
 }
 
-.meteordg-plans-size-delimiter {
+.meteordg-main-size-delimiter {
     width: 1200px;
 }
+
+.meteordg-footer {
+    margin-top: 60px;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #424242;
+    color: #fff;
+}
+
+.meteordg-footer-size-delimiter {
+    margin: 0 auto;
+    padding: 0 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1200px;
+}
+
+/*PAGINA DE PLANES*/
 
 #meteordg-plans-title {
     font-size: 45px;
@@ -278,6 +301,149 @@ body {
 .meteordg-plan-feature:last-child {
     margin-bottom: 0;
 }
+
+/*PAGINA DE CONTACTO*/
+
+.meteordg-contact-section-container {
+    border: 1px solid red;
+    display: flex;
+    justify-content: center;
+}
+
+.meteordg-contact-main-message-zone {
+    border: 1px solid red;
+    padding: 50px;
+    display: flex;
+    align-items: center;
+}
+
+
+.meteordg-contact-section-container .section-containers {
+    flex: 1;
+}
+
+.meteordg-contact-main-form-zone {
+    border: 1px solid red;
+
+}
+
+.meteordg-contact-main-form-zone {
+    border: 1px solid red;
+
+}
+
+.meteordg-contact-form-section {
+    width: 410px;
+    background: #24303c;
+    padding: 30px;
+    margin: auto;
+    border-radius: 8px;
+    font-family: 'calibri';
+    color: white;
+}
+
+.meteordg-contact-form-fields {
+    width: 100%;
+    background: transparent;
+    padding: 5px;
+    margin-bottom: 16px;
+    border-radius: 4px;
+    border: 1px solid #1f53c5;
+    font-family: 'Titillium-Thin';
+    font-size: 18px;
+    color: white;
+}
+
+.meteordg-contact-form-helplist {
+    list-style: none;
+    padding: 0;
+
+}
+
+/*SIGN-UP*/
+
+/*body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}*/
+
+.meteordg-form-register {
+    width: 410px;
+    background: #24303c;
+    padding: 30px;
+    margin: auto;
+    border-radius: 8px;
+    font-family: 'calibri';
+    color: white;
+}
+
+.meteordg-register-title {
+    font-size: 22px;
+    margin-bottom: 25px;
+}
+
+.meteordg-register-paragraph {
+    height: 40px;
+    text-align: center;
+    font-size: 18px;
+    line-height: 40px;
+}
+
+.meteordg-register-paragraph a {
+    color: white;
+    text-decoration: none;
+}
+
+.meteordg-register-paragraph a:hover {
+    color: #64B5F6;
+    text-decoration: underline;
+}
+
+.meteordg-register-buttons {
+    width: 100%;
+    background-color: #1f53c5;
+    padding: 12px;
+    margin: 16px 0;
+    border-radius: 4px;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.meteordg-register-buttons:hover {
+    background-color: #64B5F6;
+    color: darkblue;
+}
+
+.meteordg-register-fields {
+    width: 100%;
+    background: transparent;
+    padding: 10px;
+    margin-bottom: 16px;
+    border-radius: 4px;
+    border: 1px solid #1f53c5;
+    font-family: 'Titillium-Thin';
+    font-size: 18px;
+    color: white;
+}
+
+.meteordg-register-cif-container {
+    display: flex;
+}
+
+.meteordg-register-country-select {
+    width: 35%;
+    margin-right: 16px;
+}
+
+.meteordg-register-fields #cif {
+    width: 65%;
+}
+
+/*FOOTER*/
 
 .meteordg-footer {
     margin-top: 60px;
