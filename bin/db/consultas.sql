@@ -102,3 +102,43 @@ END;
 DELIMITER ;
 
 
+/*Ver Transaccion*/
+/*nota para el futuro sacar el nif a nombre de la compañia en caso de tener dicha compañia en la base de datos*/
+CREATE OR REPLACE PROCEDURE SEE_TRANSACTION(P_ID_TRANSACTION)
+AS
+P_NIF_ORIGIN VARCHAR(10);
+P_NIF_DESTINATION VARCHAR(10);
+P_AMOUNT NUMBER;
+P_DATE_TRANSACTION DATE;
+BEGIN
+SELECT NIF_ORIGIN,NIF_DESTINATION,AMOUNT,DATE_TRANSACTION INTO P_NIF_ORIGIN,P_NIF_DESTINATION,P_AMOUNT,P_DATE_TRANSACTION FROM TABLE_TRANSACTION WHERE ID_TRANSACTION=P_ID_TRANSACTION;
+DBMS_OUTPUT.PUT_LINE('La transaccion '||P_ID_TRANSACTION||' tiene un nif de origen: '||P_NIF_ORIGIN||', con un nif destino: '||P_NIF_DESTINATION||', cuya cantidad es de: '||P_AMOUNT||', y se realizo en: '||P_DATE_TRANSACTION||'.');
+EXCEPTION
+WHEN NO_DATA_FOUND THEN 
+DBMS_OUTPUT.PUT_LINE('El ID de la transaccion esta mal escrito o no existe en nuestra base de datos.');
+END;
+
+/*Ver Transacion en mysql*/
+DELIMITER //
+CREATE PROCEDURE SEE_TRANSACTION(IN P_ID_TRANSACTION INT)
+BEGIN
+  DECLARE P_NIF_ORIGIN VARCHAR(10);
+  DECLARE P_NIF_DESTINATION VARCHAR(10);
+  DECLARE P_AMOUNT DECIMAL(10, 2);
+  DECLARE P_DATE_TRANSACTION DATE;
+  
+  SELECT NIF_ORIGIN, NIF_DESTINATION, AMOUNT, DATE_TRANSACTION
+  INTO P_NIF_ORIGIN, P_NIF_DESTINATION, P_AMOUNT, P_DATE_TRANSACTION
+  FROM TABLE_TRANSACTION
+  WHERE ID_TRANSACTION = P_ID_TRANSACTION;
+  
+  SELECT CONCAT('La transacción ', P_ID_TRANSACTION, ' tiene un NIF de origen: ', P_NIF_ORIGIN, 
+                ', con un NIF destino: ', P_NIF_DESTINATION, ', cuya cantidad es de: ', P_AMOUNT,
+                ', y se realizó en: ', P_DATE_TRANSACTION, '.') AS Result;
+  
+  IF ROW_COUNT() = 0 THEN
+    SELECT 'El ID de la transacción está mal escrito o no existe en nuestra base de datos.' AS Result;
+  END IF;
+END;
+//
+DELIMITER ;
