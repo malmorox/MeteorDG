@@ -228,3 +228,131 @@
     font-size: 13px;
     font-family: Ubuntu-Light;
 }
+
+
+/*/////////////////////////////////////////////////////////////////*/
+
+
+.meteordg-admin-buttons {
+    font-size: 19px;
+    font-family: 'Ubuntu-Regular';
+    padding: 6px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.meteordg-admin-blue-button {
+    background: #1a237e;
+    border: none;
+    color: white;
+}
+
+.meteordg-admin-blue-button:hover {
+    background: #64b5f6;
+}
+
+.meteordg-admin-home-page {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.meteordg-admin-title {
+    margin: 0;
+}
+
+.meteordg-admin-container {
+    padding: 20px;
+    border-radius: 10px;
+}
+
+#meteordg-admin-table-container {
+    background-color: #2196f3;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+#meteordg-admin-filter-formulary {
+    display: flex;
+    flex-direction: column;
+}
+
+.meteordg-admin-subtitle {
+    margin: 0;
+}
+
+#meteordg-admin-filters-container {
+    display: flex;
+    gap: 30px;
+    margin-top: 20px;
+    justify-content: space-between;
+}
+
+.meteordg-admin-filter-selector {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+#meteordg-admin-container-last-transactions {
+    margin-top: 20px;
+    background-color: #f5f5f5;
+    display: flex;
+    flex-direction: column;
+}
+
+.meteordg-admin-company-logo {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+#meteordg-admin-company-table {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#meteordg-admin-header-table {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 0;
+}
+
+.meteordg-admin-header-container-table-information {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+}
+
+.meteordg-admin-table-information {
+    margin: 0;
+}
+
+.meteordg-admin-row-table {
+    display: flex;
+    justify-content: space-between;
+    background-color: #2196f3;
+}
+
+.meteordg-admin-row-container-table-information {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+}
+
+.meteordg-admin-field-company {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.meteordg-admin-name-company {
+    margin: 0;
+}
