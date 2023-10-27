@@ -1,64 +1,64 @@
 
 /*Busqueda y filtrado*/
 CREATE OR REPLACE FUNCTION FILTER_COMPANY(
-    p_name VARCHAR,
-    p_type VARCHAR,
-    p_country VARCHAR,
-    p_nif VARCHAR
+    P_NAME VARCHAR,
+    P_TYPE VARCHAR,
+    P_COUNTRY VARCHAR,
+    P_NIF VARCHAR
 ) RETURN SYS_REFCURSOR IS
-    cur SYS_REFCURSOR;
+    CUR SYS_REFCURSOR;
 BEGIN
-OPEN cur FOR
+OPEN CUR FOR
 SELECT *
 FROM COMPANY
-WHERE (p_name IS NULL OR NAME = p_name)
-  AND (p_type IS NULL OR TYPE = p_type)
-  AND (p_country IS NULL OR COUNTRY = p_country)
-  AND (p_nif IS NULL OR NIF = p_nif);
+WHERE (P_NAME IS NULL OR NAME = P_NAME)
+  AND (P_TYPE IS NULL OR TYPE = P_TYPE)
+  AND (P_COUNTRY IS NULL OR COUNTRY = P_COUNTRY)
+  AND (P_NIF IS NULL OR NIF = P_NIF);
 
-RETURN cur;
+RETURN CUR;
 END;
 /
 
 /*Busqueda y filtrado traducido a MySQL*/
 DELIMITER //
 CREATE FUNCTION FILTER_COMPANY(
-    p_name VARCHAR(255),
-    p_type VARCHAR(255),
-    p_country VARCHAR(255),
-    p_nif VARCHAR(10)
+    P_NAME VARCHAR(255),
+    P_TYPE VARCHAR(255),
+    P_COUNTRY VARCHAR(255),
+    P_NIF VARCHAR(10)
 )
     RETURNS BOOLEAN
 BEGIN
-    DECLARE filter BOOLEAN;
+    DECLARE FILTER BOOLEAN;
 
-    SET filter = FALSE;
+    SET FILTER = FALSE;
 
-    IF p_name IS NOT NULL THEN
-    IF p_name = NAME THEN
-    SET filter = TRUE;
-END IF;
-END IF;
-
-IF p_type IS NOT NULL THEN
-        IF p_type = TYPE THEN
-SET filter = TRUE;
+    IF P_NAME IS NOT NULL THEN
+    IF P_NAME = NAME THEN
+    SET FILTER = TRUE;
 END IF;
 END IF;
 
-IF p_country IS NOT NULL THEN
-        IF p_country = COUNTRY THEN
-SET filter = TRUE;
+IF P_TYPE IS NOT NULL THEN
+        IF P_TYPE = TYPE THEN
+SET FILTER = TRUE;
 END IF;
 END IF;
 
-IF p_nif IS NOT NULL THEN
-        IF p_nif = NIF THEN
-SET filter = TRUE;
+IF P_COUNTRY IS NOT NULL THEN
+        IF P_COUNTRY = COUNTRY THEN
+SET FILTER = TRUE;
 END IF;
 END IF;
 
-RETURN filter;
+IF P_NIF IS NOT NULL THEN
+        IF P_NIF = NIF THEN
+SET FILTER = TRUE;
+END IF;
+END IF;
+
+RETURN FILTER;
 END;
 //
 DELIMITER ;
@@ -66,36 +66,37 @@ DELIMITER ;
 
 
 /*Introducir empresas nuevas*/
-CREATE OR REPLACE FUNCTION insert_empresa(
-    p_nif VARCHAR(10),
-    p_nombre VARCHAR(12),
-    p_tipo VARCHAR(15),
-    p_pais VARCHAR(20),
-    p_direccion VARCHAR(50),
-    p_telefono VARCHAR(12),
-    p_email VARCHAR(30)
+CREATE OR REPLACE FUNCTION INSERT_EMPRESA(
+    P_NIF VARCHAR(10),
+    P_NOMBRE VARCHAR(12),
+    P_TIPO VARCHAR(15),
+    P_PAIS VARCHAR(20),
+    P_DIRECCION VARCHAR(50),
+    P_TELEFONO VARCHAR(12),
+    P_EMAIL VARCHAR(30)
 )
-    RETURNS VOID AS $$;
+    RETURN VOID AS $$;
 BEGIN
     INSERT INTO COMPANY (NIF, NAME, TYPE, COUNTRY, ADDRESS, PHONE, EMAIL)
-    VALUES (p_nif, p_nombre, p_tipo, p_pais, p_direccion, p_telefono, p_email);
+    VALUES (P_NIF, P_NOMBRE, P_TIPO, P_PAIS, P_DIRECCION, P_TELEFONO, P_EMAIL);
 END;
 $$ LANGUAGE plpgsql;
 
 /*Introducir nuevas empresas traducido a MySQL*/
 DELIMITER //
-CREATE PROCEDURE insert_empresa(
-    IN p_nif VARCHAR(10),
-    IN p_nombre VARCHAR(12),
-    IN p_tipo VARCHAR(15),
-    IN p_pais VARCHAR(20),
-    IN p_direccion VARCHAR(50),
-    IN p_telefono VARCHAR(12),
-    IN p_email VARCHAR(30)
+CREATE PROCEDURE INSERT_EMPRESA(
+    IN P_NIF VARCHAR(10),
+    IN P_NOMBRE VARCHAR(12),
+    IN P_TIPO VARCHAR(15),
+    IN P_PAIS VARCHAR(20),
+    IN P_DIRECCION VARCHAR(50),
+    IN P_TELEFONO VARCHAR(12),
+    IN P_EMAIL VARCHAR(30)
 )
+RETURN VOID
 BEGIN
     INSERT INTO COMPANY (NIF, NAME, TYPE, COUNTRY, ADDRESS, PHONE, EMAIL)
-    VALUES (p_nif, p_nombre, p_tipo, p_pais, p_direccion, p_telefono, p_email);
+    VALUES (P_NIF, P_NOMBRE, P_TIPO, P_PAIS, P_DIRECCION, P_TELEFONO, P_EMAIL);
 END;
 //
 DELIMITER ;
