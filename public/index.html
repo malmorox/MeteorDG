@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Admin Dashboard | MeteorDG </title>
+        <link rel="icon" type="image/png" href="img/logotype/Logo_MeteorDG.ico"/>
+        <link rel="stylesheet" href="styles.css">
+        <script src="js/view_admin.js" defer></script>
+    </head>
+    <body>
+        <header class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+            <a class="navbar-brand ps-3" href="index.html"> <img src="img/logotype/Logo_MeteorDG-LIGHT.svg"> </a>
+            <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
+            <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
+                <div class="input-group">
+                    <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
+                    <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
+                </div>
+            </form>
+            <!-- Opciones de la cuenta -->
+            <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item">Settings</a></li>
+                        <li><hr class="dropdown-divider" /></li>
+                        <li><a class="dropdown-item" href="#!">Logout</a></li>
+                        <li><a class="dropdown-item" href="#!">Activity Log</a></li>
+                        <li><a class="dropdown-item" href="#!">Logout</a></li>
+                        <li><a class="dropdown-item" href="#!">Activity Log</a></li>
+                        <li><hr class="dropdown-divider" /></li>
+                        <li><a class="dropdown-item" href="#!">Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </header>
+        <section id="layoutSidenav">
+            <div id="layoutSidenav_nav">
+                <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                    <div class="sb-sidenav-menu">
+                        <div class="nav">
+                            <a class="nav-link" href="index.html">
+                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                Dashboard
+                            </a>
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                                Layouts
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="layout-static.html">Static Navigation</a>
+                                    <a class="nav-link" href="layout-sidenav-light.html">Light Sidenav</a>
+                                </nav>
+                            </div>
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
+                                <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
+                                Pages
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
+                                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
+                                        Authentication
+                                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                    </a>
+                                    <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
+                                        <nav class="sb-sidenav-menu-nested nav">
+                                            <a class="nav-link" href="login.html">Login</a>
+                                            <a class="nav-link" href="register.html">Register</a>
+                                            <a class="nav-link" href="password.html">Forgot Password</a>
+                                        </nav>
+                                    </div>
+                                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">
+                                        Error
+                                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                    </a>
+                                    <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
+                                        <nav class="sb-sidenav-menu-nested nav">
+                                            <a class="nav-link" href="401.html">401 Page</a>
+                                            <a class="nav-link" href="404.html">404 Page</a>
+                                            <a class="nav-link" href="500.html">500 Page</a>
+                                        </nav>
+                                    </div>
+                                </nav>
+                            </div>
+                            <a class="nav-link" href="charts.html">
+                                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                                Charts
+                            </a>
+                            <a class="nav-link" href="tables.html">
+                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                Tables
+                            </a>
+                        </div>
+                    </div>
+                    <div class="sb-sidenav-footer">
+                        <div class="small">Logged in as:</div>
+                        Start Bootstrap
+                    </div>
+                </nav>
+            </div>
+            <div id="layoutSidenav_content">
+
+
+
+
+
+
+                <main class="meteordg-admin-home-page">
+                    <h1>Home</h1>
+                    <div class="meteordg-admin-container" id="meteordg-admin-table-container">
+                        <form action="" id="meteordg-admin-filter-formulary">
+                            <h4>Filtrar empresa:</h4>
+                            <div id="meteordg-admin-filters-container">
+                                <div class="meteordg-admin-filter-selector">
+                                    <label for="">Nombre: </label>
+                                    <select name="meteordg-admin-order-selector" id="">
+                                        <option value="">Ascendente</option>
+                                        <option value="">Descendente</option>
+                                    </select>
+                                </div>
+                                <div class="meteordg-admin-filter-selector">
+                                    <label for="">NIF: </label>
+                                    <select name="meteordg-admin-order-selector" id="">
+                                        <option value="">Ascendente</option>
+                                        <option value="">Descendente</option>
+                                    </select>
+                                </div>
+                                <div class="meteordg-admin-filter-selector">
+                                    <label for="">Tipo: </label>
+                                    <select name="meteordg-admin-order-selector" id="">
+                                        <option value="">Venta al por menor o al por mayor</option>
+                                        <option value="">Alimentación/Gastronomía</option>
+                                        <option value="">Tecnología/Telecomunicaciones</option>
+                                        <option value="">Videojuegos</option>
+                                        <option value="">Cuidado personal/Estética</option>
+                                        <option value="">Salud</option>
+                                        <option value="">Arquitectura/Construcción</option>
+                                        <option value="">Comercio electrónico</option>
+                                        <option value="">Educación</option>
+                                        <option value="">Servicios especializados</option>
+                                        <option value="">Servicios contables o financieros</option>
+                                        <option value="">Consultoría</option>
+                                        <option value="">Vehículos y recambios</option>
+                                        <option value="">Agricultura/Ganadería</option>
+                                        <option value="">Manufactura</option>
+                                        <option value="">Artes/Manualidades</option>
+                                        <option value="">Transporte/Logística</option>
+                                        <option value="">Publicidad/Medios digitales</option>
+                                        <option value="">Hostelería/Turismo</option>
+                                        <option value="">Entretenimiento</option>
+                                        <option value="">ONG</option>
+                                        <option value="">Otros</option>
+                                    </select>
+                                </div>
+                                <div class="meteordg-admin-filter-selector">
+                                    <label for="">País: </label>
+                                    <select name="meteordg-admin-order-selector" id="">
+                                        <option value="">España</option>
+                                        <option value="">Alemania</option>
+                                        <option value="">Francia</option>
+                                        <option value="">Rumanía</option>
+                                    </select>
+                                </div>
+                                <div class="meteordg-admin-filter-selector">
+                                    <label for="">Ciudad: </label>
+                                    <select name="meteordg-admin-order-selector" id="">
+                                        <option value="">Madrid</option>
+                                        <option value="">Barcelona</option>
+                                        <option value="">Almería</option>
+                                        <option value="">Valencia</option>
+                                    </select>
+                                </div>                  
+                                <button class="meteordg-admin-buttons meteordg-admin-blue-button">Filtrar</button>
+                            </div>                         
+                        </form>
+                        <div class="meteordg-admin-container" id="meteordg-admin-container-last-transactions">
+                            <h4>Últimos movimientos:</h4>
+                            <div id="meteordg-admin-company-table">
+                                <div id="meteordg-admin-header-table" class="meteordg-admin-container">
+                                    <div class="meteordg-admin-header-container-table-information">
+                                        <p class="meteordg-admin-table-information">Empresa origen</p>
+                                    </div>
+                                    <div class="meteordg-admin-header-container-table-information">
+                                        <p class="meteordg-admin-table-information">Nif</p>
+                                    </div>
+                                    <div class="meteordg-admin-header-container-table-information">
+                                        <p class="meteordg-admin-table-information">transacción comercial</p>
+                                    </div>
+                                    <div class="meteordg-admin-header-container-table-information">
+                                        <p class="meteordg-admin-table-information">Divisa</p>
+                                    </div>
+                                    <div class="meteordg-admin-header-container-table-information">
+                                        <p class="meteordg-admin-table-information">Fecha</p>
+                                    </div>
+                                    <div class="meteordg-admin-header-container-table-information">
+                                        <p class="meteordg-admin-table-information">Empresa destino</p>
+                                    </div>
+                                    <div class="meteordg-admin-header-container-table-information">
+                                        <p class="meteordg-admin-table-information">Nif</p>
+                                    </div>                
+                                </div>
+                                <div class="meteordg-admin-container meteordg-admin-row-table">
+                                    <div class="meteordg-admin-row-container-table-information">
+                                        <div class="meteordg-admin-field-company">
+                                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/BMW.svg/1015px-BMW.svg.png" class="meteordg-admin-company-logo">
+                                            <p class="meteordg-admin-name-company">BMW</p>
+                                        </div>
+                                    </div>
+                                    <div class="meteordg-admin-row-container-table-information">
+                                        <p class="meteordg-admin-table-information">5478SF</p>
+                                    </div>
+                                    <div class="meteordg-admin-row-container-table-information">
+                                        <p class="meteordg-admin-table-information">5.234.709,37</p>
+                                    </div>
+                                    <div class="meteordg-admin-row-container-table-information">
+                                        <p class="meteordg-admin-table-information">€</p>
+                                    </div>
+                                    <div class="meteordg-admin-row-container-table-information">
+                                        <p class="meteordg-admin-table-information">13/04/2023</p>
+                                    </div>
+                                    <div class="meteordg-admin-row-container-table-information">
+                                        <div class="meteordg-admin-field-company">
+                                            <img src="https://i.pinimg.com/originals/76/9e/36/769e367222b218140068d37eae38b9f0.png" class="meteordg-admin-company-logo">
+                                            <p class="meteordg-admin-name-company">Mercedes-Benz</p>
+                                        </div>
+                                    </div>
+                                    <div class="meteordg-admin-row-container-table-information">
+                                        <p class="meteordg-admin-table-information">3851AV</p>
+                                    </div>
+                                </div>
+                                <div class="meteordg-admin-container meteordg-admin-row-table">
+                                    <div class="meteordg-admin-row-container-table-information">
+                                        <div class="meteordg-admin-field-company">
+                                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Logotipo_de_BBVA.svg/2560px-Logotipo_de_BBVA.svg.png" class="meteordg-admin-company-logo">
+                                            <p class="meteordg-admin-name-company">BBVA</p>
+                                        </div>
+                                    </div>
+                                    <div class="meteordg-admin-row-container-table-information">
+                                        <p class="meteordg-admin-table-information">8163HQ</p>
+                                    </div>
+                                    <div class="meteordg-admin-row-container-table-information">
+                                        <p class="meteordg-admin-table-information">824.1359,82</p>
+                                    </div>
+                                    <div class="meteordg-admin-row-container-table-information">
+                                        <p class="meteordg-admin-table-information">€</p>
+                                    </div>
+                                    <div class="meteordg-admin-row-container-table-information">
+                                        <p class="meteordg-admin-table-information">25/04/2023</p>
+                                    </div>
+                                    <div class="meteordg-admin-row-container-table-information">
+                                        <div class="meteordg-admin-field-company">
+                                            <img src="https://www.santander.com/content/dam/santander-com/images/image-resources/san-logo.png" class="meteordg-admin-company-logo">
+                                            <p class="meteordg-admin-name-company">Santander</p>
+                                        </div>
+                                    </div>
+                                    <div class="meteordg-admin-row-container-table-information">
+                                        <p class="meteordg-admin-table-information">7024TG</p>
+                                    </div>
+                                </div>
+                                <div class="meteordg-admin-container meteordg-admin-row-table">
+                                    <div class="meteordg-admin-row-container-table-information">
+                                        <div class="meteordg-admin-field-company">
+                                            <img src="https://assets.stickpng.com/images/590607570cbeef0acff9a641.png" class="meteordg-admin-company-logo">
+                                            <p class="meteordg-admin-name-company">KFC</p>
+                                        </div>
+                                    </div>
+                                    <div class="meteordg-admin-row-container-table-information">
+                                        <p class="meteordg-admin-table-information">8163HQ</p>
+                                    </div>
+                                    <div class="meteordg-admin-row-container-table-information">
+                                        <p class="meteordg-admin-table-information">824.1359,82</p>
+                                    </div>
+                                    <div class="meteordg-admin-row-container-table-information">
+                                        <p class="meteordg-admin-table-information">€</p>
+                                    </div>
+                                    <div class="meteordg-admin-row-container-table-information">
+                                        <p class="meteordg-admin-table-information">25/04/2023</p>
+                                    </div>
+                                    <div class="meteordg-admin-row-container-table-information">
+                                        <div class="meteordg-admin-field-company">
+                                            <img src="https://www.santander.com/content/dam/santander-com/images/image-resources/san-logo.png" class="meteordg-admin-company-logo">
+                                            <p class="meteordg-admin-name-company">Santander</p>
+                                        </div>
+                                    </div>
+                                    <div class="meteordg-admin-row-container-table-information">
+                                        <p class="meteordg-admin-table-information">7024TG</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+
+
+
+
+
+                <footer class="py-4 bg-light mt-auto">
+                    <div class="container-fluid px-4">
+                        <div class="d-flex align-items-center justify-content-between small">
+                            <div class="text-muted">Copyright &copy; Your Website 2023</div>
+                            <div>
+                                <a href="#">Privacy Policy</a>
+                                &middot;
+                                <a href="#">Terms &amp; Conditions</a>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </section>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="js/scripts.js"></script>
+    </body>
+</html>
