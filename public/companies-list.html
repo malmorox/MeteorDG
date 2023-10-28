@@ -107,6 +107,25 @@
             <main class="meteordg-admin-content">
                 <h1 class="meteordg-admin-companies-title"> Listado de empresas </h1>
                 <div class="meteordg-admin-companies-panel">
+                    <!--<?php
+                        foreach ($companies as $company) {
+                            echo '<div class="meteordg-company" data-company="' . $company["nombre"] . '">';
+                            echo '<div class="meteordg-company-info-zone">';
+                            echo '<div class="meteordg-company-logo" id="' . $company["nombre"] . '">';
+                            echo '<img src="' . $company["logo"] . '">';
+                            echo '</div>';
+                            echo '<div class="meteordg-company-data-zone">';
+                            echo '<div class="meteordg-company-name">';
+                            echo '<span>' . $company["nombre"] . '</span>';
+                            echo '</div>';
+                            echo '<div class="meteordg-company-nif">';
+                            echo '<span>' . $company["nif"] . '</span>';
+                            echo '</div>';
+                            echo '</div>';
+                            echo '</div>';
+                            echo '</div>';
+                        }
+                    ?>-->
                     <div class="meteordg-company" data-company="bmw">
                         <div class="meteordg-company-info-zone">
                             <div class="meteordg-company-logo" id="bmw">
@@ -213,6 +232,7 @@
                         </div>
                     </div>
                 </div>
+                <button class="meteordg-admin-open-popup-button" id="open-popup">+</button>
             </main>
             <footer class="py-4 bg-light mt-auto">
                 <div class="container-fluid px-4">
@@ -226,6 +246,20 @@
                     </div>
                 </div>
             </footer>
+        </div>
+        <div class="meteordg-admin-popup" id="popup-container">
+            <div class="meteordg-admin-company-register-popup" id="popup">
+                <a href="#" class="meteordg-admin-close-popup-button" id="close-popup"><i class="fas fa-times"></i></a>
+                <h3>SUSCRIBETE</h3>
+                <h4>y recibe un cupon de descuento.</h4>
+                <form action="">
+                    <div class="contenedor-inputs">
+                        <input type="text" placeholder="Nombre">
+                        <input type="email" placeholder="Correo">
+                    </div>
+                    <input type="submit" class="btn-submit" value="Suscribirse">
+                </form>
+            </div>
         </div>
     </section>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>

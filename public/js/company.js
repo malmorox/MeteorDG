@@ -1,3 +1,23 @@
+/* ABRIR POP-UP PARA REGISTRAR UNA NUEVA EMPRESA */
+
+const popupOpenButton = document.getElementById('open-popup');
+const popupContainer = document.getElementById('popup-container');
+const popup = document.getElementById('popup');
+const popupCloseButton = document.getElementById('close-popup');
+
+popupOpenButton.addEventListener('click', function(){
+    popupContainer.classList.add('active');
+    popup.classList.add('active');
+});
+
+popupCloseButton.addEventListener('click', function(e){
+    e.preventDefault();
+    popupContainer.classList.remove('active');
+    popup.classList.remove('active');
+});
+
+/* CARGAR PÁGINA DE LA EMPRESA QUE CLICKEMOS */
+
 document.addEventListener('click', function (event) {
     if (event.target.classList.contains('meteordg-company')) {
         const companyName = event.target.getAttribute('data-company');
@@ -34,3 +54,5 @@ function redirectToCompanyPage(companyName) {
         console.log(`No se encontró la compañía: ${companyName}`);
     }
 } */
+
+

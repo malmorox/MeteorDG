@@ -38,3 +38,31 @@ foreach ($resultados as $empresa) {
 }
 ?>
 
+<?php
+$mysqli = new mysqli("localhost", "usuario", "contraseña", "basededatos");
+
+// Verificar la conexión
+if ($mysqli->connect_error) {
+    die("Error de conexión a la base de datos: " . $mysqli->connect_error);
+}
+
+// Realizar una consulta para obtener las empresas
+$result = $mysqli->query("SELECT * FROM COMPANY");
+
+$companies = array();
+
+if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        $companies[] = $row;
+    }
+} else {
+    $companies[] = "No hay empresas en la base de datos";
+}
+
+// Devolver la respuesta en formato JSON
+echo json_encode($companies);
+
+// Cerrar la conexión
+$mysqli->close();
+?>
+
