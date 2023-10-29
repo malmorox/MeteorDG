@@ -250,6 +250,28 @@
         <div class="meteordg-admin-popup" id="popup-container">
             <div class="meteordg-admin-company-register-popup" id="popup">
                 <a href="#" class="meteordg-admin-close-popup-button" id="close-popup"><i class="fas fa-times"></i></a>
+                <form method="post" action="php/sign-up.php">
+                    <section class="meteordg-company-register first-step">
+                        <h4 class="meteordg-register-title"> Registra tu empresa </h4>
+                        <input type="text" class="meteordg-register-fields" name="name" id="name" placeholder="Nombre" required/>
+                        <section class="meteordg-register-cif-container">
+                            <select class="meteordg-register-fields meteordg-register-country-select" id="country">
+                                <option value="ESP"> ESP </option>
+                                <option value="ARG"> ARG </option>
+                                <option value="FRA"> FRA </option>
+                                <option value="ITA"> ITA </option>
+                                <option value="ENG"> ENG </option>
+                                <option value="DEU"> DEU </option>
+                                <option value="NLD"> NLD </option>
+                            </select>
+                            <input type="text" class="meteordg-register-fields" name="nif" id="nif" placeholder="NIF" required/>
+                        </section>
+                        <input type="text" class="meteordg-register-fields" name="location" id="location" placeholder="Dirección jurídica"/>
+                        <input type="tel" class="meteordg-register-fields" name="phone" id="phone" pattern="[0-9]{9}" maxlength="9" placeholder="Teléfono"/>
+                        <input type="button" class="meteordg-register-buttons" value="Siguiente" id="continue"/>
+                        <p class="meteordg-register-paragraph"><a href="#">¿Ya tengo Cuenta?</a></p>
+                    </section>
+                </form>
             </div>
         </div>
     </section>
