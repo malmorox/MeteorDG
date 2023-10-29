@@ -70,6 +70,17 @@
     background: #f3f3f3;
 }
 
+.meteordg-admin-companies-head {
+    display: flex;
+    align-items: center;
+    border: 1px solid black;
+}
+
+.meteordg-admin-open-popup-button {
+    padding: 5px;
+}
+
+
 .meteordg-admin-companies-title {
     font-family: Titillium-Semibold;
 }
