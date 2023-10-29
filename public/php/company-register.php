@@ -1,10 +1,12 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Obtén los datos del formulario
-    $nif = $_POST["nif"];
-    $nombre = $_POST["nombre"];
-    $tipo = $_POST["tipo"];
-    $pais = $_POST["pais"];
+    $name = $_POST['name'];
+    $nif = $_POST['nif'];
+    $email = $_POST['email'];
+    $adress = $_POST['location'];
+    $country = $_POST['country'];
+    $phone = $_POST['phone'];
 
     // Establece la conexión a la base de datos (ajusta los valores de conexión según tu configuración)
     $host = "tu_host";
