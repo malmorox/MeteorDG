@@ -254,10 +254,6 @@
     padding: 20px;
     text-align: center;
     width: 600px;
-
-    transition: .3s ease all;
-    transform: scale(0.7);
-    opacity: 0;
 }
 
 .meteordg-admin-company-register-popup .meteordg-admin-close-popup-button {
@@ -265,7 +261,6 @@
     line-height: 16px;
     display: block;
     text-align: right;
-    transition: .3s ease all;
     color: #BBBBBB;
 }
 
@@ -312,7 +307,6 @@
     font-family: 'Montserrat', sans-serif;
     font-size: 16px;
     cursor: pointer;
-    transition: .3s ease all;
 }
 
 
