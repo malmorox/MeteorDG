@@ -13,7 +13,7 @@ if ($conn->connect_error) {
 
 // Recopila los datos del formulario
 $name = $_POST['name'];
-$NIF = $_POST['nif'];
+$nif = $_POST['nif'];
 $email = $_POST['email'];
 $adress = $_POST['location'];
 $country = $_POST['country'];
@@ -22,7 +22,7 @@ $phone = $_POST['phone'];
 
 // Inserta los datos en la base de datos
 $sql = "INSERT INTO COMPANY (CIF, NAME, COUNTRY, ADDRESS, PHONE, EMAIL) 
-        VALUES ('$NIF', $name, $country, $adress, $phone, '$email')";
+        VALUES ('$nif', $name, $country, $adress, $phone, '$email')";
 
 if ($conn->query($sql) === TRUE) {
     echo "Datos insertados con éxito.";
