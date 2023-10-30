@@ -2509,7 +2509,7 @@ textarea.form-control-lg {
 .input-group > .datatable-selector,
 .input-group > .form-floating {
     position: relative;
-    flex: 1 1 auto;
+    flex: 1;
     width: 1%;
     min-width: 0;
 }
@@ -9079,7 +9079,7 @@ textarea.form-control-lg {
         margin-right: 0.5rem !important;
     }
     .me-md-3 {
-        margin-right: 1rem !important;
+        margin-right: 0 !important;
     }
     .me-md-4 {
         margin-right: 1.5rem !important;

@@ -80,8 +80,20 @@
 }
 
 .meteordg-admin-open-popup-button {
-    padding: 5px 10px;
-    border-radius: 4px;
+    font-size: 19px;
+    font-family: 'Ubuntu-Regular';
+    padding: 5px 15px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 0.375rem;
+    background: #0797b9;
+    cursor: pointer;
+    transition: 0.25s;
+    color: white;
+}
+
+.meteordg-admin-open-popup-button:hover {
+    background: #068ca9;
 }
 
 .meteordg-admin-companies-panel {
@@ -110,6 +122,10 @@
 }
 
 @media (max-width: 1000px) {
+    .meteordg-admin-open-popup-button {
+        justify-self: flex-end;
+    }
+
     .meteordg-admin-companies-panel {
         grid-template-columns: 1fr;
     }
