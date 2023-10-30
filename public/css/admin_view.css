@@ -430,17 +430,22 @@
     gap: 5px;
 }
 
+.meteordg-admin-filter-text-input {
+    width: 160px;
+    height: 25px;
+    border-radius: 5px;
+}
+
+.meteordg-admin-filter-date-input {
+    height: 25px;
+    border-radius: 5px;
+}
+
 #meteordg-admin-container-last-transactions {
     margin-top: 20px;
     background-color: #f5f5f5;
     display: flex;
     flex-direction: column;
-}
-
-.meteordg-admin-company-logo {
-    width: 50px;
-    height: 50px;
-    object-fit: contain;
 }
 
 #meteordg-admin-company-table {
@@ -459,12 +464,22 @@
 .meteordg-admin-header-container-table-information {
     display: flex;
     justify-content: center;
+    gap: 5px;
     align-items: center;
-    width: 200px;
+    width: 220px;
 }
 
 .meteordg-admin-table-information {
     margin: 0;
+}
+
+.meteordg-admin-button-last-movement {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    width: 25px;
+    height: 25px;
 }
 
 .meteordg-admin-row-table {
@@ -484,7 +499,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 8px;
 }
 
 .meteordg-admin-name-company {
