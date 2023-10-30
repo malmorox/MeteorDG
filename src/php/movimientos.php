@@ -9,4 +9,13 @@
     if (!$conexion) {
         die("Error de conexión: ".mysqli_connect_errno());
     }
+
+    $selectNombre = "SELECT NOMBRE FROM PERSONA";
+    $resultado = mysqli_query($conexion, $selectNombre);
+
+    while($fila = mysqli_fetch_assoc($resultado)){
+        echo "Nombre: ".$fila['nombre']. "<br/>";
+    }
+
+    mysqli_close($conexion);
 ?>
