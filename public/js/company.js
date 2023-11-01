@@ -21,24 +21,14 @@ popupCloseButton.addEventListener('click', function(e){
 document.addEventListener('click', function (event) {
     if (event.target.classList.contains('meteordg-company')) {
         const companyName = event.target.getAttribute('data-company');
-        redirectToCompanyPage(companyName);
+        redirectToCompanyDetails(companyName);
     }
 });
 
-function redirectToCompanyPage(companyName) {
-    // Define un objeto que mapea el nombre de la compañía a la URL correspondiente
-    const companyPages = {
-        'BMW': 'bmw.html',
-        'KFC': 'kfc.html',
-        // Agrega más compañías y URL correspondientes aquí
-    };
-
-    // Obtén la URL correspondiente al nombre de la compañía
-    const companyURL = companyPages[companyName];
-
-    // Redirige a la página de la compañía
-    if (companyURL) {
-        window.location.href = companyURL;
+function redirectToCompanyDetails(company) {
+    const companyPage = 'company-details.html';
+    if (companyPage) {
+        window.location.href = companyPage;
     }
 }
 
