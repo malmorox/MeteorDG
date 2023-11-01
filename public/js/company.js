@@ -1,11 +1,11 @@
 /* ABRIR POP-UP PARA REGISTRAR UNA NUEVA EMPRESA */
 
-const popupOpenButton = document.getElementById('open-popup');
+/*const popupOpenButton = document.getElementById('open-popup');
 const popupContainer = document.getElementById('popup-container');
 const popup = document.getElementById('popup');
-const popupCloseButton = document.getElementById('close-popup');
+const popupCloseButton = document.getElementById('close-popup')*/
 
-popupOpenButton.addEventListener('click', function(){
+/* popupOpenButton.addEventListener('click', function(){
     popupContainer.classList.add('active');
     popup.classList.add('active');
 });
@@ -14,19 +14,20 @@ popupCloseButton.addEventListener('click', function(e){
     e.preventDefault();
     popupContainer.classList.remove('active');
     popup.classList.remove('active');
-});
+}); */
 
-/* CARGAR PÁGINA DE LA EMPRESA QUE CLICKEMOS */
+/* CARGAR PÁGINA DE DETALLE DE LA EMPRESA QUE CLICKEMOS */
 
 document.addEventListener('click', function (event) {
     if (event.target.classList.contains('meteordg-company')) {
         const companyName = event.target.getAttribute('data-company');
+        console.log('Hiciste clic en: ' + companyName);
         redirectToCompanyDetails(companyName);
     }
 });
 
 function redirectToCompanyDetails(company) {
-    const companyPage = 'company-details.html';
+    const companyPage = 'company-details.html'; // Coloca aquí la URL de la página de detalles
     if (companyPage) {
         window.location.href = companyPage;
     }
