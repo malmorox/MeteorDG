@@ -79,7 +79,7 @@
     font-family: Titillium-Semibold;
 }
 
-.meteordg-admin-open-popup-button {
+/*.meteordg-admin-open-popup-button {
     font-size: 19px;
     font-family: 'Ubuntu-Regular';
     padding: 5px 15px;
@@ -94,7 +94,7 @@
 
 .meteordg-admin-open-popup-button:hover {
     background: #068ca9;
-}
+}*/
 
 .meteordg-admin-companies-panel {
     margin-top: 30px;
@@ -174,7 +174,7 @@
     }
 }
 
-.meteordg-company-logo {
+.meteordg-company .meteordg-company-logo {
     padding: 15px;
     display: flex;
     justify-content: center;
@@ -211,7 +211,7 @@
     background: #ffffa1;
 }
 
-.meteordg-company-logo img {
+.meteordg-company .meteordg-company-logo img {
     min-width: 80px;
     max-width: 80px;
     min-height: 80px;
@@ -221,20 +221,20 @@
     object-fit: contain;
 }
 
-.meteordg-company-name {
+.meteordg-company .meteordg-company-name {
     margin-top: 5px;
 }
 
-.meteordg-company-name span {
+.meteordg-company .meteordg-company-name span {
     font-size: 20px;
     font-family: Titillium-Semibold;
 }
 
-.meteordg-company-nif {
+.meteordg-company .meteordg-company-nif {
     margin-top: -5px;
 }
 
-.meteordg-company-nif span {
+.meteordg-company .meteordg-company-nif span {
     font-size: 13px;
     font-family: Ubuntu-Light;
 }
@@ -374,6 +374,60 @@
 .meteordg-register-fields #cif {
     width: 65%;
 } */
+
+
+/*/////////////////////////////////////////////////////////////////*/
+
+
+.meteordg-admin-company-details {
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 10px;
+    flex: 1;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.meteordg-admin-company-details .meteordg-company-info-zone {
+    display: flex;
+    flex-direction: row;
+}
+
+.meteordg-admin-company-details .meteordg-company-logo {
+    padding: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #646464;
+    border-radius: 10px;
+}
+
+.meteordg-admin-company-details .meteordg-company-logo img {
+    min-width: 120px;
+    max-width: 120px;
+    min-height: 120px;
+    max-height: 120px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
+.meteordg-admin-company-details .meteordg-company-name {
+    margin-top: 5px;
+}
+
+.meteordg-admin-company-details .meteordg-company-name span {
+    font-size: 20px;
+    font-family: Titillium-Semibold;
+}
+
+.meteordg-admin-company-details .meteordg-company-nif {
+    margin-top: -5px;
+}
+
+.meteordg-admin-company-details .meteordg-company-nif span {
+    font-size: 13px;
+    font-family: Ubuntu-Light;
+}
 
 
 /*/////////////////////////////////////////////////////////////////*/
