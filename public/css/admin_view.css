@@ -122,10 +122,6 @@
 }
 
 @media (max-width: 1000px) {
-    .meteordg-admin-open-popup-button {
-        justify-self: flex-end;
-    }
-
     .meteordg-admin-companies-panel {
         grid-template-columns: 1fr;
     }
@@ -243,7 +239,7 @@
     font-family: Ubuntu-Light;
 }
 
-.meteordg-admin-popup {
+/*.meteordg-admin-popup {
     background: rgba(0,0,0,.5);
     position: fixed;
     top: 0;
@@ -377,7 +373,7 @@
 
 .meteordg-register-fields #cif {
     width: 65%;
-}
+} */
 
 
 /*/////////////////////////////////////////////////////////////////*/
