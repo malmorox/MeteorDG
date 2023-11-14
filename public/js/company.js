@@ -1,11 +1,11 @@
-/*const popupOpenButton = document.getElementById('open-popup');
+const popupOpenButton = document.getElementById('open-popup');
 const popupContainer = document.getElementById('popup-container');
 const popup = document.getElementById('popup');
-const popupCloseButton = document.getElementById('close-popup');*/
+const popupCloseButton = document.getElementById('close-popup');
 
 /* ABRIR POP-UP PARA REGISTRAR UNA NUEVA EMPRESA */
 
-/* popupOpenButton.addEventListener('click', function(){
+popupOpenButton.addEventListener('click', function(){
     popupContainer.classList.add('active');
     popup.classList.add('active');
 });
@@ -14,7 +14,7 @@ popupCloseButton.addEventListener('click', function(e){
     e.preventDefault();
     popupContainer.classList.remove('active');
     popup.classList.remove('active');
-}); */
+});
 
 /* CARGAR PÁGINA DE DETALLE DE LA EMPRESA QUE CLICKEMOS */
 

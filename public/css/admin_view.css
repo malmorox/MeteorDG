@@ -79,7 +79,7 @@
     font-family: Titillium-Semibold;
 }
 
-/*.meteordg-admin-open-popup-button {
+.meteordg-admin-open-popup-button {
     font-size: 19px;
     font-family: 'Ubuntu-Regular';
     padding: 5px 15px;
@@ -94,7 +94,7 @@
 
 .meteordg-admin-open-popup-button:hover {
     background: #068ca9;
-}*/
+}
 
 .meteordg-admin-companies-panel {
     margin-top: 30px;
@@ -239,7 +239,7 @@
     font-family: Ubuntu-Light;
 }
 
-/*.meteordg-admin-popup {
+.meteordg-admin-popup {
     background: rgba(0,0,0,.5);
     position: fixed;
     top: 0;
@@ -373,7 +373,7 @@
 
 .meteordg-register-fields #cif {
     width: 65%;
-} */
+}
 
 
 /*/////////////////////////////////////////////////////////////////*/
