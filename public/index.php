@@ -52,7 +52,7 @@
                         </a>
                         <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="pages/companies-list.html"> Empresas </a>
+                                <a class="nav-link" href="pages/companies-list.php"> Empresas </a>
                                 <a class="nav-link" href="pages/bills.html"> Facturas</a>
                             </nav>
                         </div>

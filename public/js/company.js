@@ -37,7 +37,7 @@ function redirectToCompanyDetails(company) {
     // Comprueba si la compañía existe en el objeto companyPages
     if (companyName in companyPages) {
         // Obtén la URL de la compañía
-        const companyURL = `companies/${companyPages[companyName]}`;
+        const companyURL = `companies-logos/${companyPages[companyName]}`;
         // Redirige a la página de la compañía
         window.location.href = companyURL;
     } else {

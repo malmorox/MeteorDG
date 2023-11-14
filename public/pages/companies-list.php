@@ -147,7 +147,7 @@
                     <div class="meteordg-company" data-company="kfc">
                         <div class="meteordg-company-info-zone">
                             <div class="meteordg-company-logo" id="kfc">
-                                <img src="../img/companies/Kfc_logo.png">
+                                <img src="../../resources/companies-logos/Kfc_logo.png">
                             </div>
                             <div class="meteordg-company-data-zone">
                                 <div class="meteordg-company-name">
@@ -234,6 +234,47 @@
                             </div>
                         </div>
                     </div>
+                    <?php
+                    $sql = "SELECT * FROM companies";
+                    $result = $conn->query($sql);
+
+                    if ($result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
+                    $company = new Company(
+                    $row['logo'],
+                    $row['nif'],
+                    $row['name'],
+                    $row['type'],
+                    $row['country'],
+                    $row['legalAddress'],
+                    $row['phone'],
+                    $row['email']
+                    );
+
+                    // Imprimir la información de la empresa en HTML
+                    echo '<div class="meteordg-company" data-company="' . $company->getName() . '">';
+                        echo '    <div class="meteordg-company-info-zone">';
+                            echo '        <div class="meteordg-company-logo" id="' . $company->getName() . '">';
+                                echo '            <img src="../../resources/companies-logos/' . $company->getLogo() . '">';
+                                echo '        </div>';
+                            echo '        <div class="meteordg-company-data-zone">';
+                                echo '            <div class="meteordg-company-name">';
+                                    echo '                <span>' . $company->getName() . '</span>';
+                                    echo '            </div>';
+                                echo '            <div class="meteordg-company-nif">';
+                                    echo '                <span>' . $company->getNif() . '</span>';
+                                    echo '            </div>';
+                                echo '        </div>';
+                            echo '    </div>';
+                        echo '</div>';
+                    }
+                    } else {
+                    echo "No companies found";
+                    }
+
+                    $conn->close();
+                    ?>
+
                 </div>
             </main>
             <footer class="py-4 bg-light mt-auto">
@@ -255,7 +296,7 @@
                 <form method="post" action="php/sign-up.php">
                     <section class="meteordg-company-register first-step">
                         <h4 class="meteordg-register-title"> Registra tu empresa </h4>
-                        <input type="file" name="imagen" id="imagen" accept="image/*" required>
+                        <input type="file" name="image" id="image" accept="image/*" required>
                         <input type="text" class="meteordg-register-fields" name="name" id="name" placeholder="Nombre" required/>
                         <section class="meteordg-register-cif-container">
                             <select class="meteordg-register-fields meteordg-register-country-select" id="country">

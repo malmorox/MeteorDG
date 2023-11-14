@@ -1,6 +1,18 @@
 <?php
+function get_image() {
+    isset($_POST['image']) {
+        $image = $_POST['image'];
+        return $image;
+    }
+}
+
+function get_name() {
+    isset($_POST['name']) {
+        $company_name = $_POST['name'];
+        return $company_name;
+    }
+}
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Obtén los datos del formulario
     $name = $_POST['name'];
     $nif = $_POST['nif'];
     $email = $_POST['email'];
@@ -36,3 +48,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $conexion = null;
 }
 ?>
+
+
