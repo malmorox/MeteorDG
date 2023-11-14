@@ -110,114 +110,72 @@
                 </div>
                 <div class="meteordg-admin-container" id="meteordg-admin-table-container">
                     <form action="" id="meteordg-admin-filter-formulary">
-                        <h4 class="meteordg-admin-subtitle">Filtrar empresa:</h4>
+                        <h4 class="meteordg-admin-subtitle">Filter company:</h4>
                         <div id="meteordg-admin-filters-container">
                             <div class="meteordg-admin-filter-selector">
-                                <label for="">Nombre: </label>
-                                <select name="meteordg-admin-order-selector" id="">
-                                    <option value="">Ascendente</option>
-                                    <option value="">Descendente</option>
-                                </select>
+                                <label for="">Name: </label>
+                                <input type="text" class="meteordg-admin-filter-text-input">
                             </div>
                             <div class="meteordg-admin-filter-selector">
-                                <label for="">NIF: </label>
-                                <select name="meteordg-admin-order-selector" id="">
-                                    <option value="">Ascendente</option>
-                                    <option value="">Descendente</option>
-                                </select>
+                                <label for="">Origin NIF: </label>
+                                <input type="text" class="meteordg-admin-filter-text-input">
                             </div>
                             <div class="meteordg-admin-filter-selector">
-                                <label for="">Transacción: </label>
-                                <select name="meteordg-admin-order-selector" id="">
-                                    <option value="">Ascendente</option>
-                                    <option value="">Descendente</option>
-                                </select>
+                                <label for="">Destination NIF: </label>
+                                <input type="text" class="meteordg-admin-filter-text-input">
                             </div>
                             <div class="meteordg-admin-filter-selector">
-                                <label for="">Fecha: </label>
-                                <select name="meteordg-admin-order-selector" id="">
-                                    <option value="">Ascendente</option>
-                                    <option value="">Descendente</option>
-                                </select>
+                                <label for="">Initial date: </label>
+                                <input type="date" class="meteordg-admin-filter-date-input">
                             </div>
                             <div class="meteordg-admin-filter-selector">
-                                <label for="">Tipo: </label>
-                                <select name="meteordg-admin-order-selector" id="">
-                                    <option value="">Venta al por menor o al por mayor</option>
-                                    <option value="">Alimentación/Gastronomía</option>
-                                    <option value="">Tecnología/Telecomunicaciones</option>
-                                    <option value="">Videojuegos</option>
-                                    <option value="">Cuidado personal/Estética</option>
-                                    <option value="">Salud</option>
-                                    <option value="">Arquitectura/Construcción</option>
-                                    <option value="">Comercio electrónico</option>
-                                    <option value="">Educación</option>
-                                    <option value="">Servicios especializados</option>
-                                    <option value="">Servicios contables o financieros</option>
-                                    <option value="">Consultoría</option>
-                                    <option value="">Vehículos y recambios</option>
-                                    <option value="">Agricultura/Ganadería</option>
-                                    <option value="">Manufactura</option>
-                                    <option value="">Artes/Manualidades</option>
-                                    <option value="">Transporte/Logística</option>
-                                    <option value="">Publicidad/Medios digitales</option>
-                                    <option value="">Hostelería/Turismo</option>
-                                    <option value="">Entretenimiento</option>
-                                    <option value="">ONG</option>
-                                    <option value="">Otros</option>
-                                </select>
-                            </div>
-                            <div class="meteordg-admin-filter-selector">
-                                <label for="">País: </label>
-                                <select name="meteordg-admin-order-selector" id="">
-                                    <option value="">España</option>
-                                    <option value="">Alemania</option>
-                                    <option value="">Francia</option>
-                                    <option value="">Rumanía</option>
-                                </select>
-                            </div>
-                            <div class="meteordg-admin-filter-selector">
-                                <label for="">Ciudad: </label>
-                                <select name="meteordg-admin-order-selector" id="">
-                                    <option value="">Madrid</option>
-                                    <option value="">Barcelona</option>
-                                    <option value="">Almería</option>
-                                    <option value="">Valencia</option>
-                                </select>
+                                <label for="">Final date: </label>
+                                <input type="date" class="meteordg-admin-filter-date-input">
                             </div>
                             <button class="meteordg-admin-buttons meteordg-admin-blue-button">Filtrar</button>
                         </div>
                     </form>
                     <div class="meteordg-admin-container" id="meteordg-admin-container-last-transactions">
-                        <h4 class="meteordg-admin-subtitle">Últimos movimientos:</h4>
+                        <h4 class="meteordg-admin-subtitle">Last movements:</h4>
                         <div id="meteordg-admin-company-table">
                             <div id="meteordg-admin-header-table" class="meteordg-admin-container">
                                 <div class="meteordg-admin-header-container-table-information">
-                                    <h5 class="meteordg-admin-table-information">Empresa origen</h5>
+                                    <h5 class="meteordg-admin-table-information">Origin</h5>
+                                    <button class="meteordg-admin-button-last-movement">
+                                        <span>↑</span>
+                                    </button>
                                 </div>
                                 <div class="meteordg-admin-header-container-table-information">
-                                    <h5 class="meteordg-admin-table-information">Nif</h5>
+                                    <h5 class="meteordg-admin-table-information">Origin NIF</h5>
                                 </div>
                                 <div class="meteordg-admin-header-container-table-information">
-                                    <h5 class="meteordg-admin-table-information">transacción comercial</h5>
+                                    <h5 class="meteordg-admin-table-information">Transaction</h5>
+                                    <button class="meteordg-admin-button-last-movement">
+                                        <span>↑</span>
+                                    </button>
                                 </div>
                                 <div class="meteordg-admin-header-container-table-information">
-                                    <h5 class="meteordg-admin-table-information">Divisa</h5>
+                                    <h5 class="meteordg-admin-table-information">Badge</h5>
                                 </div>
                                 <div class="meteordg-admin-header-container-table-information">
-                                    <h5 class="meteordg-admin-table-information">Fecha</h5>
+                                    <h5 class="meteordg-admin-table-information">Date</h5>
+                                    <button class="meteordg-admin-button-last-movement">
+                                        <span>↑</span>
+                                    </button>
                                 </div>
                                 <div class="meteordg-admin-header-container-table-information">
-                                    <h5 class="meteordg-admin-table-information">Empresa destino</h5>
+                                    <h5 class="meteordg-admin-table-information">Destination</h5>
+                                    <button class="meteordg-admin-button-last-movement">
+                                        <span>↑</span>
+                                    </button>
                                 </div>
                                 <div class="meteordg-admin-header-container-table-information">
-                                    <h5 class="meteordg-admin-table-information">Nif</h5>
+                                    <h5 class="meteordg-admin-table-information">Destination NIF</h5>
                                 </div>
                             </div>
                             <div class="meteordg-admin-container meteordg-admin-row-table">
                                 <div class="meteordg-admin-row-container-table-information">
                                     <div class="meteordg-admin-field-company">
-                                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/BMW.svg/1015px-BMW.svg.png" class="meteordg-admin-company-logo">
                                         <p class="meteordg-admin-name-company">BMW</p>
                                     </div>
                                 </div>
@@ -228,14 +186,13 @@
                                     <p class="meteordg-admin-table-information">5.234.709,37</p>
                                 </div>
                                 <div class="meteordg-admin-row-container-table-information">
-                                    <p class="meteordg-admin-table-information">€</p>
+                                    <p class="meteordg-admin-table-information">EUR</p>
                                 </div>
                                 <div class="meteordg-admin-row-container-table-information">
                                     <p class="meteordg-admin-table-information">13/04/2023</p>
                                 </div>
                                 <div class="meteordg-admin-row-container-table-information">
                                     <div class="meteordg-admin-field-company">
-                                        <img src="https://i.pinimg.com/originals/76/9e/36/769e367222b218140068d37eae38b9f0.png" class="meteordg-admin-company-logo">
                                         <p class="meteordg-admin-name-company">Mercedes-Benz</p>
                                     </div>
                                 </div>
@@ -246,7 +203,6 @@
                             <div class="meteordg-admin-container meteordg-admin-row-table">
                                 <div class="meteordg-admin-row-container-table-information">
                                     <div class="meteordg-admin-field-company">
-                                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Logotipo_de_BBVA.svg/2560px-Logotipo_de_BBVA.svg.png" class="meteordg-admin-company-logo">
                                         <p class="meteordg-admin-name-company">BBVA</p>
                                     </div>
                                 </div>
@@ -257,14 +213,13 @@
                                     <p class="meteordg-admin-table-information">824.1359,82</p>
                                 </div>
                                 <div class="meteordg-admin-row-container-table-information">
-                                    <p class="meteordg-admin-table-information">€</p>
+                                    <p class="meteordg-admin-table-information">EUR</p>
                                 </div>
                                 <div class="meteordg-admin-row-container-table-information">
                                     <p class="meteordg-admin-table-information">25/04/2023</p>
                                 </div>
                                 <div class="meteordg-admin-row-container-table-information">
                                     <div class="meteordg-admin-field-company">
-                                        <img src="https://www.santander.com/content/dam/santander-com/images/image-resources/san-logo.png" class="meteordg-admin-company-logo">
                                         <p class="meteordg-admin-name-company">Santander</p>
                                     </div>
                                 </div>
@@ -275,7 +230,6 @@
                             <div class="meteordg-admin-container meteordg-admin-row-table">
                                 <div class="meteordg-admin-row-container-table-information">
                                     <div class="meteordg-admin-field-company">
-                                        <img src="https://assets.stickpng.com/images/590607570cbeef0acff9a641.png" class="meteordg-admin-company-logo">
                                         <p class="meteordg-admin-name-company">KFC</p>
                                     </div>
                                 </div>
@@ -286,14 +240,13 @@
                                     <p class="meteordg-admin-table-information">1.628.924</p>
                                 </div>
                                 <div class="meteordg-admin-row-container-table-information">
-                                    <p class="meteordg-admin-table-information">$</p>
+                                    <p class="meteordg-admin-table-information">USD</p>
                                 </div>
                                 <div class="meteordg-admin-row-container-table-information">
                                     <p class="meteordg-admin-table-information">28/04/2023</p>
                                 </div>
                                 <div class="meteordg-admin-row-container-table-information">
                                     <div class="meteordg-admin-field-company">
-                                        <img src="https://logodownload.org/wp-content/uploads/2015/02/burger-king-logo-6.png" class="meteordg-admin-company-logo">
                                         <p class="meteordg-admin-name-company">Burguer King</p>
                                     </div>
                                 </div>
@@ -304,7 +257,6 @@
                             <div class="meteordg-admin-container meteordg-admin-row-table">
                                 <div class="meteordg-admin-row-container-table-information">
                                     <div class="meteordg-admin-field-company">
-                                        <img src="https://vgboxart.com/resources/logo/3285_ubisoft-prev.png" class="meteordg-admin-company-logo">
                                         <p class="meteordg-admin-name-company">Ubisoft</p>
                                     </div>
                                 </div>
@@ -315,14 +267,13 @@
                                     <p class="meteordg-admin-table-information">246.561,36</p>
                                 </div>
                                 <div class="meteordg-admin-row-container-table-information">
-                                    <p class="meteordg-admin-table-information">$</p>
+                                    <p class="meteordg-admin-table-information">USD</p>
                                 </div>
                                 <div class="meteordg-admin-row-container-table-information">
                                     <p class="meteordg-admin-table-information">05/05/2023</p>
                                 </div>
                                 <div class="meteordg-admin-row-container-table-information">
                                     <div class="meteordg-admin-field-company">
-                                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Nintendo_red_logo.svg/1280px-Nintendo_red_logo.svg.png" class="meteordg-admin-company-logo">
                                         <p class="meteordg-admin-name-company">Nintendo</p>
                                     </div>
                                 </div>
@@ -333,7 +284,6 @@
                             <div class="meteordg-admin-container meteordg-admin-row-table">
                                 <div class="meteordg-admin-row-container-table-information">
                                     <div class="meteordg-admin-field-company">
-                                        <img src="https://www.liderlogo.es/wp-content/uploads/2022/12/IBE.MC-a357ed2a.png" class="meteordg-admin-company-logo">
                                         <p class="meteordg-admin-name-company">Iberdrola</p>
                                     </div>
                                 </div>
@@ -344,14 +294,13 @@
                                     <p class="meteordg-admin-table-information">3.274.692,31</p>
                                 </div>
                                 <div class="meteordg-admin-row-container-table-information">
-                                    <p class="meteordg-admin-table-information">€</p>
+                                    <p class="meteordg-admin-table-information">EUR</p>
                                 </div>
                                 <div class="meteordg-admin-row-container-table-information">
                                     <p class="meteordg-admin-table-information">10/05/2023</p>
                                 </div>
                                 <div class="meteordg-admin-row-container-table-information">
                                     <div class="meteordg-admin-field-company">
-                                        <img src="https://image.comunicaciones.endesa.es/lib/fe3611717564047f721d71/m/4/6754cd71-0956-4a09-8a75-14cdcc6a8d81.png" class="meteordg-admin-company-logo">
                                         <p class="meteordg-admin-name-company">Endesa</p>
                                     </div>
                                 </div>
