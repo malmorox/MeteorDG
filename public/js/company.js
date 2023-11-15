@@ -27,7 +27,7 @@ document.addEventListener('click', function (event) {
 });
 
 function redirectToCompanyDetails(company) {
-    const companyPage = 'company-details.php'; // Coloca aquí la URL de la página de detalles
+    const companyPage = 'company-details.php';
     if (companyPage) {
         window.location.href = companyPage;
     }

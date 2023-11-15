@@ -49,8 +49,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 
-/*<?php
-$sql = "SELECT * FROM companies";
+<?php
+$sql = "SELECT * FROM COMPANY";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -64,23 +64,23 @@ if ($result->num_rows > 0) {
             $row['legalAddress'],
             $row['phone'],
             $row['email']
-        );*/
+        );
 
-        // Imprimir la información de la empresa en HTML
-        echo '<div class="meteordg-company" data-company="' . $company->getName() . '">';
-        echo '    <div class="meteordg-company-info-zone">';
-        echo '        <div class="meteordg-company-logo" id="' . $company->getName() . '">';
-        echo '            <img src="../../resources/companies-logos/' . $company->getLogo() . '">';
-        echo '        </div>';
-        echo '        <div class="meteordg-company-data-zone">';
-        echo '            <div class="meteordg-company-name">';
-        echo '                <span>' . $company->getName() . '</span>';
-        echo '            </div>';
-        echo '            <div class="meteordg-company-nif">';
-        echo '                <span>' . $company->getNif() . '</span>';
-        echo '            </div>';
-        echo '        </div>';
-        echo '    </div>';
+        //imprimir la información en un contenedor de la empresa en HTML
+        echo '<div class="meteordg-company" data-company="' . strtolower($company->getName()) . '">';
+        echo '<div class="meteordg-company-info-zone">';
+        echo '<div class="meteordg-company-logo" id="' . $company->getName() . '">';
+        echo '<img src="../../resources/companies-logos/' . $company->getLogo() . '">';
+        echo '</div>';
+        echo '<div class="meteordg-company-data-zone">';
+        echo '<div class="meteordg-company-name">';
+        echo '<span>' . $company->getName() . '</span>';
+        echo '</div>';
+        echo '<div class="meteordg-company-nif">';
+        echo '<span>' . $company->getNif() . '</span>';
+        echo '</div>';
+        echo '</div>';
+        echo '</div>';
         echo '</div>';
     }
 } else {
