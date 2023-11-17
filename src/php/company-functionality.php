@@ -1,4 +1,7 @@
 <?php
+    require 'company.php';
+
+// Crear empresas nuevas a traves del formulario y añadirlas a la BDD
 function get_image() {
     isset($_POST['image']) {
         $image = $_POST['image'];
@@ -47,9 +50,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Cierra la conexión a la base de datos
     $conexion = null;
 }
-?>
 
-<?php
+
+
+// Listar todas las empresas que hay en la BBDD
 $allCompanies = "SELECT * FROM COMPANY";
 $result = $conn->query($allCompanies);
 
@@ -67,7 +71,7 @@ function showCompanies() {
                 $row['email']
             );
 
-            //imprimir la empresa en un contenedor de la empresa en HTML
+            // Imprimir la empresa en un contenedor dentro del HTML
             echo '<div class="meteordg-company" data-company="' . strtolower($company->getName()) . '">';
             echo '<div class="meteordg-company-info-zone">';
             echo '<div class="meteordg-company-logo" id="' . $company->getName() . '">';
