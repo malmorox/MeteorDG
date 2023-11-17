@@ -36,7 +36,7 @@
 .meteordg-admin-header {
     padding-left: 0;
     height: 56px;
-    z-index: 1039;
+    z-index: 999;
     position: relative;
     display: flex;
     flex-wrap: wrap;
@@ -88,7 +88,7 @@
     border-radius: 0.375rem;
     background: #0797b9;
     cursor: pointer;
-    transition: 0.25s;
+    transition: transform 0.25s;
     color: white;
 }
 
@@ -122,10 +122,6 @@
 }
 
 @media (max-width: 1000px) {
-    .meteordg-admin-open-popup-button {
-        justify-self: flex-end;
-    }
-
     .meteordg-admin-companies-panel {
         grid-template-columns: 1fr;
     }
@@ -178,7 +174,7 @@
     }
 }
 
-.meteordg-company-logo {
+.meteordg-company .meteordg-company-logo {
     padding: 15px;
     display: flex;
     justify-content: center;
@@ -215,7 +211,7 @@
     background: #ffffa1;
 }
 
-.meteordg-company-logo img {
+.meteordg-company .meteordg-company-logo img {
     min-width: 80px;
     max-width: 80px;
     min-height: 80px;
@@ -225,23 +221,25 @@
     object-fit: contain;
 }
 
-.meteordg-company-name {
+.meteordg-company .meteordg-company-name {
     margin-top: 5px;
 }
 
-.meteordg-company-name span {
+.meteordg-company .meteordg-company-name span {
     font-size: 20px;
     font-family: Titillium-Semibold;
 }
 
-.meteordg-company-nif {
+.meteordg-company .meteordg-company-nif {
     margin-top: -5px;
 }
 
-.meteordg-company-nif span {
+.meteordg-company .meteordg-company-nif span {
     font-size: 13px;
     font-family: Ubuntu-Light;
 }
+
+/* POP-UP PARA AGREGAR EMPRESAS */
 
 .meteordg-admin-popup {
     background: rgba(0,0,0,.5);
@@ -254,6 +252,7 @@
     justify-content: center;
     display: flex;
     visibility: hidden;
+    z-index: 3300;
 }
 
 .meteordg-admin-popup.active {
@@ -263,7 +262,7 @@
 .meteordg-admin-company-register-popup {
     background: #F8F8F8;
     box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.3);
-    border-radius: 3px;
+    border-radius: 0.375rem;
     font-family: 'Montserrat', sans-serif;
     padding: 20px;
     text-align: center;
@@ -380,6 +379,63 @@
 }
 
 
+/* PÁGINA DE DETALLES DE LA EMPRESA EN LA QUE CLICKEAMOS C*/
+
+
+.meteordg-admin-company-details {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    background-color: #fff;
+    border-radius: 10px;
+
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.meteordg-admin-company-details .meteordg-company-info-zone {
+    display: flex;
+    flex-direction: row;
+}
+
+.meteordg-admin-company-details .meteordg-company-logo {
+    padding: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #646464;
+    border-radius: 10px;
+}
+
+.meteordg-admin-company-details .meteordg-company-logo img {
+    min-width: 120px;
+    max-width: 120px;
+    min-height: 120px;
+    max-height: 120px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
+.meteordg-admin-company-details .meteordg-company-name {
+    margin-top: 5px;
+}
+
+.meteordg-admin-company-details .meteordg-company-name span {
+    font-size: 20px;
+    font-family: Titillium-Semibold;
+}
+
+.meteordg-admin-company-details .meteordg-company-nif {
+    margin-top: -5px;
+}
+
+.meteordg-admin-company-details .meteordg-company-nif span {
+    font-size: 13px;
+    font-family: Ubuntu-Light;
+}
+
+
 /*/////////////////////////////////////////////////////////////////*/
 
 
@@ -446,17 +502,22 @@
     gap: 5px;
 }
 
+.meteordg-admin-filter-text-input {
+    width: 160px;
+    height: 25px;
+    border-radius: 5px;
+}
+
+.meteordg-admin-filter-date-input {
+    height: 25px;
+    border-radius: 5px;
+}
+
 #meteordg-admin-container-last-transactions {
     margin-top: 20px;
     background-color: #f5f5f5;
     display: flex;
     flex-direction: column;
-}
-
-.meteordg-admin-company-logo {
-    width: 50px;
-    height: 50px;
-    object-fit: contain;
 }
 
 #meteordg-admin-company-table {
@@ -475,12 +536,22 @@
 .meteordg-admin-header-container-table-information {
     display: flex;
     justify-content: center;
+    gap: 5px;
     align-items: center;
-    width: 200px;
+    width: 220px;
 }
 
 .meteordg-admin-table-information {
     margin: 0;
+}
+
+.meteordg-admin-button-last-movement {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    width: 25px;
+    height: 25px;
 }
 
 .meteordg-admin-row-table {
@@ -500,7 +571,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 8px;
 }
 
 .meteordg-admin-name-company {
