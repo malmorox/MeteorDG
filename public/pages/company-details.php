@@ -117,6 +117,23 @@
                             <div class="info-item">Campo 3: Valor 3</div>
                         </div>
                     </div>
+                    <div class="meteordg-company-info-zone">
+                        <div class="meteordg-company-logo" id="bmw">
+                            <img src="https://i.pinimg.com/originals/27/6a/97/276a970cd35a83cc71beee75cb89f382.png">
+                        </div>
+                        <div class="meteordg-company-data-zone">
+                            <div class="meteordg-company-name">
+                                <span></span>
+                            </div>
+                            <div class="meteordg-company-nif">
+                                <span></span>
+                            </div>
+                            <p class="info-label">Información adicional:</p>
+                            <div class="info-item">Campo 1: Valor 1</div>
+                            <div class="info-item">Campo 2: Valor 2</div>
+                            <div class="info-item">Campo 3: Valor 3</div>
+                        </div>
+                    </div>
                 </div>
             </main>
             <footer class="py-4 bg-light mt-auto">

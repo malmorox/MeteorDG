@@ -100,7 +100,7 @@
         <div id="layoutSidenav_content">
             <main class="meteordg-admin-content">
                 <div class="meteordg-admin-companies-head">
-                    <h1 class="meteordg-admin-companies-title"> Listado de empresas </h1>
+                    <h1 class="meteordg-admin-companies-title"> List of companies </h1>
                     <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
                         <div class="input-group">
                             <input class="form-control" type="text" placeholder="Busca aquí..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
@@ -110,25 +110,6 @@
                     <button class="meteordg-admin-open-popup-button" id="open-popup">+</button>
                 </div>
                 <div class="meteordg-admin-companies-panel">
-                    <!--<?php
-                        foreach ($companies as $company) {
-                            echo '<div class="meteordg-company" data-company="' . $company["nombre"] . '">';
-                            echo '<div class="meteordg-company-info-zone">';
-                            echo '<div class="meteordg-company-logo" id="' . $company["nombre"] . '">';
-                            echo '<img src="' . $company["logo"] . '">';
-                            echo '</div>';
-                            echo '<div class="meteordg-company-data-zone">';
-                            echo '<div class="meteordg-company-name">';
-                            echo '<span>' . $company["nombre"] . '</span>';
-                            echo '</div>';
-                            echo '<div class="meteordg-company-nif">';
-                            echo '<span>' . $company["nif"] . '</span>';
-                            echo '</div>';
-                            echo '</div>';
-                            echo '</div>';
-                            echo '</div>';
-                        }
-                    ?>-->
                     <div class="meteordg-company" data-company="bmw">
                         <div class="meteordg-company-info-zone">
                             <div class="meteordg-company-logo" id="bmw">
@@ -234,6 +215,7 @@
                             </div>
                         </div>
                     </div>
+                    <!--<?php showCompanies() ?>-->
                 </div>
             </main>
             <footer class="py-4 bg-light mt-auto">
@@ -254,25 +236,21 @@
                 <a href="#" class="meteordg-admin-close-popup-button" id="close-popup"><i class="fas fa-times"></i></a>
                 <form method="post" action="php/sign-up.php">
                     <section class="meteordg-company-register first-step">
-                        <h4 class="meteordg-register-title"> Registra tu empresa </h4>
+                        <h4 class="meteordg-register-title"> Registra una empresa </h4>
                         <input type="file" name="image" id="image" accept="image/*" required>
                         <input type="text" class="meteordg-register-fields" name="name" id="name" placeholder="Nombre" required/>
                         <section class="meteordg-register-cif-container">
                             <select class="meteordg-register-fields meteordg-register-country-select" id="country">
-                                <option value="ESP"> ESP </option>
-                                <option value="ARG"> ARG </option>
-                                <option value="FRA"> FRA </option>
-                                <option value="ITA"> ITA </option>
-                                <option value="ENG"> ENG </option>
-                                <option value="DEU"> DEU </option>
-                                <option value="NLD"> NLD </option>
+                                <option value="ESP"> ESP </option> <option value="ARG"> ARG </option>
+                                <option value="FRA"> FRA </option> <option value="ITA"> ITA </option>
+                                <option value="ENG"> ENG </option> <option value="DEU"> DEU </option>
+                                <option value="NLD"> NLD </option> <option value="NLD"> NLD </option>
                             </select>
                             <input type="text" class="meteordg-register-fields" name="nif" id="nif" placeholder="NIF" required/>
                         </section>
                         <input type="text" class="meteordg-register-fields" name="location" id="location" placeholder="Dirección jurídica"/>
                         <input type="tel" class="meteordg-register-fields" name="phone" id="phone" pattern="[0-9]{9}" maxlength="9" placeholder="Teléfono"/>
                         <input type="button" class="meteordg-register-buttons" value="Siguiente" id="continue"/>
-                        <p class="meteordg-register-paragraph"><a href="#">¿Ya tengo Cuenta?</a></p>
                     </section>
                 </form>
             </div>

@@ -56,8 +56,4 @@ class Company {
     }
 }
 
-$ejemplo = new Company('logo.png', '123456789A', 'My Company', 'Public Limited Company', 'United States', '123 Example Street', '123456789', 'info@mycompany.com');
-
-
-
 ?>
