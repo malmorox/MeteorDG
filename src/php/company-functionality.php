@@ -32,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $conexion = new PDO("pgsql:host=$host;dbname=$base_datos", $usuario, $contrasena);
 
     // Prepara la sentencia SQL de inserción
-    $sentencia = $conexion->prepare("INSERT INTO COMPANY (NIF, NAME, TYPE, COUNTRY) VALUES (:nif, :nombre, :tipo, :pais)");
+    $sentencia = $conexion->prepare("INSERT INTO COMPANY (LOGO, NIF, NAME, TYPE, COUNTRY, ADDRESS, PHONE, EMAIL) VALUES (:logo, :nif, :nombre, :tipo, :pais, :direccion, :telefono, :email)");
     $sentencia->bindParam(':nif', $nif, PDO::PARAM_STR);
     $sentencia->bindParam(':nombre', $nombre, PDO::PARAM_STR);
     $sentencia->bindParam(':tipo', $tipo, PDO::PARAM_STR);

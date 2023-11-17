@@ -232,7 +232,7 @@
         <div class="meteordg-admin-popup" id="popup-container">
             <div class="meteordg-admin-company-register-popup" id="popup">
                 <a href="#" class="meteordg-admin-close-popup-button" id="close-popup"><i class="fas fa-times"></i></a>
-                <form method="post" action="php/sign-up.php">
+                <form method="post" action="../../src/php/company-functionality.php">
                     <section class="meteordg-company-register first-step">
                         <h4 class="meteordg-register-title"> Registra una empresa </h4>
                         <input type="file" name="image" id="image" accept="image/*" required>
