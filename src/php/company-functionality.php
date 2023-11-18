@@ -1,4 +1,5 @@
 <?php
+    require 'mysql-connection.php';
     require 'company.php';
 
     // Crear empresas nuevas a traves del formulario y añadirlas a la BDD
@@ -32,15 +33,8 @@ function registerCompany() {
             $country = $_POST['country'];
             $phone = $_POST['phone'];
 
-            // Establece la conexión a la base de datos (ajusta los valores de conexión según tu configuración)
-            $host = "tu_host";
-            $usuario = "tu_usuario";
-            $contrasena = "tu_contrasena";
-            $base_datos = "tu_base_de_datos";
 
-            $conexion = new PDO("pgsql:host=$host;dbname=$base_datos", $usuario, $contrasena);
-
-            // Prepara la sentencia SQL de inserción
+            // Hacemos el insert de una nueva empresa en la BBDD
             $sentencia = $conexion->prepare("INSERT INTO COMPANY (LOGO, NIF, NAME, TYPE, COUNTRY, ADDRESS, PHONE, EMAIL) VALUES (:logo, :nif, :nombre, :tipo, :pais, :direccion, :telefono, :email)");
 
 
@@ -54,7 +48,7 @@ function registerCompany() {
             }
 
             // Cierra la conexión a la base de datos
-            $conexion = null;
+            $conn->close();
         }
     }
 
