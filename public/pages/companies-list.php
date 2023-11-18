@@ -1,3 +1,8 @@
+<?php
+include('../../resources/listado.php');
+
+// $bmw = "../../uploadDocs/img/bmw.png";
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -113,7 +118,8 @@
                     <div class="meteordg-company" data-company="bmw">
                         <div class="meteordg-company-info-zone">
                             <div class="meteordg-company-logo" id="bmw">
-                                <img src="https://i.pinimg.com/originals/27/6a/97/276a970cd35a83cc71beee75cb89f382.png">
+                                <!-- <img src="https://i.pinimg.com/originals/27/6a/97/276a970cd35a83cc71beee75cb89f382.png"/> -->
+                                <img <?="src='$bmw' alt='$hola'"?>/>
                             </div>
                             <div class="meteordg-company-data-zone">
                                 <div class="meteordg-company-name">
