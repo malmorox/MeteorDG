@@ -1,7 +1,11 @@
 <?php
+
 include('../../resources/listado.php');
 
 // $bmw = "../../uploadDocs/img/bmw.png";
+
+//require '../../src/php/company-functionality.php';
+
 ?>
 <!DOCTYPE html>
 <html lang="es">
