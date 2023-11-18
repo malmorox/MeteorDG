@@ -11,9 +11,6 @@ $adress = $conn->real_escape_string($_POST['location']);
 $country = $conn->real_escape_string($_POST['country']);
 $phone = $conn->real_escape_string($_POST['phone']);
 
-// Inserta los datos en la base de datos usando una consulta parametrizada
-$sql = "INSERT INTO COMPANY (CIF, NAME, COUNTRY, ADDRESS, PHONE, EMAIL) VALUES (?, ?, ?, ?, ?, ?)";
-
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("ssssss", $NIF, $name, $country, $adress, $phone, $email);
 
@@ -50,6 +47,8 @@ function registerCompany() {
             // Cierra la conexión a la base de datos
             $conn->close();
         }
+
+        showCompanies();
     }
 
     $arrayCompanies = [];
