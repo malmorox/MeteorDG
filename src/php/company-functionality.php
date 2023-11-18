@@ -21,7 +21,7 @@ if ($stmt->execute()) {
 }
 
 
-function registerCompany() {
+function registerCompany($conn) {
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $name = $_POST['name'];
             $nif = $_POST['nif'];
@@ -48,14 +48,14 @@ function registerCompany() {
             connectDB()->close();
         }
 
-        showCompanies();
+        showCompanies($conn);
     }
 
     $arrayCompanies = [];
 
     // Listar todas las empresas que hay en la BBDD en la página de 'companies-list.php'
 
-    function showCompanies() {
+    function showCompanies($conn) {
         $allCompanies = 'SELECT * FROM COMPANY';
         $result = connectDB()->query($allCompanies);
 
