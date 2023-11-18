@@ -3,7 +3,27 @@
 
     // Crear empresas nuevas a traves del formulario y añadirlas a la BDD
 
-    function registerCompany() {
+$name = $conn->real_escape_string($_POST['name']);
+$NIF = $conn->real_escape_string($_POST['nif']);
+$email = $conn->real_escape_string($_POST['email']);
+$adress = $conn->real_escape_string($_POST['location']);
+$country = $conn->real_escape_string($_POST['country']);
+$phone = $conn->real_escape_string($_POST['phone']);
+
+// Inserta los datos en la base de datos usando una consulta parametrizada
+$sql = "INSERT INTO COMPANY (CIF, NAME, COUNTRY, ADDRESS, PHONE, EMAIL) VALUES (?, ?, ?, ?, ?, ?)";
+
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("ssssss", $NIF, $name, $country, $adress, $phone, $email);
+
+if ($stmt->execute()) {
+    echo "Datos insertados con éxito.";
+} else {
+    echo "Error: " . $stmt->error;
+}
+
+
+function registerCompany() {
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $name = $_POST['name'];
             $nif = $_POST['nif'];
@@ -40,7 +60,7 @@
 
     $arrayCompanies = [];
 
-    // Listar todas las empresas que hay en la BBDD
+    // Listar todas las empresas que hay en la BBDD en la página de 'companies-list.php'
 
     function showCompanies() {
         $allCompanies = 'SELECT * FROM COMPANY';
