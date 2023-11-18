@@ -2,53 +2,35 @@
     require 'mysql-connection.php';
     require 'company.php';
 
+    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["submit"])) {
+        registerCompany();
+    }
+
     // Crear empresas nuevas a traves del formulario y añadirlas a la BDD
-
-$name = $conn->real_escape_string($_POST['name']);
-$NIF = $conn->real_escape_string($_POST['nif']);
-$email = $conn->real_escape_string($_POST['email']);
-$adress = $conn->real_escape_string($_POST['location']);
-$country = $conn->real_escape_string($_POST['country']);
-$phone = $conn->real_escape_string($_POST['phone']);
-
-$stmt = $conn->prepare($sql);
-$stmt->bind_param("ssssss", $NIF, $name, $country, $adress, $phone, $email);
-
-if ($stmt->execute()) {
-    echo "Datos insertados con éxito.";
-} else {
-    echo "Error: " . $stmt->error;
-}
+    function registerCompany() {
+        $name = $_POST['name'];
+        $nif = $_POST['nif'];
+        $email = $_POST['email'];
+        $adress = $_POST['location'];
+        $country = $_POST['country'];
+        $phone = $_POST['phone'];
 
 
-function registerCompany() {
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            $name = $_POST['name'];
-            $nif = $_POST['nif'];
-            $email = $_POST['email'];
-            $adress = $_POST['location'];
-            $country = $_POST['country'];
-            $phone = $_POST['phone'];
+        // Hacemos el insert de una nueva empresa en la BBDD
+        $sentencia = connectDB()->prepare("INSERT INTO COMPANY (LOGO, NIF, NAME, TYPE, COUNTRY, ADDRESS, PHONE, EMAIL) VALUES (:logo, :nif, :nombre, :tipo, :pais, :direccion, :telefono, :email)");
 
 
-            // Hacemos el insert de una nueva empresa en la BBDD
-            $sentencia = connectDB()->prepare("INSERT INTO COMPANY (LOGO, NIF, NAME, TYPE, COUNTRY, ADDRESS, PHONE, EMAIL) VALUES (:logo, :nif, :nombre, :tipo, :pais, :direccion, :telefono, :email)");
+        // Ejecuta la sentencia SQL de inserción
+        $exito = $sentencia->execute();
 
-
-            // Ejecuta la sentencia SQL de inserción
-            $exito = $sentencia->execute();
-
-            if ($exito) {
-                echo "Empresa insertada exitosamente.";
-            } else {
-                echo "Hubo un error al insertar la empresa.";
-            }
-
-            // Cierra la conexión a la base de datos
-            connectDB()->close();
+        if ($exito) {
+            echo "Empresa insertada exitosamente.";
+        } else {
+            echo "Hubo un error al insertar la empresa.";
         }
 
-        showCompanies();
+        // Cierra la conexión a la base de datos
+        connectDB()->close();
     }
 
     $arrayCompanies = [];
