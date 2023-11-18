@@ -32,7 +32,7 @@ function registerCompany() {
 
 
             // Hacemos el insert de una nueva empresa en la BBDD
-            $sentencia = $conexion->prepare("INSERT INTO COMPANY (LOGO, NIF, NAME, TYPE, COUNTRY, ADDRESS, PHONE, EMAIL) VALUES (:logo, :nif, :nombre, :tipo, :pais, :direccion, :telefono, :email)");
+            $sentencia = connectDB()->prepare("INSERT INTO COMPANY (LOGO, NIF, NAME, TYPE, COUNTRY, ADDRESS, PHONE, EMAIL) VALUES (:logo, :nif, :nombre, :tipo, :pais, :direccion, :telefono, :email)");
 
 
             // Ejecuta la sentencia SQL de inserción
@@ -45,7 +45,7 @@ function registerCompany() {
             }
 
             // Cierra la conexión a la base de datos
-            $conn->close();
+            connectDB()->close();
         }
 
         showCompanies();
@@ -57,7 +57,7 @@ function registerCompany() {
 
     function showCompanies() {
         $allCompanies = 'SELECT * FROM COMPANY';
-        $result = $conn->query($allCompanies);
+        $result = connectDB()->query($allCompanies);
 
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
