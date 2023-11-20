@@ -35,14 +35,14 @@
     }
 
     function saveLogo() {
-        define('MAX_SIZE', 500000);
+        define('MAX_IMAGE_SIZE', 50000);
 
-        $target_dir = "uploads/";  // Directorio donde se subirán las imágenes.
-        $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+        $targetDirectory = "../../resources/companies-logos/";  // Directorio donde se guardan los logos de las empresas
+        $targetFile = $targetDirectory . basename($_FILES["fileToUpload"]["name"]);
         $uploadOk = 1;
-        $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+        $imageFileType = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));
 
-// Verifica si el archivo es una imagen real.
+        // Verifica si el archivo es una imagen real
         if(isset($_POST["submit"])) {
             $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
             if($check !== false) {
@@ -54,28 +54,28 @@
             }
         }
 
-// Verifica si el archivo ya existe.
+        // Verifica si la imagen ya existe
         if (file_exists($target_file)) {
             echo "Lo siento, la imagen ya existe.";
             $uploadOk = 0;
         }
 
-// Verifica el tamaño del archivo.
-        if ($_FILES["fileToUpload"]["size"] > MAX_SIZE) {  // por ejemplo, 500KB
+        // Verifica el tamaño del archivo
+        if ($_FILES["fileToUpload"]["size"] > MAX_SIZE) {
             echo "Lo siento, tu archivo es demasiado grande.";
             $uploadOk = 0;
         }
 
-// Permite ciertos formatos de archivo.
+        // Permite ciertas extensiones de archivo
         if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif" ) {
             echo "Solo se permiten archivos JPG, JPEG, PNG & GIF.";
             $uploadOk = 0;
         }
 
-// Verifica si $uploadOk está establecido en 0 por un error.
+        // Verifica si $uploadOk está establecido en 0 por un error
         if ($uploadOk == 0) {
             echo "Tu archivo no fue subido.";
-// Si todo está bien, intenta subir el archivo.
+        // Si todo está bien, intenta subir el archivo
         } else {
             if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
                 echo "La imagen ". basename( $_FILES["fileToUpload"]["name"]). " ha sido subida.";
