@@ -8,18 +8,27 @@
 
     // Crear empresas nuevas a traves del formulario y añadirlas a la BBDD
     function registerCompany() {
-        $name = $_POST['name'];
         $nif = $_POST['nif'];
+        $name = $_POST['name'];
         $type = $_POST['type'];
-        $address = $_POST['location'];
         $country = $_POST['country'];
+        $address = $_POST['address'];
         $phone = $_POST['phone'];
         $email = $_POST['email'];
 
+        $logo = saveLogo();
 
         // Hacemos el insert de una nueva empresa en la BBDD
-        $sentencia = connectDB()->prepare("INSERT INTO COMPANY (LOGO, NIF, NAME, TYPE, COUNTRY, ADDRESS, PHONE, EMAIL) VALUES (:logo, :nif, :nombre, :tipo, :pais, :direccion, :telefono, :email)");
+        $sentencia = connectDB()->prepare("INSERT INTO COMPANY (LOGO, NIF, NAME, TYPE, COUNTRY, ADDRESS, PHONE, EMAIL) VALUES (:logo, :nif, :name, :type, :country, :address, :$hone, :email)");
 
+        $sentencia->bindParam(':logo', $logo);
+        $sentencia->bindParam(':nif', $nif);
+        $sentencia->bindParam(':name', $name);
+        $sentencia->bindParam(':type', $type);
+        $sentencia->bindParam(':country', $country);
+        $sentencia->bindParam(':address', $address);
+        $sentencia->bindParam(':phone', $phone);
+        $sentencia->bindParam(':email', $email);
 
         // Ejecuta la sentencia SQL de inserción
         $exito = $sentencia->execute();
@@ -109,6 +118,7 @@
                 array_push($arrayCompanies, $company);
 
                 // Imprimir la empresa en un contenedor dentro del HTML
+                echo '<a href="">';
                 echo '<div class="meteordg-company" data-company="' . strtolower($company->getName()) . '">';
                 echo '<div class="meteordg-company-info-zone">';
                 echo '<div class="meteordg-company-logo" id="' . $company->getName() . '">';
@@ -124,6 +134,7 @@
                 echo '</div>';
                 echo '</div>';
                 echo '</div>';
+                echo '</a>';
             }
         } else {
             echo '<div class="meteordg-notfound-company">';
@@ -134,5 +145,3 @@
         $conn->close();
     }
 ?>
-
-
