@@ -1,8 +1,6 @@
 <?php
 
-include('../../src/php/listado.php');
-
-// $bmw = "../../uploadDocs/img/bmw.png";
+//include('../../src/php/listado.php');
 
 //require '../../src/php/company-functionality.php';
 
@@ -225,14 +223,14 @@ include('../../src/php/listado.php');
                             </div>
                         </div>
                     </div> -->
-                    <?php if 
-                        ($result->num_rows > 0) {
-                        echo "<table><tr><th>ID</th><th>Nombre</th><th>Email</th></tr>";
-                        // Salida de cada fila de datos
-                        while ($row = $result->fetch_assoc()) {
+                    <?php 
+                        if($result->num_rows > 0) {
+                            echo "<table><tr><th>ID</th><th>Nombre</th><th>Email</th></tr>";
+                            // Salida de cada fila de datos
+                            while ($row = $result->fetch_assoc()) {
                             echo "<tr><td>" . $row["id"] . "</td><td>" . $row["nombre"] . "</td><td>" . $row["email"] . "</td></tr>";
-                        }
-                        echo "</table>";
+                            }
+                            echo "</table>";
                         } else {
                             echo "<p>Parece que no hay empresas o hay algun error</p>";
                         }                   
