@@ -26,7 +26,7 @@
         if ($exito) {
             echo "Empresa insertada exitosamente.";
         } else {
-            echo "Hubo un error al insertar la empresa.";
+            echo "Hubo un error al in sertar la empresa.";
         }
 
         // Cierra la conexión a la base de datos
