@@ -1,7 +1,7 @@
 <?php
 // Conexión a la BBDD
 function connectDB() {
-    $servername = "51.68.47.14";
+    $servername = "localhost";
     $username = "probador";
     $password = "1234";
     $dbname = "pruebas";

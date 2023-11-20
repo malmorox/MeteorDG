@@ -1,6 +1,6 @@
 <?php
 
-include('../../resources/listado.php');
+include('../../src/php/listado.php');
 
 // $bmw = "../../uploadDocs/img/bmw.png";
 
@@ -119,11 +119,11 @@ include('../../resources/listado.php');
                     <button class="meteordg-admin-open-popup-button" id="open-popup">+</button>
                 </div>
                 <div class="meteordg-admin-companies-panel">
-                    <div class="meteordg-company" data-company="bmw">
+                    <!-- <div class="meteordg-company" data-company="bmw">
                         <div class="meteordg-company-info-zone">
                             <div class="meteordg-company-logo" id="bmw">
-                                <!-- <img src="https://i.pinimg.com/originals/27/6a/97/276a970cd35a83cc71beee75cb89f382.png"/> -->
-                                <img <?="src='$bmw' alt='$hola'"?>/>
+                                 <img src="https://i.pinimg.com/originals/27/6a/97/276a970cd35a83cc71beee75cb89f382.png"/> 
+                                <img/>
                             </div>
                             <div class="meteordg-company-data-zone">
                                 <div class="meteordg-company-name">
@@ -135,7 +135,7 @@ include('../../resources/listado.php');
                             </div>
                         </div>
                     </div>
-                    <div class="meteordg-company" data-company="kfc">
+                     <div class="meteordg-company" data-company="kfc">
                         <div class="meteordg-company-info-zone">
                             <div class="meteordg-company-logo" id="kfc">
                                 <img src="../../resources/companies-logos/Kfc_logo.png">
@@ -149,7 +149,7 @@ include('../../resources/listado.php');
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> 
                     <div class="meteordg-company" data-company="ubisoft">
                         <div class="meteordg-company-info-zone">
                             <div class="meteordg-company-logo" id="ubisoft">
@@ -224,8 +224,19 @@ include('../../resources/listado.php');
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <?php //showCompanies() ?>
+                    </div> -->
+                    <?php if 
+                        ($result->num_rows > 0) {
+                        echo "<table><tr><th>ID</th><th>Nombre</th><th>Email</th></tr>";
+                        // Salida de cada fila de datos
+                        while ($row = $result->fetch_assoc()) {
+                            echo "<tr><td>" . $row["id"] . "</td><td>" . $row["nombre"] . "</td><td>" . $row["email"] . "</td></tr>";
+                        }
+                        echo "</table>";
+                        } else {
+                            echo "<p>Parece que no hay empresas o hay algun error</p>";
+                        }                   
+                    ?>
                 </div>
             </main>
             <footer class="py-4 bg-light mt-auto">
