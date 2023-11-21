@@ -1,3 +1,6 @@
+<?php
+//require '../../src/php/company-functionality.php';
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>

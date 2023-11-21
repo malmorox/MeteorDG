@@ -152,8 +152,11 @@
         if ($result && $result->num_rows > 0) {
             return $result->fetch_assoc();
         }
-
         return null;
+    }
+
+    function showCompanyDetails() {
+
     }
 ?>
 
