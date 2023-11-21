@@ -104,6 +104,13 @@
             <main class="meteordg-admin-content">
                 <div class="meteordg-admin-company-details">
                     <div class="meteordg-company-info-zone">
+                        <?php
+                            if (isset($_GET['nif'])) {
+                                $companyNIF = $_GET['nif'];
+
+                                $companyDetails = getClickedCompanyDetails($companyNIF);
+
+                        ?>
                         <div class="meteordg-company-logo" id="bmw">
                             <img src="https://i.pinimg.com/originals/27/6a/97/276a970cd35a83cc71beee75cb89f382.png">
                         </div>

@@ -156,7 +156,25 @@
     }
 
     function showCompanyDetails() {
-        
+        if ($companyDetails) {
+            // Display the details on the page
+            echo '<div class="company-details">';
+            echo '<img src="../../resources/companies-logos/' . $companyDetails['logo'] . '">';
+            echo '<p>Name: ' . $companyDetails['name'] . '</p>';
+            echo '<p>NIF: ' . $companyDetails['nif'] . '</p>';
+            echo '<p>Type: ' . $companyDetails['type'] . '</p>';
+            echo '<p>Country: ' . $companyDetails['country'] . '</p>';
+            echo '<p>Address: ' . $companyDetails['address'] . '</p>';
+            echo '<p>Phone: ' . $companyDetails['phone'] . '</p>';
+            echo '<p>Email: ' . $companyDetails['email'] . '</p>';
+            // ... include other details
+            echo '</div>';
+        } else {
+            echo '<p>Company not found.</p>';
+        }
+    } else {
+    echo '<p>Company NIF not provided.</p>';
+}
     }
 ?>
 
