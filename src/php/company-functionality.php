@@ -15,11 +15,11 @@
         $address = $_POST['address'];
         $phone = $_POST['phone'];
         $email = $_POST['email'];
-
         $logo = saveLogo();
 
+        $dbconnection = connectDB();
         // Hacemos el insert de una nueva empresa en la BBDD
-        $sentencia = connectDB()->prepare("INSERT INTO COMPANY (LOGO, NIF, NAME, TYPE, COUNTRY, ADDRESS, PHONE, EMAIL) VALUES (:logo, :nif, :name, :type, :country, :address, :$hone, :email)");
+        $sentencia = $dbconnection->prepare("INSERT INTO COMPANY (LOGO, NIF, NAME, TYPE, COUNTRY, ADDRESS, PHONE, EMAIL) VALUES (:logo, :nif, :name, :type, :country, :address, :$hone, :email)");
 
         $sentencia->bindParam(':logo', $logo);
         $sentencia->bindParam(':nif', $nif);
@@ -118,7 +118,7 @@
                 array_push($arrayCompanies, $company);
 
                 // Imprimir la empresa en un contenedor dentro del HTML
-                echo '<a href="">';
+                echo '<a href="company-details.php?id=' . $company->getNif() . '">';
                 echo '<div class="meteordg-company" data-company="' . strtolower($company->getName()) . '">';
                 echo '<div class="meteordg-company-info-zone">';
                 echo '<div class="meteordg-company-logo" id="' . $company->getName() . '">';
