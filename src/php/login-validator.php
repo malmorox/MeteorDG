@@ -1,5 +1,5 @@
 <?php
-    include('mysql-connection.php');
+    include('mysql-connection.php');//Conexión al archivo con la clase connectDB para connectarse a la BBDD
 
     $userName = "";
     $userPassword = "";
@@ -8,12 +8,14 @@
 
     if(isset($_POST['send-user'])){
         if(isset($_POST['name-user']) && $_POST['name-user'] != ""){
+            //Validar el nombre de usuario del formulario con regix
             $userName = $_POST['name-user'];
         } else {
             $errorList['name-user'] = "es obligatorio";
         }
 
         if(isset($_POST['passdword-user']) && $_POST['passdword-user'] != ""){
+            //Validar la contraseña del formulario con regix
             $userPassword = $_POST['password-user'];
             $userPasswordHash = password_hash($userPassword, PASSWORD_DEFAULT); 
         } else {
@@ -27,7 +29,8 @@
         }
     }
 
-    function insertValue(){
+    //Evitar posibles inyecciones de código malicioso
+    function insertValue($userName, $userPassword){
         try{
             $conn = connectDB();
             
