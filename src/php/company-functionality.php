@@ -144,4 +144,16 @@
 
         $conn->close();
     }
+
+    function getClickedCompanyDetails($nif) {
+        $companyData = "SELECT * FROM COMPANY WHERE NIF = '$nif'";
+        $result = connectDB()->query($companyData);
+
+        if ($result && $result->num_rows > 0) {
+            return $result->fetch_assoc();
+        }
+
+        return null;
+    }
 ?>
+
