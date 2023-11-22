@@ -362,7 +362,6 @@
     border: 1px solid #1f53c5;
     font-family: 'Titillium-Thin';
     font-size: 18px;
-    color: white;
 }
 
 .meteordg-register-cif-container {
@@ -383,13 +382,15 @@
 
 
 .meteordg-admin-company-details {
-    padding: 30px;
     display: flex;
     flex-direction: column;
-    gap: 60px;
+    gap: 40px;
+}
+
+.meteordg-company-details-container {
+    padding: 30px;
     background-color: #fff;
     border-radius: 10px;
-
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 
@@ -433,6 +434,11 @@
 .meteordg-admin-company-details .meteordg-company-nif span {
     font-size: 13px;
     font-family: Ubuntu-Light;
+}
+
+.meteordg-admin-company-details .meteordg-company-transactions {
+    display: flex;
+    flex-direction: row;
 }
 
 

@@ -1,5 +1,5 @@
 <?php
-//require '../../src/php/company-functionality.php';
+    //require '../../src/php/company-functionality.php';
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -103,26 +103,20 @@
         <div id="layoutSidenav_content">
             <main class="meteordg-admin-content">
                 <div class="meteordg-admin-company-details">
-                    <div class="meteordg-company-info-zone">
+                    <div class="meteordg-company-details-container meteordg-company-info-zone">
                         <?php
                             if (isset($_GET['nif'])) {
                                 $companyNIF = $_GET['nif'];
-
+                                // Mandar el NIF (de la empresa que se ha clickado) a la funcion que busca los daros en la BBDD
                                 $companyDetails = getClickedCompanyDetails($companyNIF);
                                 showCompanyDetails($companyDetails);
                             }
                         ?>
-                        <div class="meteordg-company-logo" id="bmw">
-                            <img src="https://i.pinimg.com/originals/27/6a/97/276a970cd35a83cc71beee75cb89f382.png">
-                        </div>
-                        <div class="meteordg-company-data-zone">
-                            <div class="meteordg-company-name">
-                                <span></span>
-                            </div>
-                            <div class="meteordg-company-nif">
-                                <span></span>
-                            </div>
-                        </div>
+                    </div>
+                    <div class="meteordg-company-details-container meteordg-company-transactions">
+
+
+                        <?php showCompanyFlow(); ?>
                     </div>
                 </div>
             </main>

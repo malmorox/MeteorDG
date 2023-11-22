@@ -206,7 +206,7 @@
                     <div class="meteordg-company" data-company="lays">
                         <div class="meteordg-company-info-zone">
                             <div class="meteordg-company-logo" id="lays">
-                                <img src="https://www.lays.es/images/default-source/default-album/layslogo.png?sfvrsn=2">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Lay%27s_logo_2019.svg/1200px-Lay%27s_logo_2019.svg.png">
                             </div>
                             <div class="meteordg-company-data-zone">
                                 <div class="meteordg-company-name">
