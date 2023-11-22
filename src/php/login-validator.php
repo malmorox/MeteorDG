@@ -23,20 +23,35 @@
         }
 
         if(empty($errorList)){
-            insertValue($userName, $userPasswordHash);
+            compareWithTable($userName, $userPasswordHash);
             header("Location:session-in.html");
             die(0);
         }
     }
 
     //Evitar posibles inyecciones de código malicioso
-    function insertValue($userName, $userPassword){
+    function compareWithTable($userName, $userPassword){
         try{
             $conn = connectDB();
+            $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             
-            $consulta = $conn->prepare("INSERT INTO REGISTRADOS (NAMEUSER,PASSWRD) VALUES (:nombre,:contra)");
-            $consulta->bindValue(':nombre', $userName, PDO::PARAM_STR);
-            $consulta->bindValue(':nombre', $userPassword, PDO::PARAM_STR);
+            $stmt = $conn->prepare("SELECT password FROM registrados WHERE username = :username");
+            $stmt->bindParam(':username', $userName);
+            $stmt->execute();
+
+            $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            if ($result) {
+                $hashedPassword = $result['password'];
+                // Verificar si la contraseña proporcionada coincide con el hash en la base de datos
+                if (password_verify($userPassword, $hashedPassword)) {
+                    return true; // Coinciden las contraseñas
+                } else {
+                    return false; // No coinciden las contraseñas
+                }
+            } else {
+                return false; // Usuario no encontrado
+            }
         } catch (PDOException $e) {
             echo "ERROR:" . $e->getMessage();
             die();
