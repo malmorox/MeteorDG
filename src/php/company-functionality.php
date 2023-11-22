@@ -157,20 +157,45 @@
 
     function showCompanyDetails($companyDetails) {
         if ($companyDetails) {
-            echo '<div class="company-details">';
-            echo '<img src="../../resources/companies-logos/' . $companyDetails['logo'] . '">';
-            echo '<p>Name: ' . $companyDetails['name'] . '</p>';
-            echo '<p>NIF: ' . $companyDetails['nif'] . '</p>';
-            echo '<p>Type: ' . $companyDetails['type'] . '</p>';
-            echo '<p>Country: ' . $companyDetails['country'] . '</p>';
-            echo '<p>Address: ' . $companyDetails['address'] . '</p>';
-            echo '<p>Phone: ' . $companyDetails['phone'] . '</p>';
-            echo '<p>Email: ' . $companyDetails['email'] . '</p>';
-            // ... include other details
+            //echo '<img src="../../resources/companies-logos/' . $companyDetails['logo'] . '">';
+            echo '<div class="meteordg-company-logo">';
+            echo '<img src="' . $companyDetails['logo'] . '">';
             echo '</div>';
+            echo '<div class="meteordg-company-data-zone">';
+            echo '<div class="meteordg-company-name">';
+            echo '<span>' . $companyDetails['name'] . '</span>';
+            echo '</div>';
+            echo '<div class="meteordg-company-nif">';
+            echo '<span>' . $companyDetails['nif'] . '</span>';
+            echo '</div>';
+            echo '</div>';
+
         } else {
             echo '<p>Company not found.</p>';
         }
     }
+
+    function getClickedCompanyFlow($nif) {
+        $companyFlow = "SELECT * FROM COMPANY_TRANSACTION WHERE NIF_ORIGIN = '$nif'";
+        $result = connectDB()->query($companyFlow);
+
+        if ($result && $result->num_rows > 0) {
+            return $result->fetch_assoc();
+        }
+        return null;
+    }
+
+    function showCompanyFlow($companyDetails) {
+        if {
+        echo '<tr>';
+        echo '<td> </td>';
+        echo '<td> </td>';
+        echo '<td> </td>';
+        echo '<td> </td>';
+        echo '<td> </td>';
+        echo '</tr>';
+        } else {
+            echo '<p>This company has not made or received financial movements.</p>';
+        }
 ?>
 
