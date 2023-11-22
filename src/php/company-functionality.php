@@ -118,7 +118,7 @@
                 array_push($arrayCompanies, $company);
 
                 // Imprimir la empresa en un contenedor dentro del HTML
-                echo '<a href="company-details.php?id=' . $company->getNif() . '">';
+                echo '<a href="company-details.php?nif=' . $company->getNif() . '">';
                 echo '<div class="meteordg-company" data-company="' . strtolower($company->getName()) . '">';
                 echo '<div class="meteordg-company-info-zone">';
                 echo '<div class="meteordg-company-logo" id="' . $company->getName() . '">';
@@ -155,9 +155,8 @@
         return null;
     }
 
-    function showCompanyDetails() {
+    function showCompanyDetails($companyDetails) {
         if ($companyDetails) {
-            // Display the details on the page
             echo '<div class="company-details">';
             echo '<img src="../../resources/companies-logos/' . $companyDetails['logo'] . '">';
             echo '<p>Name: ' . $companyDetails['name'] . '</p>';
@@ -172,9 +171,6 @@
         } else {
             echo '<p>Company not found.</p>';
         }
-    } else {
-    echo '<p>Company NIF not provided.</p>';
-}
     }
 ?>
 
