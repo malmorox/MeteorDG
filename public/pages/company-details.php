@@ -1,5 +1,8 @@
 <?php
     //require '../../src/php/company-functionality.php';
+    if (isset($_GET['nif'])) {
+        $companyNIF = $_GET['nif'];
+    }
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -105,12 +108,9 @@
                 <div class="meteordg-admin-company-details">
                     <div class="meteordg-company-details-container meteordg-company-info-zone">
                         <?php
-                            if (isset($_GET['nif'])) {
-                                $companyNIF = $_GET['nif'];
-                                // Mandar el NIF (de la empresa que se ha clickado) a la funcion que busca los daros en la BBDD
-                                $companyDetails = getClickedCompanyDetails($companyNIF);
-                                showCompanyDetails($companyDetails);
-                            }
+                            // Mandar el NIF (de la empresa que se ha clickado) a la funcion que busca los daros en la BBDD
+                            $companyDetails = getClickedCompanyDetails($companyNIF);
+                            showCompanyDetails($companyDetails);
                         ?>
                     </div>
                     <div class="meteordg-company-details-container meteordg-company-transactions">
