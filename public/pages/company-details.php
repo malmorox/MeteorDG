@@ -111,7 +111,6 @@
                             // Mandar el NIF (de la empresa que se ha clickado) a la funcion que busca los daros en la BBDD
                             $companyDetails = getClickedCompanyDetails($companyNIF);
                             showCompanyDetails($companyDetails);
-                            }
                         ?>
                     </div>
                     <div class="meteordg-company-details-container meteordg-company-transactions">

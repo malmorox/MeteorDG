@@ -186,7 +186,7 @@
     }
 
     function showCompanyFlow($companyDetails) {
-        if {
+        if () {
         echo '<tr>';
         echo '<td> </td>';
         echo '<td> </td>';
@@ -197,5 +197,5 @@
         } else {
             echo '<p>This company has not made or received financial movements.</p>';
         }
+    }
 ?>
-
