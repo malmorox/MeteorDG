@@ -198,4 +198,29 @@
             echo '<p>This company has not made or received financial movements.</p>';
         }
     }
+
+    function searchCompanies($searchTerm) {
+        $searchQuery = "SELECT * FROM COMPANY WHERE NAME LIKE '$searchTerm%'";
+        $result = connectDB()->query($searchQuery);
+
+        $filteredCompanies = [];
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $company = new Company(
+                    $row['logo'],
+                    $row['nif'],
+                    $row['name'],
+                    $row['type'],
+                    $row['country'],
+                    $row['address'],
+                    $row['phone'],
+                    $row['email']
+                );
+
+                array_push($filteredCompanies, $company);
+            }
+        }
+
+        return $filteredCompanies;
+    }
 ?>

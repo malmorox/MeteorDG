@@ -1,5 +1,5 @@
 <?php
-    //require '../../src/php/company-functionality.php';
+    //require '../../src/php/companies-functionality.php';
     if (isset($_GET['nif'])) {
         $companyNIF = $_GET['nif'];
     }
