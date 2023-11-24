@@ -157,8 +157,8 @@
 
     function showCompanyDetails($companyDetails) {
         if ($companyDetails) {
-            //echo '<img src="../../resources/companies-logos/' . $companyDetails['logo'] . '">';
             echo '<div class="meteordg-company-logo">';
+            //echo '<img src="../../resources/companies-logos/' . $companyDetails['logo'] . '">';
             echo '<img src="' . $companyDetails['logo'] . '">';
             echo '</div>';
             echo '<div class="meteordg-company-data-zone">';
@@ -169,7 +169,6 @@
             echo '<span>' . $companyDetails['nif'] . '</span>';
             echo '</div>';
             echo '</div>';
-
         } else {
             echo '<p>Company not found.</p>';
         }
@@ -180,22 +179,21 @@
         $result = connectDB()->query($companyFlow);
 
         if ($result && $result->num_rows > 0) {
-            return $result->fetch_assoc();
+            return $result->fetch_all(MYSQLI_ASSOC);
         }
         return null;
     }
 
-    function showCompanyFlow($companyDetails) {
-        if () {
-        echo '<tr>';
-        echo '<td> </td>';
-        echo '<td> </td>';
-        echo '<td> </td>';
-        echo '<td> </td>';
-        echo '<td> </td>';
-        echo '</tr>';
-        } else {
-            echo '<p>This company has not made or received financial movements.</p>';
+    function showCompanyFlow($companyFlow) {
+        foreach ($companyFlow as $row) {
+            echo '<tr>';
+            echo '<td>' . $row['ID_TRANSACTION'] . '</td>';
+            echo '<td>' . $row['NIF_ORIGIN'] . '</td>';
+            echo '<td>' . $row['NIF_DESTINATION'] . '</td>';
+            echo '<td>' . $row['AMOUNT'] . '</td>';
+            echo '<td>' . $row['BADGE'] . '</td>';
+            echo '<td>' . date("d/m/Y", strtotime($row['DATE_TRANSACTION'])) . '</td>';
+            echo '</tr>';
         }
     }
 
@@ -216,11 +214,9 @@
                     $row['phone'],
                     $row['email']
                 );
-
                 array_push($filteredCompanies, $company);
             }
         }
-
         return $filteredCompanies;
     }
 ?>
