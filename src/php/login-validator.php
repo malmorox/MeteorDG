@@ -23,9 +23,14 @@
         }
 
         if(empty($errorList)){
-            compareWithTable($userName, $userPasswordHash);
-            header("Location:session-in.html");
-            die(0);
+            $isUser = compareWithTable($userName, $userPasswordHash);
+            if($isUser == true){
+                //Ir a la página que corresponda para un usuario registrado
+            } else {
+                //Dar mensaje de usuario no valido
+                header("Location:session-in.html");
+                die(0);
+            }
         }
     }
 
