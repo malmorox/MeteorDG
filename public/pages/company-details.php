@@ -114,9 +114,21 @@
                         ?>
                     </div>
                     <div class="meteordg-company-details-container meteordg-company-transactions">
-
-
-                        <?php showCompanyFlow(); ?>
+                        <?php
+                            $companyFlow = getClickedCompanyFlow($companyNIF);
+                            if ($companyFlow) {
+                                echo '<table>';
+                                echo '<tr>';
+                                echo '<th> Transaction ID </th>';    echo '<th> Origin NIF </th>';
+                                echo '<th> Amount </th>';            echo '<th> Badge </th>';
+                                echo '<th> Destination NIF </th>';   echo '<th> Transaction date </th>';
+                                echo '<tr>';
+                                showCompanyFlow($companyFlow);
+                                echo '</table>';
+                            } else {
+                                echo '<p>This company has not made or received financial movements.</p>';
+                            }
+                        ?>
                     </div>
                 </div>
             </main>
