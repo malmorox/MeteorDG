@@ -98,7 +98,7 @@
 
     // Listar todas las empresas que hay en la BBDD en la página de 'companies-list.php'
 
-    function showCompanies() {
+    function showCompanies($conn) {
         $allCompanies = 'SELECT * FROM COMPANY';
         $result = connectDB()->query($allCompanies);
 
