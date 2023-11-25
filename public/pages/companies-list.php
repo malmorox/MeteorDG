@@ -1,9 +1,5 @@
 <?php
-
-//include('../../src/php/listado.php');
-
-//require '../../src/php/company-functionality.php';
-
+    require '../../src/php/companies-functionality.php';
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -211,7 +207,7 @@
                     <div class="meteordg-company" data-company="lays">
                         <div class="meteordg-company-info-zone">
                             <div class="meteordg-company-logo" id="lays">
-                                <img src="https://www.lays.es/images/default-source/default-album/layslogo.png?sfvrsn=2">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Lay%27s_logo_2019.svg/1200px-Lay%27s_logo_2019.svg.png">
                             </div>
                             <div class="meteordg-company-data-zone">
                                 <div class="meteordg-company-name">
@@ -251,7 +247,7 @@
         <div class="meteordg-admin-popup" id="popup-container">
             <div class="meteordg-admin-company-register-popup" id="popup">
                 <a href="#" class="meteordg-admin-close-popup-button" id="close-popup"><i class="fas fa-times"></i></a>
-                <form method="post" action="../../src/php/company-functionality.php">
+                <form method="post" action="../../src/php/companies-functionality.php">
                     <section class="meteordg-company-register first-step">
                         <h4 class="meteordg-register-title"> Registra una empresa </h4>
                         <input type="file" name="image" id="image" accept="image/*" required>

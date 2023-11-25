@@ -1,3 +1,9 @@
+<?php
+    //require '../../src/php/companies-functionality.php';
+    if (isset($_GET['nif'])) {
+        $companyNIF = $_GET['nif'];
+    }
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -100,50 +106,38 @@
         <div id="layoutSidenav_content">
             <main class="meteordg-admin-content">
                 <div class="meteordg-admin-company-details">
-                    <div class="meteordg-company-info-zone">
-                        <div class="meteordg-company-logo" id="bmw">
-                            <img src="https://i.pinimg.com/originals/27/6a/97/276a970cd35a83cc71beee75cb89f382.png">
-                        </div>
-                        <div class="meteordg-company-data-zone">
-                            <div class="meteordg-company-name">
-                                <span></span>
-                            </div>
-                            <div class="meteordg-company-nif">
-                                <span></span>
-                            </div>
-                            <p class="info-label">Información adicional:</p>
-                            <div class="info-item">Campo 1: Valor 1</div>
-                            <div class="info-item">Campo 2: Valor 2</div>
-                            <div class="info-item">Campo 3: Valor 3</div>
-                        </div>
+                    <div class="meteordg-company-details-container meteordg-company-info-zone">
+                        <?php
+                            // Mandar el NIF (de la empresa que se ha clickado) a la funcion que busca los daros en la BBDD
+                            $companyDetails = getClickedCompanyDetails($companyNIF);
+                            showCompanyDetails($companyDetails);
+                        ?>
                     </div>
-                    <div class="meteordg-company-info-zone">
-                        <div class="meteordg-company-logo" id="bmw">
-                            <img src="https://i.pinimg.com/originals/27/6a/97/276a970cd35a83cc71beee75cb89f382.png">
-                        </div>
-                        <div class="meteordg-company-data-zone">
-                            <div class="meteordg-company-name">
-                                <span></span>
-                            </div>
-                            <div class="meteordg-company-nif">
-                                <span></span>
-                            </div>
-                            <p class="info-label">Información adicional:</p>
-                            <div class="info-item">Campo 1: Valor 1</div>
-                            <div class="info-item">Campo 2: Valor 2</div>
-                            <div class="info-item">Campo 3: Valor 3</div>
-                        </div>
+                    <div class="meteordg-company-details-container meteordg-company-transactions">
+                        <?php
+                            $companyFlow = getClickedCompanyFlow($companyNIF);
+                            if ($companyFlow) {
+                                echo '<table>';
+                                echo '<tr>';
+                                echo '<th> Transaction ID </th>';    echo '<th> Origin NIF </th>';
+                                echo '<th> Amount </th>';            echo '<th> Badge </th>';
+                                echo '<th> Destination NIF </th>';   echo '<th> Transaction date </th>';
+                                echo '<tr>';
+                                showCompanyFlow($companyFlow);
+                                echo '</table>';
+                            } else {
+                                echo '<p>This company has not made or received financial movements.</p>';
+                            }
+                        ?>
                     </div>
                 </div>
             </main>
             <footer class="py-4 bg-light mt-auto">
                 <div class="container-fluid px-4">
                     <div class="d-flex align-items-center justify-content-between small">
-                        <div class="text-muted">Copyright &copy; Your Website 2023</div>
+                        <div class="text-muted">Copyright &copy; MeteorDG 2023 </div>
                         <div>
-                            <a href="#">Privacy Policy</a>
-                            &middot;
-                            <a href="#">Terms &amp; Conditions</a>
+                            <a href="https://github.com/malmorox/MeteorDG" target="_blank">Repositorio de GitHub</a>
                         </div>
                     </div>
                 </div>
