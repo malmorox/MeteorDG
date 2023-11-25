@@ -114,10 +114,11 @@
                         ?>
                     </div>
                     <div class="meteordg-company-details-container meteordg-company-transactions">
+                        <h2> Lastest transactions </h2>
                         <?php
                             $companyFlow = getClickedCompanyFlow($companyNIF);
                             if ($companyFlow) {
-                                echo '<table>';
+                                echo '<table class="meteordg-company-flows-table">';
                                 echo '<tr>';
                                 echo '<th> Transaction ID </th>';    echo '<th> Origin NIF </th>';
                                 echo '<th> Amount </th>';            echo '<th> Badge </th>';
