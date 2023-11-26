@@ -43,6 +43,7 @@
         connectDB()->close();
     }
 
+    // Función para guardar el logo en resources y rotornar la ruta del logo que vamos a meter en la BBDD
     function saveLogo() {
         define('MAX_IMAGE_SIZE', 50000);
 
@@ -64,13 +65,13 @@
         }
 
         // Verifica si la imagen ya existe
-        if (file_exists($target_file)) {
+        if (file_exists($targetFile)) {
             echo "Lo siento, la imagen ya existe.";
             $uploadOk = 0;
         }
 
         // Verifica el tamaño del archivo
-        if ($_FILES["fileToUpload"]["size"] > MAX_SIZE) {
+        if ($_FILES["fileToUpload"]["size"] > MAX_IMAGE_SIZE) {
             echo "Lo siento, tu archivo es demasiado grande.";
             $uploadOk = 0;
         }
@@ -86,8 +87,9 @@
             echo "Tu archivo no fue subido.";
         // Si todo está bien, intenta subir el archivo
         } else {
-            if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+            if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $targetFile)) {
                 echo "La imagen ". basename( $_FILES["fileToUpload"]["name"]). " ha sido subida.";
+                return $targetFile;
             } else {
                 echo "Hubo un error al subir tu archivo.";
             }
