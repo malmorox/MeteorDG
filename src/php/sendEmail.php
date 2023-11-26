@@ -7,8 +7,17 @@ require 'vendor/autoload.php';
 
 $mail = new PHPMailer(true);
 
-function enviarCorreo($userMail) {
+function sendEmail($userMail) {
     try {
+        $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
+        $mail->isSMTP();                                            //Send using SMTP
+        $mail->Host       = 'smtp.example.com';                     //Set the SMTP server to send through
+        $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+        $mail->Username   = 'user@example.com';                     //SMTP username
+        $mail->Password   = 'secret';                               //SMTP password
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
+        $mail->Port       = 465;
+        //
         $this->mail->setFrom('notifications@meteordg.com', 'MeteorDG');
         $this->mail->addAddress($userMail);
         //contenido del email
