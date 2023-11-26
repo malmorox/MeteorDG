@@ -1,5 +1,5 @@
 <?php
-    include('mysql-connection.php');//Conexión al archivo con la clase connectDB para connectarse a la BBDD
+    include 'mysql-connection.php'; //Conexión al archivo con la clase connectDB para connectarse a la BBDD
 
     $userName = "";
     $userPassword = "";
