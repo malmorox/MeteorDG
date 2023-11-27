@@ -19,7 +19,7 @@
 
         $dbconnection = connectDB();
         // Hacemos el insert de una nueva empresa en la BBDD
-        $sentencia = $dbconnection->prepare("INSERT INTO COMPANY (LOGO, NIF, NAME, TYPE, COUNTRY, ADDRESS, PHONE, EMAIL) VALUES (:logo, :nif, :name, :type, :country, :address, :$hone, :email)");
+        $sentencia = $dbconnection->prepare("INSERT INTO COMPANY (LOGO, NIF, COMPANY_NAME, COMPANY_TYPE, COUNTRY, COMPANY_ADDRESS, PHONE, EMAIL) VALUES (:logo, :nif, :name, :type, :country, :address, :phone, :email)");
 
         $sentencia->bindParam(':logo', $logo);
         $sentencia->bindParam(':nif', $nif);
@@ -100,7 +100,7 @@
 
     // Listar todas las empresas que hay en la BBDD en la página de 'companies-list.php'
 
-    function showCompanies($conn) {
+    function showCompanies() {
         $allCompanies = 'SELECT * FROM COMPANY';
         $result = connectDB()->query($allCompanies);
 
@@ -177,7 +177,7 @@
     }
 
     function getClickedCompanyFlow($nif) {
-        $companyFlow = "SELECT * FROM COMPANY_TRANSACTION WHERE NIF_ORIGIN = '$nif'";
+        $companyFlow = "SELECT * FROM TRANSACTIONS WHERE NIF_ORIGIN = '$nif'";
         $result = connectDB()->query($companyFlow);
 
         if ($result && $result->num_rows > 0) {
@@ -189,12 +189,12 @@
     function showCompanyFlow($companyFlow) {
         foreach ($companyFlow as $row) {
             echo '<tr>';
-            echo '<td>' . $row['ID_TRANSACTION'] . '</td>';
+            echo '<td>' . $row['TRANSACTION_ID'] . '</td>';
             echo '<td>' . $row['NIF_ORIGIN'] . '</td>';
             echo '<td>' . $row['NIF_DESTINATION'] . '</td>';
             echo '<td>' . $row['AMOUNT'] . '</td>';
             echo '<td>' . $row['BADGE'] . '</td>';
-            echo '<td>' . date("d/m/Y", strtotime($row['DATE_TRANSACTION'])) . '</td>';
+            echo '<td>' . date("d/m/Y", strtotime($row['TRANSACTION_DATE'])) . '</td>';
             echo '</tr>';
         }
     }

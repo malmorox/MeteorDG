@@ -9,14 +9,14 @@ $mail = new PHPMailer(true);
 
 function sendEmail($userMail) {
     try {
-        $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
-        $mail->isSMTP();                                            //Send using SMTP
-        $mail->Host       = 'smtp.example.com';                     //Set the SMTP server to send through
-        $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-        $mail->Username   = 'user@example.com';                     //SMTP username
-        $mail->Password   = 'secret';                               //SMTP password
-        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
-        $mail->Port       = 465;
+        $this->$mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
+        $this->$mail->isSMTP();                                            //Send using SMTP
+        $this->$mail->Host       = 'smtp.example.com';                     //Set the SMTP server to send through
+        $this->$mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+        $this->$mail->Username   = 'user@example.com';                     //SMTP username
+        $this->$mail->Password   = 'secret';                               //SMTP password
+        $this->$mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
+        $this->$mail->Port       = 465;
         //
         $this->mail->setFrom('notifications@meteordg.com', 'MeteorDG');
         $this->mail->addAddress($userMail);
