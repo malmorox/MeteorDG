@@ -1,5 +1,33 @@
 <?php
-    include 'mysql-connection.php'; //Conexión al archivo con la clase connectDB para connectarse a la BBDD
+    include 'DBConnect.php'; //Conexión al archivo con la clase connectDB para connectarse a la BBDD
+
+    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['register'])) {
+        // Realizar validación del formulario
+        $validationResult = validateRegistration($_POST['name'], $_POST['email'], $_POST['password'], $_POST['confirm-password']);
+
+        if ($validationResult === true) {
+            // Registro válido, enviar correo electrónico
+            $userMail = $_POST['email'];
+            $confirmationCode = generateConfirmationCode(); // Asegúrate de tener una función para generar el código de confirmación
+
+            if (sendEmail($userMail, $confirmationCode)) {
+                // Éxito al enviar el correo, puedes redirigir o mostrar un mensaje de éxito
+                echo "Correo electrónico de confirmación enviado con éxito.";
+            } else {
+                // Manejar el error al enviar el correo
+                echo "Error al enviar el correo electrónico.";
+            }
+        } else {
+            // Manejar el error de validación del formulario
+            echo "Error en la validación del formulario: $validationResult";
+        }
+    }
+
+    function generateConfirmationCode() {
+        $confirmationCode = mt_rand(100000, 999999);
+        return $confirmationCode;
+    }
+
 
     $userName = "";
     $userPassword = "";

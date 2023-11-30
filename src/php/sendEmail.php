@@ -7,7 +7,7 @@ require 'vendor/autoload.php';
 
 $mail = new PHPMailer(true);
 
-function sendEmail($userMail) {
+function sendEmail($userMail, $confirmationCode) {
     try {
         $this->$mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
         $this->$mail->isSMTP();                                            //Send using SMTP
@@ -34,13 +34,8 @@ function sendEmail($userMail) {
                 </head>
                 <body style='font-family: Arial, sans-serif;'>
                     <div>
-                        <h2 style='color: #333;'>Contacto:</h2>
-                        <strong>Motivo de contacto:</strong> $motivo <br>
-                        <strong>Nombre:</strong> $nombre<br>
-                        <strong>Email:</strong> $userMail<br>
-                        <strong>Mensaje extra:</strong> $mensajeExtra<br>
+                        <strong>Código de confirmación </strong> $confirmationCode
                     </div>
-                
                 </body>
             </html>";
         return $this->mail->send();
