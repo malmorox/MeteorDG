@@ -1,5 +1,5 @@
 <?php
-include('mysql-connection.php');
+include('DBConnect.php');
 
     $conn=connectDB();
 

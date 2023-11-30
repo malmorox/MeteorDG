@@ -1,5 +1,5 @@
 <?php
-    require 'mysql-connection.php';
+    require 'DBConnect.php';
     require 'company.php';
 
     const GET_ALL_FROM_COMPANIES = 'SELECT * FROM COMPANY';

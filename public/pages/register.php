@@ -1,5 +1,6 @@
 <?php
-include('../../src/php/register-validator.php'); // Asegúrate de tener un archivo para validar el registro si es necesario
+    include '../../src/php/log-validator.php'; // Asegúrate de tener un archivo para validar el registro si es necesario
+    include '../../src/php/sendEmail.php';
 ?>
 <!DOCTYPE html>
 <html lang="es">
