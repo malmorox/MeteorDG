@@ -1,14 +1,17 @@
 <?php
-    include 'DBConnect.php'; //Conexión al archivo con la clase connectDB para connectarse a la BBDD
+    include 'DBConnect.php';
+
+    const MIN_RANDOM_CONFIRM_CODE = 100000;
+    const MAX_RANDOM_CONFIRM_CODE = 999999;
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['register'])) {
-        // Realizar validación del formulario
+        //realizamos la validación del formulario
         $validationResult = validateRegistration($_POST['name'], $_POST['email'], $_POST['password'], $_POST['confirm-password']);
 
         if ($validationResult === true) {
-            // Registro válido, enviar correo electrónico
+            //registro valido, por lo que enviamos correo electrónico
             $userMail = $_POST['email'];
-            $confirmationCode = generateConfirmationCode(); // Asegúrate de tener una función para generar el código de confirmación
+            $confirmationCode = generateConfirmationCode(); //generamos por cada  el código de confirmación
 
             if (sendEmail($userMail, $confirmationCode)) {
                 // Éxito al enviar el correo, puedes redirigir o mostrar un mensaje de éxito
@@ -24,8 +27,33 @@
     }
 
     function generateConfirmationCode() {
-        $confirmationCode = mt_rand(100000, 999999);
+        $confirmationCode = rand(MIN_RANDOM_CONFIRM_CODE, MAX_RANDOM_CONFIRM_CODE);
         return $confirmationCode;
+    }
+
+    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['login'])) {
+        $userName = $_POST['name-user'];
+        $userPassword = $_POST['password-user'];
+        $userPasswordHash = password_hash($userPassword, PASSWORD_DEFAULT);
+
+        $isUser = compareWithTable($userName, $userPasswordHash);
+
+        if ($isUser) {
+            // Verificar el código de confirmación si se proporciona
+            if (isset($_POST['confirmation-code'])) {
+                $confirmationCode = $_POST['confirmation-code'];
+
+                // Verificar el código de confirmación con el almacenado en la base de datos
+                // Si coincide, redirigir a la página principal o realizar cualquier acción necesaria.
+                // De lo contrario, mostrar un mensaje de error y permitir al usuario intentar nuevamente.
+            } else {
+                // Mostrar el formulario para ingresar el código de confirmación
+                echo "Introduce el código de confirmación enviado a tu correo electrónico.";
+                // Puedes agregar un formulario aquí para ingresar el código.
+            }
+        } else {
+            echo "Usuario no válido.";
+        }
     }
 
 
