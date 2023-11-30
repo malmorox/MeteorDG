@@ -2,6 +2,8 @@
     require 'mysql-connection.php';
     require 'company.php';
 
+    const GET_ALL_FROM_COMPANIES = 'SELECT * FROM COMPANY';
+
     if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["submit"])) {
         registerCompany();
     }
@@ -101,7 +103,7 @@
     // Listar todas las empresas que hay en la BBDD en la página de 'companies-list.php'
 
     function showCompanies() {
-        $allCompanies = 'SELECT * FROM COMPANY';
+        $allCompanies = GET_ALL_FROM_COMPANIES;
         $result = connectDB()->query($allCompanies);
 
         if ($result->num_rows > 0) {
@@ -177,7 +179,7 @@
     }
 
     function getClickedCompanyFlow($nif) {
-        $companyFlow = "SELECT * FROM TRANSACTIONS WHERE NIF_ORIGIN = '$nif'";
+        $companyFlow = "SELECT * FROM TRANSACTIONS WHERE NIF_ORIGIN = '$nif' ORDER BY TRANSACTION_DATE DESC";
         $result = connectDB()->query($companyFlow);
 
         if ($result && $result->num_rows > 0) {
@@ -199,7 +201,7 @@
         }
     }
 
-    function searchCompanies($searchTerm) {
+    /*function searchCompanies($searchTerm) {
         $searchQuery = "SELECT * FROM COMPANY WHERE NAME LIKE '$searchTerm%'";
         $result = connectDB()->query($searchQuery);
 
@@ -220,5 +222,5 @@
             }
         }
         return $filteredCompanies;
-    }
+    }*/
 ?>

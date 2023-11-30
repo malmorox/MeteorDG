@@ -219,7 +219,7 @@
                             </div>
                         </div>
                     </div> -->
-                    <?php //showCompanies(); ?>
+                    <?php showCompanies(); ?>
                 </div>
             </main>
             <footer class="py-4 bg-light mt-auto">
