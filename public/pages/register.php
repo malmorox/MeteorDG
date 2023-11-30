@@ -24,6 +24,15 @@
             <input type="submit" value="Registrarse" name="register" id="register" class="send-input">
         </form>
     </div>
+    <div class="verification">
+        <form action="" method="post" class="form-register">
+            <input type="text" placeholder="Nombre" name="name" id="name" class="text-input" required>
+            <input type="email" placeholder="Correo Electrónico" name="email" id="email" class="text-input" required>
+            <input type="password" placeholder="Contraseña" name="password" id="password" class="text-input" required>
+            <input type="password" placeholder="Confirmar Contraseña" name="confirm-password" id="confirm-password" class="text-input" required>
+            <input type="submit" value="Registrarse" name="register" id="register" class="send-input">
+        </form>
+    </div>
 </div>
 </body>
 </html>

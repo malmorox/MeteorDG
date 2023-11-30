@@ -1,21 +1,5 @@
 <?php
-    // Conexión a la BBDD
-    /*function connectDB() {
-
-        $servername = "mysql:host=localhost"; // "51.68.47.14"
-        $username = "probador";
-        $password = "1234";
-        $dbname = "pruebas";
-
-        $conn = new PDO($servername, $username, $password, $dbname); // PDO
-
-        if ($conn->connect_error) {
-            die("Error en la conexión a la base de datos: " . $conn->connect_error);
-        }
-
-        return $conn;
-    }*/
-
+// Conexión a la BBDD
 class DBConnect {
     private static $instance = null;
     private $conn;
@@ -41,7 +25,6 @@ class DBConnect {
         if (self::$instance === null) {
             self::$instance = new self();
         }
-
         return self::$instance;
     }
 
@@ -53,6 +36,4 @@ class DBConnect {
         $this->conn = null;
     }
 }
-
-
 ?>

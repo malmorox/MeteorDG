@@ -1,6 +1,6 @@
 <?php
-    require 'DBConnect.php';
-    require 'company.php';
+    include_once 'DBConnect.php';
+    require 'Company.php';
 
     const GET_ALL_FROM_COMPANIES = 'SELECT * FROM COMPANY';
 
@@ -19,30 +19,33 @@
         $email = $_POST['email'];
         $logo = saveLogo();
 
-        $dbconnection = connectDB();
-        // Hacemos el insert de una nueva empresa en la BBDD
-        $sentencia = $dbconnection->prepare("INSERT INTO COMPANY (LOGO, NIF, COMPANY_NAME, COMPANY_TYPE, COUNTRY, COMPANY_ADDRESS, PHONE, EMAIL) VALUES (:logo, :nif, :name, :type, :country, :address, :phone, :email)");
+        // Obtenemos la instancia de la clase DBConnect
+        $db = DBConnect::getInstance();
+        $conn = $db->getConnection();
 
-        $sentencia->bindParam(':logo', $logo);
-        $sentencia->bindParam(':nif', $nif);
-        $sentencia->bindParam(':name', $name);
-        $sentencia->bindParam(':type', $type);
-        $sentencia->bindParam(':country', $country);
-        $sentencia->bindParam(':address', $address);
-        $sentencia->bindParam(':phone', $phone);
-        $sentencia->bindParam(':email', $email);
+        // Hacemos el insert de una nueva empresa en la BBDD
+        $query = $conn->prepare("INSERT INTO COMPANY (LOGO, NIF, COMPANY_NAME, COMPANY_TYPE, COUNTRY, COMPANY_ADDRESS, PHONE, EMAIL) VALUES (:logo, :nif, :name, :type, :country, :address, :phone, :email)");
+
+        $query->bindParam(':logo', $logo);
+        $query->bindParam(':nif', $nif);
+        $query->bindParam(':name', $name);
+        $query->bindParam(':type', $type);
+        $query->bindParam(':country', $country);
+        $query->bindParam(':address', $address);
+        $query->bindParam(':phone', $phone);
+        $query->bindParam(':email', $email);
 
         // Ejecuta la sentencia SQL de inserción
-        $exito = $sentencia->execute();
+        $success = $query->execute();
 
-        if ($exito) {
+        if ($success) {
             echo "Empresa insertada exitosamente.";
         } else {
-            echo "Hubo un error al in sertar la empresa.";
+            echo "Hubo un error al insertar la empresa.";
         }
 
         // Cierra la conexión a la base de datos
-        connectDB()->close();
+        $db->closeConnection();
     }
 
     // Función para guardar el logo en resources y rotornar la ruta del logo que vamos a meter en la BBDD
@@ -150,11 +153,18 @@
     }
 
     function getClickedCompanyDetails($nif) {
-        $companyData = "SELECT * FROM COMPANY WHERE NIF = '$nif'";
-        $result = connectDB()->query($companyData);
+        $db = DBConnect::getInstance();
+        $conn = $db->getConnection();
 
-        if ($result && $result->num_rows > 0) {
-            return $result->fetch_assoc();
+        $companyData = "SELECT * FROM COMPANY WHERE NIF = :nif";
+        $stmt = $conn->prepare($companyData);
+        $stmt->bindParam(':nif', $nif);
+        $stmt->execute();
+
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if ($result !== false) {
+            return $result;
         }
         return null;
     }
@@ -179,11 +189,18 @@
     }
 
     function getClickedCompanyFlow($nif) {
-        $companyFlow = "SELECT * FROM TRANSACTIONS WHERE NIF_ORIGIN = '$nif' ORDER BY TRANSACTION_DATE DESC";
-        $result = connectDB()->query($companyFlow);
+        $db = DBConnect::getInstance();
+        $conn = $db->getConnection();
 
-        if ($result && $result->num_rows > 0) {
-            return $result->fetch_all(MYSQLI_ASSOC);
+        $companyFlow = "SELECT * FROM TRANSACTIONS WHERE NIF_ORIGIN = :nif OR NIF_DESTINATION = :nif";
+        $stmt = $conn->prepare($companyFlow);
+        $stmt->bindParam(':nif', $nif);
+        $stmt->execute();
+
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        if ($result !== false) {
+            return $result;
         }
         return null;
     }
