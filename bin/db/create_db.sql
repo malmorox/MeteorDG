@@ -1,7 +1,7 @@
 ------------------------------------TABLE COMPANY------------------------------------
-DROP TABLE COMPANY;
+DROP TABLE IF EXISTS COMPANY;
 
-CREATE TABLE COMPANY
+CREATE TABLE COMPANY(
     LOGO VARCHAR(100) NOT NULL,
     CIF VARCHAR(10) NOT NULL,
     COMPANY_NAME VARCHAR(50) NOT NULL,
@@ -14,7 +14,7 @@ CREATE TABLE COMPANY
 );
 
 ------------------------------------TABLE BILLS------------------------------------
-DROP TABLE BILLS;
+DROP TABLE IF EXISTS BILLS;
 
 CREATE TABLE BILLS (
     BILL_ID VARCHAR(10),
@@ -28,7 +28,7 @@ CREATE TABLE BILLS (
 );
 
 ------------------------------------TABLA TRANSACTION------------------------------------
-DROP TABLE TRANSACTIONS;
+DROP TABLE IF EXISTS TRANSACTIONS;
 
 CREATE TABLE TRANSACTIONS (
     TRANSACTION_ID VARCHAR(10),
@@ -43,7 +43,7 @@ CREATE TABLE TRANSACTIONS (
 );
 
 ------------------------------------TABLA REPORT------------------------------------
-DROP TABLE REPORT;
+DROP TABLE IF EXISTS REPORT;
 
 CREATE TABLE REPORT(
     NUM_REPORT VARCHAR(10),
