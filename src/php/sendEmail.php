@@ -8,6 +8,7 @@ require 'vendor/autoload.php';
 $mail = new PHPMailer(true);
 
 function sendEmail($userMail, $confirmationCode) {
+    global $mail;
     try {
         $this->$mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
         $this->$mail->isSMTP();                                            //Send using SMTP
