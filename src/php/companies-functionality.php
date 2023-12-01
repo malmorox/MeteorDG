@@ -35,7 +35,7 @@
         $query->bindParam(':phone', $phone);
         $query->bindParam(':email', $email);
 
-        // Ejecuta la sentencia SQL de inserción
+        // Ejecutamos la query de inserción
         $success = $query->execute();
 
         if ($success) {
@@ -44,7 +44,7 @@
             echo "Hubo un error al insertar la empresa.";
         }
 
-        // Cierra la conexión a la base de datos
+        // Cierro la conexion a la BBDD
         $db->closeConnection();
     }
 

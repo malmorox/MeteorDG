@@ -1,35 +1,39 @@
 <?php
     include 'DBConnect.php';
+    include 'sendEmail.php';
 
     const MIN_RANDOM_CONFIRM_CODE = 100000;
     const MAX_RANDOM_CONFIRM_CODE = 999999;
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['register'])) {
-        //realizamos la validación del formulario
+        // Realizamos la validación del formulario
         $validationResult = validateRegistration($_POST['name'], $_POST['email'], $_POST['password'], $_POST['confirm-password']);
 
         if ($validationResult === true) {
-            //registro valido, por lo que enviamos correo electrónico
+            // Registro valido, por lo que enviamos correo electrónico
             $userMail = $_POST['email'];
             $confirmationCode = generateConfirmationCode(); //generamos por cada  el código de confirmación
 
             if (sendEmail($userMail, $confirmationCode)) {
-                // Éxito al enviar el correo, puedes redirigir o mostrar un mensaje de éxito
                 echo "Correo electrónico de confirmación enviado con éxito.";
             } else {
-                // Manejar el error al enviar el correo
                 echo "Error al enviar el correo electrónico.";
             }
         } else {
-            // Manejar el error de validación del formulario
             echo "Error en la validación del formulario: $validationResult";
         }
+    }
+
+    function validateRegistration($name, $email, $password, $confirmPassword) {
+        return true;
     }
 
     function generateConfirmationCode() {
         $confirmationCode = rand(MIN_RANDOM_CONFIRM_CODE, MAX_RANDOM_CONFIRM_CODE);
         return $confirmationCode;
     }
+
+
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['login'])) {
         $userName = $_POST['name-user'];
