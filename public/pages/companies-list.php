@@ -1,5 +1,5 @@
 <?php
-    require '../../src/php/companies-functionality.php';
+    //require '../../src/php/companies-functionality.php';
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -219,18 +219,7 @@
                             </div>
                         </div>
                     </div> -->
-                    <?php 
-                        if($result->num_rows > 0) {
-                            echo "<table><tr><th>ID</th><th>Nombre</th><th>Email</th></tr>";
-                            // Salida de cada fila de datos
-                            while ($row = $result->fetch_assoc()) {
-                            echo "<tr><td>" . $row["id"] . "</td><td>" . $row["nombre"] . "</td><td>" . $row["email"] . "</td></tr>";
-                            }
-                            echo "</table>";
-                        } else {
-                            echo "<p>Parece que no hay empresas o hay algun error</p>";
-                        }                   
-                    ?>
+                    <?php showCompanies(); ?>
                 </div>
             </main>
             <footer class="py-4 bg-light mt-auto">

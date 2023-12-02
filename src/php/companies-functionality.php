@@ -1,6 +1,8 @@
 <?php
-    require 'mysql-connection.php';
-    require 'company.php';
+    include_once 'DBConnect.php';
+    require 'Company.php';
+
+    const GET_ALL_FROM_COMPANIES = 'SELECT * FROM COMPANY';
 
     if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["submit"])) {
         registerCompany();
@@ -17,32 +19,36 @@
         $email = $_POST['email'];
         $logo = saveLogo();
 
-        $dbconnection = connectDB();
+        // Obtenemos la instancia de la clase DBConnect
+        $db = DBConnect::getInstance();
+        $conn = $db->getConnection();
+
         // Hacemos el insert de una nueva empresa en la BBDD
-        $sentencia = $dbconnection->prepare("INSERT INTO COMPANY (LOGO, NIF, NAME, TYPE, COUNTRY, ADDRESS, PHONE, EMAIL) VALUES (:logo, :nif, :name, :type, :country, :address, :$hone, :email)");
+        $query = $conn->prepare("INSERT INTO COMPANY (LOGO, NIF, COMPANY_NAME, COMPANY_TYPE, COUNTRY, COMPANY_ADDRESS, PHONE, EMAIL) VALUES (:logo, :nif, :name, :type, :country, :address, :phone, :email)");
 
-        $sentencia->bindParam(':logo', $logo);
-        $sentencia->bindParam(':nif', $nif);
-        $sentencia->bindParam(':name', $name);
-        $sentencia->bindParam(':type', $type);
-        $sentencia->bindParam(':country', $country);
-        $sentencia->bindParam(':address', $address);
-        $sentencia->bindParam(':phone', $phone);
-        $sentencia->bindParam(':email', $email);
+        $query->bindParam(':logo', $logo);
+        $query->bindParam(':nif', $nif);
+        $query->bindParam(':name', $name);
+        $query->bindParam(':type', $type);
+        $query->bindParam(':country', $country);
+        $query->bindParam(':address', $address);
+        $query->bindParam(':phone', $phone);
+        $query->bindParam(':email', $email);
 
-        // Ejecuta la sentencia SQL de inserción
-        $exito = $sentencia->execute();
+        // Ejecutamos la query de inserción
+        $success = $query->execute();
 
-        if ($exito) {
+        if ($success) {
             echo "Empresa insertada exitosamente.";
         } else {
-            echo "Hubo un error al in sertar la empresa.";
+            echo "Hubo un error al insertar la empresa.";
         }
 
-        // Cierra la conexión a la base de datos
-        connectDB()->close();
+        // Cierro la conexion a la BBDD
+        $db->closeConnection();
     }
 
+    // Función para guardar el logo en resources y rotornar la ruta del logo que vamos a meter en la BBDD
     function saveLogo() {
         define('MAX_IMAGE_SIZE', 50000);
 
@@ -64,13 +70,13 @@
         }
 
         // Verifica si la imagen ya existe
-        if (file_exists($target_file)) {
+        if (file_exists($targetFile)) {
             echo "Lo siento, la imagen ya existe.";
             $uploadOk = 0;
         }
 
         // Verifica el tamaño del archivo
-        if ($_FILES["fileToUpload"]["size"] > MAX_SIZE) {
+        if ($_FILES["fileToUpload"]["size"] > MAX_IMAGE_SIZE) {
             echo "Lo siento, tu archivo es demasiado grande.";
             $uploadOk = 0;
         }
@@ -86,8 +92,9 @@
             echo "Tu archivo no fue subido.";
         // Si todo está bien, intenta subir el archivo
         } else {
-            if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+            if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $targetFile)) {
                 echo "La imagen ". basename( $_FILES["fileToUpload"]["name"]). " ha sido subida.";
+                return $targetFile;
             } else {
                 echo "Hubo un error al subir tu archivo.";
             }
@@ -98,8 +105,8 @@
 
     // Listar todas las empresas que hay en la BBDD en la página de 'companies-list.php'
 
-    function showCompanies($conn) {
-        $allCompanies = 'SELECT * FROM COMPANY';
+    function showCompanies() {
+        $allCompanies = GET_ALL_FROM_COMPANIES;
         $result = connectDB()->query($allCompanies);
 
         if ($result->num_rows > 0) {
@@ -146,11 +153,18 @@
     }
 
     function getClickedCompanyDetails($nif) {
-        $companyData = "SELECT * FROM COMPANY WHERE NIF = '$nif'";
-        $result = connectDB()->query($companyData);
+        $db = DBConnect::getInstance();
+        $conn = $db->getConnection();
 
-        if ($result && $result->num_rows > 0) {
-            return $result->fetch_assoc();
+        $companyData = "SELECT * FROM COMPANY WHERE NIF = :nif";
+        $stmt = $conn->prepare($companyData);
+        $stmt->bindParam(':nif', $nif);
+        $stmt->execute();
+
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if ($result !== false) {
+            return $result;
         }
         return null;
     }
@@ -175,11 +189,18 @@
     }
 
     function getClickedCompanyFlow($nif) {
-        $companyFlow = "SELECT * FROM COMPANY_TRANSACTION WHERE NIF_ORIGIN = '$nif'";
-        $result = connectDB()->query($companyFlow);
+        $db = DBConnect::getInstance();
+        $conn = $db->getConnection();
 
-        if ($result && $result->num_rows > 0) {
-            return $result->fetch_all(MYSQLI_ASSOC);
+        $companyFlow = "SELECT * FROM TRANSACTIONS WHERE NIF_ORIGIN = :nif OR NIF_DESTINATION = :nif";
+        $stmt = $conn->prepare($companyFlow);
+        $stmt->bindParam(':nif', $nif);
+        $stmt->execute();
+
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        if ($result !== false) {
+            return $result;
         }
         return null;
     }
@@ -187,17 +208,17 @@
     function showCompanyFlow($companyFlow) {
         foreach ($companyFlow as $row) {
             echo '<tr>';
-            echo '<td>' . $row['ID_TRANSACTION'] . '</td>';
+            echo '<td>' . $row['TRANSACTION_ID'] . '</td>';
             echo '<td>' . $row['NIF_ORIGIN'] . '</td>';
             echo '<td>' . $row['NIF_DESTINATION'] . '</td>';
             echo '<td>' . $row['AMOUNT'] . '</td>';
             echo '<td>' . $row['BADGE'] . '</td>';
-            echo '<td>' . date("d/m/Y", strtotime($row['DATE_TRANSACTION'])) . '</td>';
+            echo '<td>' . date("d/m/Y", strtotime($row['TRANSACTION_DATE'])) . '</td>';
             echo '</tr>';
         }
     }
 
-    function searchCompanies($searchTerm) {
+    /*function searchCompanies($searchTerm) {
         $searchQuery = "SELECT * FROM COMPANY WHERE NAME LIKE '$searchTerm%'";
         $result = connectDB()->query($searchQuery);
 
@@ -218,5 +239,5 @@
             }
         }
         return $filteredCompanies;
-    }
+    }*/
 ?>
