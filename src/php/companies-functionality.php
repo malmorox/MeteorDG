@@ -4,6 +4,9 @@
 
     const GET_ALL_FROM_COMPANIES = 'SELECT * FROM COMPANY';
 
+    // Instancia global de la clase DBConnect (la llamaremos en las funciones)
+    $db = DBConnect::getInstance();
+
     if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["submit"])) {
         registerCompany();
     }
@@ -19,8 +22,8 @@
         $email = $_POST['email'];
         $logo = saveLogo();
 
-        // Obtenemos la instancia de la clase DBConnect
-        $db = DBConnect::getInstance();
+        // Obtenemos la instancia global de DBConnect
+        global $db ;
         $conn = $db->getConnection();
 
         // Hacemos el insert de una nueva empresa en la BBDD
@@ -107,7 +110,8 @@
 
     function showCompanies() {
         $allCompanies = GET_ALL_FROM_COMPANIES;
-        $result = connectDB()->query($allCompanies);
+        global $db ;
+        $result = $db->getConnection()->query($allCompanies);
 
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
@@ -149,11 +153,11 @@
             echo '</div>';
         }
 
-        $conn->close();
+        $db->closeConnection();
     }
 
     function getClickedCompanyDetails($nif) {
-        $db = DBConnect::getInstance();
+        global $db;
         $conn = $db->getConnection();
 
         $companyData = "SELECT * FROM COMPANY WHERE NIF = :nif";
@@ -189,7 +193,7 @@
     }
 
     function getClickedCompanyFlow($nif) {
-        $db = DBConnect::getInstance();
+        global $db;
         $conn = $db->getConnection();
 
         $companyFlow = "SELECT * FROM TRANSACTIONS WHERE NIF_ORIGIN = :nif OR NIF_DESTINATION = :nif";
