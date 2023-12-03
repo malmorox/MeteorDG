@@ -242,7 +242,7 @@
                         <input type="file" name="image" id="image" accept="image/*" required>
                         <input type="text" class="meteordg-register-fields" name="name" id="name" placeholder="Nombre" required/>
                         <section class="meteordg-register-cif-container">
-                            <select class="meteordg-register-fields meteordg-register-country-select" id="country">
+                            <select class="meteordg-register-fields meteordg-register-country-select" name="country" id="country">
                                 <option value="ESP"> ESP </option> <option value="ARG"> ARG </option>
                                 <option value="FRA"> FRA </option> <option value="ITA"> ITA </option>
                                 <option value="ENG"> ENG </option> <option value="DEU"> DEU </option>
@@ -251,8 +251,18 @@
                             <input type="text" class="meteordg-register-fields" name="nif" id="nif" placeholder="NIF" required/>
                         </section>
                         <input type="text" class="meteordg-register-fields" name="location" id="location" placeholder="Dirección jurídica"/>
+                        <section class="meteordg-register-type-container">
+                            <select class="meteordg-register-fields meteordg-register-type-select" name="type" id="type">
+                                <?php
+                                    foreach (COMPANY_TYPES as $type) {
+                                        echo '<option>' . $type . '</option>';
+                                    }
+                                ?>
+                            </select>
+                        </section>
                         <input type="tel" class="meteordg-register-fields" name="phone" id="phone" pattern="[0-9]{9}" maxlength="9" placeholder="Teléfono"/>
-                        <input type="button" class="meteordg-register-buttons" value="Siguiente" id="continue"/>
+                        <input type="email" class="meteordg-register-fields" name="email" id="email" placeholder="Correo electrónico"/>
+                        <input type="button" class="meteordg-register-buttons" value="INSERTAR EMPRESA" id="insert"/>
                     </section>
                 </form>
             </div>

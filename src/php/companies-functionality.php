@@ -110,7 +110,7 @@
 
     function showCompanies() {
         $allCompanies = GET_ALL_FROM_COMPANIES;
-        global $db ;
+        global $db;
         $result = $db->getConnection()->query($allCompanies);
 
         if ($result->num_rows > 0) {
@@ -196,7 +196,7 @@
         global $db;
         $conn = $db->getConnection();
 
-        $companyFlow = "SELECT * FROM TRANSACTIONS WHERE NIF_ORIGIN = :nif OR NIF_DESTINATION = :nif";
+        $companyFlow = "SELECT * FROM TRANSACTIONS WHERE NIF_ORIGIN = :nif OR NIF_DESTINATION = :nif ORDER BY TRANSACTION_DATE DESC";
         $stmt = $conn->prepare($companyFlow);
         $stmt->bindParam(':nif', $nif);
         $stmt->execute();
@@ -244,4 +244,13 @@
         }
         return $filteredCompanies;
     }*/
+
+    //tipos de empresas para el formulario de registro
+    const COMPANY_TYPES = [
+        'Venta al por menor o al por mayor', 'Alimentación/Gastronomía', 'Tecnología/Telecomunicaciones', 'Videojuegos',
+        'Cuidado personal/Estética', 'Salud', 'Arquitectura/Construcción', 'Comercio electrónico', 'Educación',
+        'Servicios especializados', 'Servicios contables o financieros', 'Consultoría', 'Vehículos y recambios',
+        'Agricultura/Ganadería', 'Manufactura', 'Artes/Manualidades', 'Transporte/Logística', 'Publicidad/Medios digitales',
+        'Hostelería/Turismo', 'Entretenimiento', 'ONG', 'Otros'
+    ];
 ?>
