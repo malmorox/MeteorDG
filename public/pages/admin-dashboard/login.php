@@ -8,11 +8,11 @@ include('../../src/php/log-validator.php')
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MeteorDG</title>
-    <link rel="icon" type="image/png" href="../img/logotype/Logo_MeteorDG.ico"/>
-    <link rel="stylesheet" href="../css/admin_view.css">
-    <link rel="stylesheet" href="../css/admin_nav-layout.css">
-    <link rel="stylesheet" href="../css/admin_nav-layout.css">
-    <link rel="stylesheet" href="../css/form-css.css">
+    <link rel="icon" type="image/png" href="../../img/logotype/Logo_MeteorDG.ico"/>
+    <link rel="stylesheet" href="../../css/admin_view.css">
+    <link rel="stylesheet" href="../../css/admin_nav-layout.css">
+    <link rel="stylesheet" href="../../css/admin_nav-layout.css">
+    <link rel="stylesheet" href="../../css/form-css.css">
 </head>
 <body>
     <div class="form-container">

@@ -23,32 +23,39 @@
         $logo = saveLogo();
 
         // Obtenemos la instancia global de DBConnect
-        global $db ;
-        $conn = $db->getConnection();
+        if (validateInsertion($nif, $name, $type, $country, $address, $phone, $email)) {
+            global $db ;
+            $conn = $db->getConnection();
 
-        // Hacemos el insert de una nueva empresa en la BBDD
-        $query = $conn->prepare("INSERT INTO COMPANY (LOGO, NIF, COMPANY_NAME, COMPANY_TYPE, COUNTRY, COMPANY_ADDRESS, PHONE, EMAIL) VALUES (:logo, :nif, :name, :type, :country, :address, :phone, :email)");
+            // Hacemos el insert de una nueva empresa en la BBDD
+            $query = $conn->prepare("INSERT INTO COMPANY (LOGO, NIF, COMPANY_NAME, COMPANY_TYPE, COUNTRY, COMPANY_ADDRESS, PHONE, EMAIL) VALUES (:logo, :nif, :name, :type, :country, :address, :phone, :email)");
 
-        $query->bindParam(':logo', $logo);
-        $query->bindParam(':nif', $nif);
-        $query->bindParam(':name', $name);
-        $query->bindParam(':type', $type);
-        $query->bindParam(':country', $country);
-        $query->bindParam(':address', $address);
-        $query->bindParam(':phone', $phone);
-        $query->bindParam(':email', $email);
+            $query->bindParam(':logo', $logo);
+            $query->bindParam(':nif', $nif);
+            $query->bindParam(':name', $name);
+            $query->bindParam(':type', $type);
+            $query->bindParam(':country', $country);
+            $query->bindParam(':address', $address);
+            $query->bindParam(':phone', $phone);
+            $query->bindParam(':email', $email);
 
-        // Ejecutamos la query de inserción
-        $success = $query->execute();
+            // Ejecutamos la query de inserción
+            $success = $query->execute();
 
-        if ($success) {
-            echo "Empresa insertada exitosamente.";
-        } else {
-            echo "Hubo un error al insertar la empresa.";
+            if ($success) {
+                echo "Empresa insertada exitosamente.";
+            } else {
+                echo "Hubo un error al insertar la empresa.";
+            }
+
+            // Cierro la conexion a la BBDD
+            $db->closeConnection();
         }
+    }
 
-        // Cierro la conexion a la BBDD
-        $db->closeConnection();
+    function validateInsertion($nif, $name, $type, $country, $address, $phone, $email) {
+        // Comprobar que el telefono son números y son de la longitud
+        return true;
     }
 
     // Función para guardar el logo en resources y rotornar la ruta del logo que vamos a meter en la BBDD
@@ -222,7 +229,10 @@
         }
     }
 
-    /*function searchCompanies($searchTerm) {
+    function searchCompanies($searchTerm) {
+        global $db;
+        $conn = $db->getConnection();
+
         $searchQuery = "SELECT * FROM COMPANY WHERE NAME LIKE '$searchTerm%'";
         $result = connectDB()->query($searchQuery);
 
@@ -243,7 +253,7 @@
             }
         }
         return $filteredCompanies;
-    }*/
+    }
 
     //tipos de empresas para el formulario de registro
     const COMPANY_TYPES = [

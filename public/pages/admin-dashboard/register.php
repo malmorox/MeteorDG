@@ -1,6 +1,6 @@
 <?php
     include '../../src/php/log-validator.php'; // Asegúrate de tener un archivo para validar el registro si es necesario
-    include '../../src/php/send-email.php';
+    include '../../src/php/MailSender.php';
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -8,10 +8,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MeteorDG - Registro</title>
-    <link rel="icon" type="image/png" href="../img/logotype/Logo_MeteorDG.ico"/>
+    <link rel="icon" type="image/png" href="../../img/logotype/Logo_MeteorDG.ico"/>
     <link rel="stylesheet" href="../css/register_view.css">
-    <link rel="stylesheet" href="../css/admin_nav-layout.css">
-    <link rel="stylesheet" href="../css/form-css.css">
+    <link rel="stylesheet" href="../../css/admin_nav-layout.css">
+    <link rel="stylesheet" href="../../css/form-css.css">
 </head>
 <body>
 <div class="form-container">

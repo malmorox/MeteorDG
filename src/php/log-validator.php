@@ -1,6 +1,6 @@
 <?php
     include 'DBConnect.php';
-    include 'send-email.php';
+    include 'MailSender.php';
 
     const MIN_RANDOM_CONFIRM_CODE = 100000;
     const MAX_RANDOM_CONFIRM_CODE = 999999;
@@ -14,7 +14,8 @@
             $userMail = $_POST['email'];
             $confirmationCode = generateConfirmationCode(); //generamos por cada  el código de confirmación
 
-            if (sendEmail($userMail, $confirmationCode)) {
+            $mail = MailSender::getInstance();
+            if ($mail->sendEmail($userMail, $confirmationCode)) {
                 echo "Correo electrónico de confirmación enviado con éxito.";
             } else {
                 echo "Error al enviar el correo electrónico.";
@@ -33,8 +34,6 @@
         return rand(MIN_RANDOM_CONFIRM_CODE, MAX_RANDOM_CONFIRM_CODE);
     }
 
-
-
     if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['login'])) {
         $userName = $_POST['name-user'];
         $userPassword = $_POST['password-user'];
@@ -47,9 +46,6 @@
             if (isset($_POST['confirmation-code'])) {
                 $confirmationCode = $_POST['confirmation-code'];
 
-                // Verificar el código de confirmación con el almacenado en la base de datos
-                // Si coincide, redirigir a la página principal o realizar cualquier acción necesaria.
-                // De lo contrario, mostrar un mensaje de error y permitir al usuario intentar nuevamente.
             } else {
                 // Mostrar el formulario para ingresar el código de confirmación
                 echo "Introduce el código de confirmación enviado a tu correo electrónico.";
