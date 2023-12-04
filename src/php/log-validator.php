@@ -1,6 +1,6 @@
 <?php
     include 'DBConnect.php';
-    include 'sendEmail.php';
+    include 'send-email.php';
 
     const MIN_RANDOM_CONFIRM_CODE = 100000;
     const MAX_RANDOM_CONFIRM_CODE = 999999;
@@ -28,9 +28,9 @@
         return true;
     }
 
+    //funcion para generar un código de confirmación aleatorio
     function generateConfirmationCode() {
-        $confirmationCode = rand(MIN_RANDOM_CONFIRM_CODE, MAX_RANDOM_CONFIRM_CODE);
-        return $confirmationCode;
+        return rand(MIN_RANDOM_CONFIRM_CODE, MAX_RANDOM_CONFIRM_CODE);
     }
 
 

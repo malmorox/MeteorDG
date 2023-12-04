@@ -1,6 +1,6 @@
 <?php
     include '../../src/php/log-validator.php'; // Asegúrate de tener un archivo para validar el registro si es necesario
-    include '../../src/php/sendEmail.php';
+    include '../../src/php/send-email.php';
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -31,6 +31,9 @@
             <input type="password" placeholder="Contraseña" name="password" id="password" class="text-input" required>
             <input type="password" placeholder="Confirmar Contraseña" name="confirm-password" id="confirm-password" class="text-input" required>
             <input type="submit" value="Registrarse" name="register" id="register" class="send-input">
+        </form>
+        <form action="">
+            <input type="text" name="verify" id="verify" class="text-input" required>
         </form>
     </div>
 </div>
