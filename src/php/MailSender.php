@@ -5,8 +5,9 @@ use PHPMailer\PHPMailer\Exception;
 
 require 'vendor/autoload.php';
 
-$mail = new PHPMailer(true);
-
+class MailSender {
+    private static $mailer;
+    private $mail;
 
     private function __construct() {
         $this->mail = new PHPMailer(true);
@@ -20,6 +21,14 @@ $mail = new PHPMailer(true);
         $this->mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $this->mail->Port = 587;
     }
+
+    public static function getInstance() {
+        if (self::$mailer === null) {
+            self::$mailer = new self();
+        }
+        return self::$mailer;
+    }
+
     public function sendEmail($userMail, $confirmationCode) {
         try {
             $this->mail->setFrom('notifications@meteordg.com', 'MeteorDG');
@@ -38,7 +47,8 @@ $mail = new PHPMailer(true);
                     </head>
                     <body style='font-family: Arial, sans-serif;'>
                         <div>
-                            <strong>Código de confirmación </strong> $confirmationCode
+                            <strong>Código de confirmación </strong> 
+                            <p> $confirmationCode </p>
                         </div>
                     </body>
                 </html>";
@@ -48,3 +58,4 @@ $mail = new PHPMailer(true);
             return false;
         }
     }
+}

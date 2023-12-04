@@ -7,15 +7,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Admin Dashboard | MeteorDG </title>
-    <link rel="icon" type="image/png" href="../img/logotype/Logo_MeteorDG.ico"/>
-    <link rel="stylesheet" href="../css/admin_view.css">
-    <link rel="stylesheet" href="../css/admin_nav-layout.css">
-    <script src="../js/company.js" defer></script>
+    <link rel="icon" type="image/png" href="../../img/logotype/Logo_MeteorDG.ico"/>
+    <link rel="stylesheet" href="../../css/admin_view.css">
+    <link rel="stylesheet" href="../../css/admin_nav-layout.css">
+    <script src="../../js/company.js" defer></script>
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header class="meteordg-admin-header">
-        <a class="navbar-brand ps-3" href="../index.php"> <img src="../img/logotype/Logo_MeteorDG-LIGHT.svg"> </a>
+        <a class="navbar-brand ps-3" href="../../index.php"> <img src="../../img/logotype/Logo_MeteorDG-LIGHT.svg"> </a>
         <!-- Opciones de la cuenta -->
         <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
             <li class="nav-item dropdown">
@@ -38,7 +38,7 @@
             <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                 <div class="sb-sidenav-menu">
                     <div class="meteordg-admin-vertical-nav nav">
-                        <a class="nav-link" href="../index.php">
+                        <a class="nav-link" href="../../index.php">
                             <div class="sb-nav-link-icon"><i class="fas fa-home"></i></div>
                             Inicio
                         </a>
@@ -236,7 +236,7 @@
         <div class="meteordg-admin-popup" id="popup-container">
             <div class="meteordg-admin-company-register-popup" id="popup">
                 <a href="#" class="meteordg-admin-close-popup-button" id="close-popup"><i class="fas fa-times"></i></a>
-                <form method="post" action="../../src/php/companies-functionality.php">
+                <form method="post" action="../../../src/php/companies-functionality.php">
                     <section class="meteordg-company-register first-step">
                         <h4 class="meteordg-register-title"> Registra una empresa </h4>
                         <input type="file" name="image" id="image" accept="image/*" required>
