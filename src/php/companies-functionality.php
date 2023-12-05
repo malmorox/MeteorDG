@@ -4,6 +4,9 @@
 
     const GET_ALL_FROM_COMPANIES = 'SELECT * FROM COMPANY';
 
+    // Instancia global de la clase DBConnect (la llamaremos en las funciones)
+    $db = DBConnect::getInstance();
+
     if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["submit"])) {
         registerCompany();
     }
@@ -19,33 +22,40 @@
         $email = $_POST['email'];
         $logo = saveLogo();
 
-        // Obtenemos la instancia de la clase DBConnect
-        $db = DBConnect::getInstance();
-        $conn = $db->getConnection();
+        // Obtenemos la instancia global de DBConnect
+        if (validateInsertion($nif, $name, $type, $country, $address, $phone, $email)) {
+            global $db ;
+            $conn = $db->getConnection();
 
-        // Hacemos el insert de una nueva empresa en la BBDD
-        $query = $conn->prepare("INSERT INTO COMPANY (LOGO, NIF, COMPANY_NAME, COMPANY_TYPE, COUNTRY, COMPANY_ADDRESS, PHONE, EMAIL) VALUES (:logo, :nif, :name, :type, :country, :address, :phone, :email)");
+            // Hacemos el insert de una nueva empresa en la BBDD
+            $query = $conn->prepare("INSERT INTO COMPANY (LOGO, NIF, COMPANY_NAME, COMPANY_TYPE, COUNTRY, COMPANY_ADDRESS, PHONE, EMAIL) VALUES (:logo, :nif, :name, :type, :country, :address, :phone, :email)");
 
-        $query->bindParam(':logo', $logo);
-        $query->bindParam(':nif', $nif);
-        $query->bindParam(':name', $name);
-        $query->bindParam(':type', $type);
-        $query->bindParam(':country', $country);
-        $query->bindParam(':address', $address);
-        $query->bindParam(':phone', $phone);
-        $query->bindParam(':email', $email);
+            $query->bindParam(':logo', $logo);
+            $query->bindParam(':nif', $nif);
+            $query->bindParam(':name', $name);
+            $query->bindParam(':type', $type);
+            $query->bindParam(':country', $country);
+            $query->bindParam(':address', $address);
+            $query->bindParam(':phone', $phone);
+            $query->bindParam(':email', $email);
 
-        // Ejecutamos la query de inserción
-        $success = $query->execute();
+            // Ejecutamos la query de inserción
+            $success = $query->execute();
 
-        if ($success) {
-            echo "Empresa insertada exitosamente.";
-        } else {
-            echo "Hubo un error al insertar la empresa.";
+            if ($success) {
+                echo "Empresa insertada exitosamente.";
+            } else {
+                echo "Hubo un error al insertar la empresa.";
+            }
+
+            // Cierro la conexion a la BBDD
+            $db->closeConnection();
         }
+    }
 
-        // Cierro la conexion a la BBDD
-        $db->closeConnection();
+    function validateInsertion($nif, $name, $type, $country, $address, $phone, $email) {
+        // Comprobar que el telefono son números y son de la longitud
+        return true;
     }
 
     // Función para guardar el logo en resources y rotornar la ruta del logo que vamos a meter en la BBDD
@@ -107,7 +117,8 @@
 
     function showCompanies() {
         $allCompanies = GET_ALL_FROM_COMPANIES;
-        $result = connectDB()->query($allCompanies);
+        global $db;
+        $result = $db->getConnection()->query($allCompanies);
 
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
@@ -149,11 +160,11 @@
             echo '</div>';
         }
 
-        $conn->close();
+        $db->closeConnection();
     }
 
     function getClickedCompanyDetails($nif) {
-        $db = DBConnect::getInstance();
+        global $db;
         $conn = $db->getConnection();
 
         $companyData = "SELECT * FROM COMPANY WHERE NIF = :nif";
@@ -189,10 +200,10 @@
     }
 
     function getClickedCompanyFlow($nif) {
-        $db = DBConnect::getInstance();
+        global $db;
         $conn = $db->getConnection();
 
-        $companyFlow = "SELECT * FROM TRANSACTIONS WHERE NIF_ORIGIN = :nif OR NIF_DESTINATION = :nif";
+        $companyFlow = "SELECT * FROM TRANSACTIONS WHERE NIF_ORIGIN = :nif OR NIF_DESTINATION = :nif ORDER BY TRANSACTION_DATE DESC";
         $stmt = $conn->prepare($companyFlow);
         $stmt->bindParam(':nif', $nif);
         $stmt->execute();
@@ -218,7 +229,10 @@
         }
     }
 
-    /*function searchCompanies($searchTerm) {
+    function searchCompanies($searchTerm) {
+        global $db;
+        $conn = $db->getConnection();
+
         $searchQuery = "SELECT * FROM COMPANY WHERE NAME LIKE '$searchTerm%'";
         $result = connectDB()->query($searchQuery);
 
@@ -239,5 +253,14 @@
             }
         }
         return $filteredCompanies;
-    }*/
+    }
+
+    //tipos de empresas para el formulario de registro
+    const COMPANY_TYPES = [
+        'Venta al por menor o al por mayor', 'Alimentación/Gastronomía', 'Tecnología/Telecomunicaciones', 'Videojuegos',
+        'Cuidado personal/Estética', 'Salud', 'Arquitectura/Construcción', 'Comercio electrónico', 'Educación',
+        'Servicios especializados', 'Servicios contables o financieros', 'Consultoría', 'Vehículos y recambios',
+        'Agricultura/Ganadería', 'Manufactura', 'Artes/Manualidades', 'Transporte/Logística', 'Publicidad/Medios digitales',
+        'Hostelería/Turismo', 'Entretenimiento', 'ONG', 'Otros'
+    ];
 ?>
