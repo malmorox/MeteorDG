@@ -83,6 +83,9 @@
             $isUser = compareWithTable($userName, $userPasswordHash);
             if($isUser == true){
                 //Ir a la página que corresponda para un usuario registrado
+                session_start();
+                $_SESSION['isUser'];
+                header("Location:compaies-list.php");
             } else {
                 //Dar mensaje de usuario no valido
                 header("Location:session-in.html");
