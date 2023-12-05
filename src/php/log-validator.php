@@ -1,6 +1,6 @@
 <?php
-    include 'DBConnect.php';
-    include 'sendEmail.php';
+    include ('./DBConnect.php');
+    include ('./sendEmail.php');
 
     const MIN_RANDOM_CONFIRM_CODE = 100000;
     const MAX_RANDOM_CONFIRM_CODE = 999999;
@@ -97,7 +97,7 @@
     //Evitar posibles inyecciones de código malicioso
     function compareWithTable($userName, $userPassword){
         try{
-            $conn = connectDB();
+            $conn = DBConnect();
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             
             $stmt = $conn->prepare("SELECT password FROM registrados WHERE username = :username");
