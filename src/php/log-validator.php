@@ -1,6 +1,7 @@
 <?php
-    include 'DBConnect.php';
-    include 'MailSender.php';
+
+    include ('DBConnect.php');
+    include ('MailSender.php');
 
     const MIN_RANDOM_CONFIRM_CODE = 100000;
     const MAX_RANDOM_CONFIRM_CODE = 999999;
@@ -82,6 +83,9 @@
             $isUser = compareWithTable($userName, $userPasswordHash);
             if($isUser == true){
                 //Ir a la página que corresponda para un usuario registrado
+                session_start();
+                $_SESSION['isUser'];
+                header("Location:compaies-list.php");
             } else {
                 //Dar mensaje de usuario no valido
                 header("Location:session-in.html");
@@ -93,7 +97,7 @@
     //Evitar posibles inyecciones de código malicioso
     function compareWithTable($userName, $userPassword){
         try{
-            $conn = connectDB();
+            $conn = DBConnect();
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             
             $stmt = $conn->prepare("SELECT password FROM registrados WHERE username = :username");
