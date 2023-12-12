@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['register'])) {
     } else {
         echo "Error en la validación del formulario: $validationResult";
     }
-}
+} FILTER_VALIDATE_EMAIL
 
 function validateRegistration($name, $email, $password, $confirmPassword) {
     return true;
@@ -119,5 +119,9 @@ function compareWithTable($userName, $userPassword){
     }
 
 }
-//Commit Comment
+
+function matchPasswords($password, $confirmPassword){
+
+}
+
 ?>
