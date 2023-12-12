@@ -7,9 +7,9 @@ const MAX_RANDOM_CONFIRM_CODE = 999999;
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['register'])) {
     // Realizamos la validación del formulario
-    $validationResult = validateRegistration($_POST['name'], $_POST['email'], $_POST['password'], $_POST['confirm-password']);
+    $validationResult = validateRegistration($_POST['name'], $_POST['email'], $_POST['password'], $_POST['confirmPassword']);
 
-    if ($validationResult === true) {
+    if ($validationResult) {
         // Registro valido, por lo que enviamos correo electrónico
         $userMail = $_POST['email'];
         $confirmationCode = generateConfirmationCode(); //generamos por cada  el código de confirmación
@@ -26,6 +26,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['register'])) {
 } FILTER_VALIDATE_EMAIL
 
 function validateRegistration($name, $email, $password, $confirmPassword) {
+    if (matchPasswords($password, $confirmPassword)) {
+        return true;
+    } else {
+
+    }
+
     return true;
 }
 
@@ -120,8 +126,9 @@ function compareWithTable($userName, $userPassword){
 
 }
 
+// Función para validar que la 'verificar contraseña' es identica a la contraseña metida a la hora de registrarte
 function matchPasswords($password, $confirmPassword){
-
+    return $password === $confirmPassword;
 }
 
 ?>
