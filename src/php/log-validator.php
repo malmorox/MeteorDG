@@ -2,6 +2,7 @@
 include 'DBConnect.php';
 include 'MailSender.php';
 
+// REGISTRO
 const MIN_RANDOM_CONFIRM_CODE = 100000;
 const MAX_RANDOM_CONFIRM_CODE = 999999;
 
@@ -12,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['register'])) {
     if ($validationResult) {
         // Registro valido, por lo que enviamos correo electrónico
         $userMail = $_POST['email'];
-        $confirmationCode = generateConfirmationCode(); //generamos por cada  el código de confirmación
+        $confirmationCode = generateConfirmationCode(); //generamos el código de confirmación
 
         $mail = MailSender::getInstance();
         if ($mail->sendEmail($userMail, $confirmationCode)) {
@@ -23,22 +24,35 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['register'])) {
     } else {
         echo "Error en la validación del formulario: $validationResult";
     }
-} FILTER_VALIDATE_EMAIL
+}
 
 function validateRegistration($name, $email, $password, $confirmPassword) {
-    if (matchPasswords($password, $confirmPassword)) {
-        return true;
-    } else {
+    if (empty($name)) {
+        return false;
+    }
 
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        return false;
+    }
+
+    if (!matchPasswords($password, $confirmPassword)) {
+        return false;
     }
 
     return true;
+}
+
+// Función para validar que la 'verificar contraseña' es identica a la contraseña metida a la hora de registrarte
+function matchPasswords($password, $confirmPassword){
+    return $password === $confirmPassword;
 }
 
 //funcion para generar un código de confirmación aleatorio
 function generateConfirmationCode() {
     return rand(MIN_RANDOM_CONFIRM_CODE, MAX_RANDOM_CONFIRM_CODE);
 }
+
+// INICIO DE SESIÓN
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['login'])) {
     $userName = $_POST['name-user'];
@@ -124,11 +138,6 @@ function compareWithTable($userName, $userPassword){
         die();
     }
 
-}
-
-// Función para validar que la 'verificar contraseña' es identica a la contraseña metida a la hora de registrarte
-function matchPasswords($password, $confirmPassword){
-    return $password === $confirmPassword;
 }
 
 ?>
