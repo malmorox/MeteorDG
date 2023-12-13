@@ -54,7 +54,18 @@
     }
 
     function validateInsertion($nif, $name, $type, $country, $address, $phone, $email) {
-        // Comprobar que el telefono son números y son de la longitud
+        if (!preg_match('/^[0-9]{9}$/', $phone)) {
+            return false;
+        }
+
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            return false;
+        }
+
+        if (empty($name) || empty($nif)) {
+            return false;
+        }
+
         return true;
     }
 
