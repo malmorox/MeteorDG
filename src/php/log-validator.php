@@ -6,6 +6,11 @@ include 'MailSender.php';
 const MIN_RANDOM_CONFIRM_CODE = 100000;
 const MAX_RANDOM_CONFIRM_CODE = 999999;
 
+// Instancia global de la clase DBConnect (la llamaremos en las funciones)
+$db = DBConnect::getInstance();
+
+$errorList = [];
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['register'])) {
     // Realizamos la validación del formulario
     $validationResult = validateRegistration($_POST['name'], $_POST['email'], $_POST['password'], $_POST['confirmPassword']);
@@ -28,14 +33,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['register'])) {
 
 function validateRegistration($name, $email, $password, $confirmPassword) {
     if (empty($name)) {
+        $errorList['name'] = "*El campo de nombre no debe estar vacio";
         return false;
     }
 
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $errorList['email'] = "*El email debe ser válido";
         return false;
     }
 
     if (!matchPasswords($password, $confirmPassword)) {
+        $errorList['password'] = "*Las contraseñas deben coincidir";
         return false;
     }
 
@@ -59,7 +67,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['login'])) {
     $userPassword = $_POST['password-user'];
     $userPasswordHash = password_hash($userPassword, PASSWORD_DEFAULT);
 
-    $isUser = compareWithTable($userName, $userPasswordHash);
+    $isUser = checkUserInDB($userName, $userPasswordHash);
 
     if ($isUser) {
         // Verificar el código de confirmación si se proporciona
@@ -110,13 +118,13 @@ if(isset($_POST['send-user'])){
     }
 }
 
-//Evitar posibles inyecciones de código malicioso
-function compareWithTable($userName, $userPassword){
+// Evitar posibles inyecciones de código malicioso
+function checkUserInDB($userName, $userPassword){
     try{
-        $conn = connectDB();
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        global $db;
+        $conn = $db->getConnection();
 
-        $stmt = $conn->prepare("SELECT password FROM registrados WHERE username = :username");
+        $stmt = $conn->prepare("SELECT PASSWORD FROM USERS WHERE USERNAME = :username");
         $stmt->bindParam(':username', $userName);
         $stmt->execute();
 
