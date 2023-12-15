@@ -7,6 +7,8 @@
     // Instancia global de la clase DBConnect (la llamaremos en las funciones)
     $db = DBConnect::getInstance();
 
+    $errorList = [];
+
     if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["submit"])) {
         registerCompany();
     }
@@ -55,14 +57,17 @@
 
     function validateInsertion($nif, $name, $type, $country, $address, $phone, $email) {
         if (!preg_match('/^[0-9]{9}$/', $phone)) {
+            $errorList['company-phone'] = "*El número de telefono no es valido";
             return false;
         }
 
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            $errorList['company-email'] = "";
             return false;
         }
 
         if (empty($name) || empty($nif)) {
+            $errorList['company-name'] = "";
             return false;
         }
 

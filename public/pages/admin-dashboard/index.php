@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Admin Dashboard | MeteorDG </title>
-    <link rel="icon" type="image/png" href="img/logotype/Logo_MeteorDG.ico"/>
-    <link rel="stylesheet" href="css/admin_view.css">
-    <link rel="stylesheet" href="css/admin_nav-layout.css">
+    <link rel="icon" type="image/png" href="../../img/logotype/Logo_MeteorDG.ico"/>
+    <link rel="stylesheet" href="../../css/admin_view.css">
+    <link rel="stylesheet" href="../../css/admin_nav-layout.css">
     <script src="js/view_admin.js" defer></script>
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header class="meteordg-admin-header">
-        <a class="navbar-brand ps-3" href="index.html"> <img src="img/logotype/Logo_MeteorDG-LIGHT.svg"> </a>
+        <a class="navbar-brand ps-3" href="../../index.html"> <img src="../../img/logotype/Logo_MeteorDG-LIGHT.svg"> </a>
         <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
             <div class="input-group">
                 <input class="form-control" type="text" placeholder="Busca aquí..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
@@ -41,7 +41,7 @@
             <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                 <div class="sb-sidenav-menu">
                     <div class="meteordg-admin-vertical-nav nav">
-                        <a class="nav-link" href="index.html">
+                        <a class="nav-link" href="../../index.html">
                             <div class="sb-nav-link-icon"><i class="fas fa-home"></i></div>
                             Inicio
                         </a>
@@ -52,7 +52,7 @@
                         </a>
                         <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="pages/admin-dashboard/companies-list.php"> Empresas </a>
+                                <a class="nav-link" href="companies-list.php"> Empresas </a>
                                 <a class="nav-link" href="pages/bills.html"> Facturas</a>
                             </nav>
                         </div>
