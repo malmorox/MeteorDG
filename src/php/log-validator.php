@@ -95,7 +95,7 @@
             global $db;
             $conn = $db->getConnection();
 
-            $stmt = $conn->prepare("SELECT PASSWORD FROM USERS WHERE USERNAME = :username");
+            $stmt = $conn->prepare("SELECT EMAIL, PASSWORD FROM USERS WHERE USERNAME = :username");
             $stmt->bindParam(':username', $userName);
             $stmt->execute();
 
