@@ -18,9 +18,10 @@ include('../../src/php/log-validator.php')
     <div class="form-container">
         <div class="form-content">
             <form action="" method="post" class="form-login">
-                <input type="text" placeholder="UserName" name="name-user" id="name-user" class="text-input"/>
-                <input type="password" placeholder="Password" name="passdword-user" id="password-user" class="text-input"/>
-                <input type="submit" value="Send" name="send-user" id="send-user" class="send-input"/>
+                <input type="text" placeholder="UserName" name="user-email" class="text-input" id="user-email" />
+                <input type="password" placeholder="Password" name="user-passdword" id="user-passdword" class="text-input"/>
+                <label> <input type="checkbox" placeholder="Password" name="remember-me" id="password-user" class="text-input"/> Recuérdame </label>
+                <input type="submit" value="Send" name="login" id="send-user" class="send-input"/>
             </form>
         </div>
     </div>
