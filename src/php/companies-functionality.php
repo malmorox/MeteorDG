@@ -30,7 +30,7 @@
             $conn = $db->getConnection();
 
             // Hacemos el insert de una nueva empresa en la BBDD
-            $query = $conn->prepare("INSERT INTO COMPANY (LOGO, NIF, COMPANY_NAME, COMPANY_TYPE, COUNTRY, COMPANY_ADDRESS, PHONE, EMAIL) VALUES (:logo, :nif, :name, :type, :country, :address, :phone, :email)");
+            $query = $conn->prepare("INSERT INTO COMPANY (LOGO, NIF, COMPANY_NAME, COMPANY_TYPE, COUNTRY, COMPANY_ADDRESS, PHONE, COMPANY_EMAIL) VALUES (:logo, :nif, :name, :type, :country, :address, :phone, :email)");
 
             $query->bindParam(':logo', $logo);
             $query->bindParam(':nif', $nif);
