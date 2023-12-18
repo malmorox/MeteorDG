@@ -32,16 +32,17 @@
     }
 
     function validateRegistration($name, $email, $password, $confirmPassword) {
+        // Validamos que el nombre no está vacio
         if (empty($name)) {
             $errorList['register-name'] = "*El campo de nombre no debe estar vacio";
             return false;
         }
-
+        // Validamos que el formato del correo es correcto
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             $errorList['register-email'] = "*El email debe ser válido";
             return false;
         }
-
+        // Validamos que las contraseñas introducidas coinciden
         if (!matchPasswords($password, $confirmPassword)) {
             $errorList['register-password'] = "*Las contraseñas deben coincidir";
             return false;
@@ -73,7 +74,7 @@
         $isUser = checkUserInDB($userEmail, $userPasswordHash);
 
         if ($isUser) {
-            // Redireccionamos al usuario a la página en la
+            // Redireccionamos al usuario a la página en la cual estaba
             header("Location: $redirectPage");
             exit();
         } else {
