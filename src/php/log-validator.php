@@ -62,23 +62,20 @@
 
     // INICIO DE SESIÓN
 
+    $redirectPage = '';
+
     if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['login'])) {
-        $userName = $_POST['name-user'];
-        $userPassword = $_POST['password-user'];
+
+        $userEmail = $_POST['user-email'];
+        $userPassword = $_POST['user-password'];
         $userPasswordHash = password_hash($userPassword, PASSWORD_DEFAULT);
 
-        $isUser = checkUserInDB($userName, $userPasswordHash);
+        $isUser = checkUserInDB($userEmail, $userPasswordHash);
 
         if ($isUser) {
-            // Verificar el código de confirmación si se proporciona
-            if (isset($_POST['confirmation-code'])) {
-                $confirmationCode = $_POST['confirmation-code'];
-
-            } else {
-                // Mostrar el formulario para ingresar el código de confirmación
-                echo "Introduce el código de confirmación enviado a tu correo electrónico.";
-                // Puedes agregar un formulario aquí para ingresar el código.
-            }
+            // Redireccionamos al usuario a la página en la
+            header("Location: $redirectPage");
+            exit();
         } else {
             echo "Usuario no válido.";
         }
@@ -90,20 +87,20 @@
 
 
     // Validamos que el usuario existe en la BBDD para iniciar sesión
-    function checkUserInDB($userName, $userPassword){
+    function checkUserInDB($userEmail, $userPassword){
         try{
             global $db;
             $conn = $db->getConnection();
 
-            $stmt = $conn->prepare("SELECT EMAIL, PASSWORD FROM USERS WHERE USERNAME = :username");
-            $stmt->bindParam(':username', $userName);
+            $stmt = $conn->prepare("SELECT USER_EMAIL, PASSWORD_HASH FROM USERS WHERE USER_EMAIL = :useremail");
+            $stmt->bindParam(':useremail', $userEmail);
             $stmt->execute();
 
             $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
             if ($result) {
                 $hashedPassword = $result['PASSWORD'];
-                // Verificar si la contraseña proporcionada coincide con el hash en la base de datos
+                // Verificamos si la contraseña proporcionada coincide con el hash en la base de datos
                 if (password_verify($userPassword, $hashedPassword)) {
                     return true; // Coinciden las contraseñas
                 } else {
