@@ -1,4 +1,3 @@
-
 /*Busqueda y filtrado*/
 CREATE OR REPLACE FUNCTION FILTER_COMPANY(
     P_NAME VARCHAR,

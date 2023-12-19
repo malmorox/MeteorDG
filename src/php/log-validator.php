@@ -16,7 +16,7 @@
         $validationResult = validateRegistration($_POST['name'], $_POST['email'], $_POST['password'], $_POST['confirmPassword']);
 
         if ($validationResult) {
-            // Registro valido, por lo que enviamos correo electrónico
+            // Registro valido, por lo que enviamos correo electrónico para verificar la cuenta
             $userMail = $_POST['email'];
             $confirmationCode = generateConfirmationCode(); // Generamos el código de confirmación
 
@@ -28,6 +28,19 @@
             }
         } else {
             echo "Error en la validación del formulario: $validationResult";
+        }
+    }
+
+    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['confirm_code'])) {
+        $enteredCode = $_POST['confirmation_code'];
+
+        // Comparar el código de confirmación ingresado con el almacenado en la sesión
+        if ($enteredCode === $_SESSION['confirmation_code']) {
+            // Código de confirmación válido, redirigir al usuario al inicio de sesión
+            header("Location: login.php");
+            exit();
+        } else {
+            echo "Código de confirmación incorrecto. Inténtalo de nuevo.";
         }
     }
 
@@ -47,7 +60,6 @@
             $errorList['register-password'] = "*Las contraseñas deben coincidir";
             return false;
         }
-
         return true;
     }
 
@@ -66,7 +78,6 @@
     $redirectPage = '';
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['login'])) {
-
         $userEmail = $_POST['user-email'];
         $userPassword = $_POST['user-password'];
         $userPasswordHash = password_hash($userPassword, PASSWORD_DEFAULT);
@@ -75,10 +86,12 @@
 
         if ($isUser) {
             // Redireccionamos al usuario a la página en la cual estaba
+            session_start();
             header("Location: $redirectPage");
             exit();
         } else {
-            echo "Usuario no válido.";
+            $errorList['invalid-credentials'] = "*Las credenciales no son correctas";
+            return false;
         }
     }
 
@@ -102,11 +115,7 @@
             if ($result) {
                 $hashedPassword = $result['PASSWORD'];
                 // Verificamos si la contraseña proporcionada coincide con el hash en la base de datos
-                if (password_verify($userPassword, $hashedPassword)) {
-                    return true; // Coinciden las contraseñas
-                } else {
-                    return false; // No coinciden las contraseñas
-                }
+                return password_verify($userPassword, $hashedPassword); // Devuelve true o false si coinciden o no las contraseñas
             } else {
                 return false; // Usuario no encontrado
             }
