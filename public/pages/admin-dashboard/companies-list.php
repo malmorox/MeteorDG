@@ -1,6 +1,6 @@
 <?php
     require '../../src/php/companies-functionality.php';
-    include '../../../src/php/user-verify.php';
+    include '../../../src/php/log-validator.php';
 ?>
 <!DOCTYPE html>
 <html lang="es">
