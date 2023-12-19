@@ -31,7 +31,7 @@
         }
     }
 
-    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['confirm_code'])) {
+    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['verify-registration'])) {
         $enteredCode = $_POST['confirmation_code'];
 
         // Comparar el código de confirmación ingresado con el almacenado en la sesión
