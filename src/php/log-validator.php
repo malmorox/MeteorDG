@@ -75,8 +75,6 @@
 
     // INICIO DE SESIÓN
 
-    $redirectPage = '';
-
     if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['login'])) {
         $userEmail = $_POST['user-email'];
         $userPassword = $_POST['user-password'];
@@ -87,7 +85,7 @@
         if ($isUser) {
             // Redireccionamos al usuario a la página en la cual estaba
             session_start();
-            header("Location: $redirectPage");
+            header('Location: index.php');
             exit();
         } else {
             $errorList['invalid-credentials'] = "*Las credenciales no son correctas";

@@ -1,19 +1,22 @@
 <?php
+    if(!isset($_SESSION['user']) || $_SESSION['user'] != 1){
+        header('Location: index.html');
+        die();
+    }
 
+    if (isset($_SESSION['user'])) {
+        // Si hay una sesión, almacenar el nombre de usuario y el estado de la session
+        $userName = $_SESSION['user'];
+        $sessionStatus = true;
+    }
 
-if(!isset($_SESSION['user']) && $_SESSION['user'] != 1){
-    header('Location: index.html');
-    die();
-}
+    // Lógica de log-out, para salir de la sesión
 
-if (isset($_SESSION['user'])) {
-    // Si hay una sesión, mostrar el nombre de usuario y el enlace para cerrar sesión
-    $nombreUsuario = $_SESSION['usuario'];
-    $mensajeBienvenida = "¡Hola, $nombreUsuario!";
-    $enlaceCerrarSesion = '<a href="logout.php">Cerrar sesión</a>';
-} else {
-    // Si no hay una sesión, mostrar enlaces para iniciar sesión o registrarse
-    $mensajeBienvenida = "Bienvenido(a) a nuestro sitio";
-    $enlaceIniciarSesion = '<a href="login.php">Iniciar sesión</a>';
-    $enlaceRegistrarse = '<a href="registro.php">Registrarse</a>';
-}
+    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['log-out'])) {
+        session_destroy();
+
+        // Una vez desloggeado salimos del area privada y redirigimos al usuario a la página de inicio
+        header('Location: index.html');
+        exit();
+    }
+?>
