@@ -18,7 +18,7 @@ popupCloseButton.addEventListener('click', function(e){
 
 /* CARGAR PÁGINA DE DETALLE DE LA EMPRESA QUE CLICKEMOS */
 
-document.addEventListener('click', function (event) {
+/*document.addEventListener('click', function (event) {
     if (event.target.classList.contains('meteordg-company')) {
         const companyName = event.target.getAttribute('data-company');
         console.log('Hiciste clic en: ' + companyName);
@@ -31,7 +31,7 @@ function redirectToCompanyDetails(company) {
     if (companyPage) {
         window.location.href = companyPage;
     }
-}
+}*/
 
 /*function redirectToCompanyPage(companyName) {
     // Comprueba si la compañía existe en el objeto companyPages

@@ -23,14 +23,14 @@
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
                 <ul class="dropdown-menu dropdown-menu-end meteordg-admin-header-dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item">email</a></li>
+                    <li><a class="dropdown-item"><?php echo $userEmail ?>></a></li>
                     <li><hr class="dropdown-divider" /></li>
                     <li><a class="dropdown-item" href="#!">Prueba</a></li>
                     <li><a class="dropdown-item" href="#!">Prueba</a></li>
                     <li><a class="dropdown-item" href="#!">Prueba</a></li>
                     <li><a class="dropdown-item" href="#!">Prueba</a></li>
                     <li><hr class="dropdown-divider" /></li>
-                    <li><a class="dropdown-item" href="#!">cerrar sesion</a></li>
+                    <li><a class="dropdown-item" href="#!" name="log-out">Log Out</a></li>
                 </ul>
             </li>
         </ul>
