@@ -32,15 +32,15 @@
     }
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['verify-registration'])) {
-        $enteredCode = $_POST['confirmation_code'];
+        $enteredCode = $_POST['confirmation-code'];
 
         // Comparar el código de confirmación ingresado con el almacenado en la sesión
-        if ($enteredCode === $_SESSION['confirmation_code']) {
-            // Código de confirmación válido, redirigir al usuario al inicio de sesión
+        if ($enteredCode === $confirmationCode) {
+            // Código de confirmación válido, por lo que redirigimos al usuario al inicio de sesión
             header("Location: login.php");
             exit();
         } else {
-            echo "Código de confirmación incorrecto. Inténtalo de nuevo.";
+            $errorList['verification-code'] = "*El código introducido es incorrecto";
         }
     }
 
