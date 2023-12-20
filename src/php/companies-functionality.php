@@ -56,6 +56,21 @@
     }
 
     function validateInsertion($nif, $name, $type, $country, $address, $phone, $email) {
+        // Validamos que el campo de nombre no este vacio
+        if (empty($name)) {
+            $errorList['company-name'] = "";
+            return false;
+        }
+        // Validamos que el campo de nombre no este vacio
+        if (empty($nif)) {
+            $errorList['company-nif'] = "";
+            return false;
+        }
+        // Validamos que el tipo de empresa ha sido seleccionado y que existe en el array
+        if (empty($type) || !in_array($type, COMPANY_TYPES)) {
+            $errorList['company-type'] = "*Por favor, selecciona un tipo de empresa válido";
+            return false;
+        }
         // Validamos que el telefono cumple con el regex
         if (!preg_match('/^[0-9]{9}$/', $phone)) {
             $errorList['company-phone'] = "*El número de telefono no es valido";
@@ -66,12 +81,6 @@
             $errorList['company-email'] = "";
             return false;
         }
-
-        if (empty($name) || empty($nif)) {
-            $errorList['company-name'] = "";
-            return false;
-        }
-
         return true;
     }
 

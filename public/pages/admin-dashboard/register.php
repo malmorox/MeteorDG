@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="../css/register_view.css">
     <link rel="stylesheet" href="../../css/admin_nav-layout.css">
     <link rel="stylesheet" href="../../css/form-css.css">
+    <script src="../../js/log-functionality.js"></script>
 </head>
 <body>
 <div class="form-container">
