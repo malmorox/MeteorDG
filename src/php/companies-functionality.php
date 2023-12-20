@@ -56,11 +56,12 @@
     }
 
     function validateInsertion($nif, $name, $type, $country, $address, $phone, $email) {
+        // Validamos que el telefono cumple con el regex
         if (!preg_match('/^[0-9]{9}$/', $phone)) {
             $errorList['company-phone'] = "*El número de telefono no es valido";
             return false;
         }
-
+        // Validamos que el formato del correo es correcto
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             $errorList['company-email'] = "";
             return false;
