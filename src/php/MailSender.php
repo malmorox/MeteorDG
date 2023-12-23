@@ -35,23 +35,42 @@ class MailSender {
             $this->mail->addAddress($userMail);
             //contenido del email
             $this->mail->isHTML(true);
-            $this->mail->Subject = 'Verifica tu cuenta | MeteorDG';
             $this->mail->CharSet = 'UTF-8';
-            $this->mail->Body =
-                "<!DOCTYPE html>
-                <html lang='es'>
-                    <head>
-                        <meta charset='UTF-8'>
-                        <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-                        <title>Formulario Contacto</title>
-                    </head>
-                    <body style='font-family: Arial, sans-serif;'>
-                        <div>
-                            <strong>Código de confirmación </strong> 
-                            <p> $confirmationCode </p>
-                        </div>
-                    </body>
-                </html>";
+            if ($emailType === 'verification') {
+                $this->mail->Subject = 'Verifica tu cuenta | MeteorDG';
+                $this->mail->Body =
+                    "<!DOCTYPE html>
+                    <html lang='es'>
+                        <head>
+                            <meta charset='UTF-8'>
+                            <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                            <title>Formulario Contacto</title>
+                        </head>
+                        <body style='font-family: Arial, sans-serif;'>
+                            <div>
+                                <strong>Código de confirmación </strong> 
+                                <p> $token </p>
+                            </div>
+                        </body>
+                    </html>";
+            } else if ($emailType === 'recovery') {
+                $this->mail->Subject = 'Recuperación de contraseña | MeteorDG';
+                $this->mail->Body =
+                    "<!DOCTYPE html>
+                    <html lang='es'>
+                        <head>
+                            <meta charset='UTF-8'>
+                            <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                            <title>Formulario Contacto</title>
+                        </head>
+                        <body style='font-family: Arial, sans-serif;'>
+                            <div>
+                                <strong>Enlace de recuperación de contraseña </strong> 
+                                <p> $token </p>
+                            </div>
+                        </body>
+                    </html>";
+            }
             return $this->mail->send();
         } catch (Exception $e) {
             throw new PHPMailerException("Error al mandar el mail de formulario de contacto.");
