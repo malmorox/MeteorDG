@@ -1,5 +1,8 @@
 <?php
-    include 'DBConnect.php';
+
+use email\MailSender;
+
+include 'DBConnect.php';
     include 'MailSender.php';
 
     // REGISTRO

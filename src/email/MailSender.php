@@ -1,15 +1,19 @@
 <?php
 
-use PHPMailer\PHPMailer\Exception;
-use PHPMailer\PHPMailer\PHPMailer;
+namespace email;
+
+use email\vendor\phpmailer\phpmailer\src\Exception;
+use email\vendor\phpmailer\phpmailer\src\PHPMailer;
 
 require 'vendor/autoload.php';
 
-class MailSender {
+class MailSender
+{
     private static $mailer;
     private $mail;
 
-    private function __construct() {
+    private function __construct()
+    {
         $this->mail = new PHPMailer(true);
 
         // Configura las opciones de SMTP
@@ -22,14 +26,16 @@ class MailSender {
         $this->mail->Port = 587;
     }
 
-    public static function getInstance() {
+    public static function getInstance()
+    {
         if (self::$mailer === null) {
             self::$mailer = new self();
         }
         return self::$mailer;
     }
 
-    public function sendEmail($userMail, $confirmationCode) {
+    public function sendEmail($userMail, $confirmationCode)
+    {
         try {
             $this->mail->setFrom('notifications@meteordg.com', 'MeteorDG');
             $this->mail->addAddress($userMail);

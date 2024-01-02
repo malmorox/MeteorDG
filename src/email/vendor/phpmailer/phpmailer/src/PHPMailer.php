@@ -19,7 +19,11 @@
  * FITNESS FOR A PARTICULAR PURPOSE.
  */
 
-namespace PHPMailer\PHPMailer;
+namespace email\vendor\phpmailer\phpmailer\src;
+
+use PHPMailer\PHPMailer\phpstatic;
+use function PHPMailer\PHPMailer\phpsubstr;
+use const PHPMailer\PHPMailer\PHPMailer;
 
 /**
  * PHPMailer - PHP email creation and transport class.
@@ -2044,16 +2048,16 @@ class PHPMailer
      * Send mail via SMTP.
      * Returns false if there is a bad MAIL FROM, RCPT, or DATA input.
      *
-     * @see PHPMailer::setSMTPInstance() to use a different class.
-     *
-     * @uses \PHPMailer\PHPMailer\SMTP
-     *
      * @param string $header The message headers
      * @param string $body   The message body
      *
-     * @throws Exception
-     *
      * @return bool
+     *@throws Exception
+     *
+     * @see PHPMailer::setSMTPInstance() to use a different class.
+     *
+     * @uses \email\vendor\phpmailer\phpmailer\src\SMTP
+     *
      */
     protected function smtpSend($header, $body)
     {
@@ -2137,11 +2141,11 @@ class PHPMailer
      *
      * @param array $options An array of options compatible with stream_context_create()
      *
-     * @throws Exception
-     *
-     * @uses \PHPMailer\PHPMailer\SMTP
-     *
      * @return bool
+     *@throws Exception
+     *
+     * @uses \email\vendor\phpmailer\phpmailer\src\SMTP
+     *
      */
     public function smtpConnect($options = null)
     {

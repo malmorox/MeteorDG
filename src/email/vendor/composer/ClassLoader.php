@@ -10,7 +10,11 @@
  * file that was distributed with this source code.
  */
 
-namespace Composer\Autoload;
+namespace email\vendor\composer;
+
+use function Composer\Autoload\phpstrtr;
+use function Composer\Autoload\phpsubstr;
+use const Composer\Autoload\ClassLoader;
 
 /**
  * ClassLoader implements a PSR-0, PSR-4 and classmap class loader.

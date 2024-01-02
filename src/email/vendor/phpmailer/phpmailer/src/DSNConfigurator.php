@@ -19,7 +19,7 @@
  * FITNESS FOR A PARTICULAR PURPOSE.
  */
 
-namespace PHPMailer\PHPMailer;
+namespace email\vendor\phpmailer\phpmailer\src;
 
 /**
  * Configure PHPMailer with DSN string.
