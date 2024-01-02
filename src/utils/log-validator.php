@@ -1,6 +1,6 @@
 <?php
 
-use DBConnect\DBConnect;
+use email\MailSender;
 
 include 'DBConnect.php';
     include 'MailSender.php';

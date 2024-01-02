@@ -66,8 +66,6 @@ can [download PHPMailer as a zip file](https://github.com/PHPMailer/PHPMailer/ar
 
 ```php
 <?php
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
 
 require 'path/to/PHPMailer/src/Exception.php';
 require 'path/to/PHPMailer/src/PHPMailer.php';
@@ -91,9 +89,7 @@ While installing the entire package manually or with Composer is simple, conveni
 <?php
 //Import PHPMailer classes into the global namespace
 //These must be at the top of your script, not inside a function
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\SMTP;
-use PHPMailer\PHPMailer\Exception;
+use email\vendor\phpmailer\phpmailer\src\Exception;use email\vendor\phpmailer\phpmailer\src\PHPMailer;use email\vendor\phpmailer\phpmailer\src\SMTP;
 
 //Load Composer's autoloader
 require 'vendor/autoload.php';

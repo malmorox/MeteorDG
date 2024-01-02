@@ -1,6 +1,5 @@
 <?php
 // Conexión a la BBDD
-namespace DBConnect;
 
 class DBConnect
 {
@@ -18,9 +17,9 @@ class DBConnect
     {
         try {
             $dsn = "mysql:host=$this->servername;dbname=$this->dbname;charset=$this->charset;port=$this->port";
-            $this->conn = new PDO($dsn, $this->username, $this->password);
-            $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        } catch (PDOException $e) {
+            $this->conn = new \DBConnect\PDO($dsn, $this->username, $this->password);
+            $this->conn->setAttribute(\DBConnect\PDO::ATTR_ERRMODE, \DBConnect\PDO::ERRMODE_EXCEPTION);
+        } catch (\DBConnect\PDOException $e) {
             die("Error en la conexión a la base de datos: " . $e->getMessage());
         }
     }

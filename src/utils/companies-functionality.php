@@ -1,7 +1,5 @@
 <?php
 
-use DBConnect\DBConnect;
-
 include_once 'DBConnect.php';
     require 'Company.php';
 
