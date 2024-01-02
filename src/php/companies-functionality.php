@@ -1,5 +1,8 @@
 <?php
-    include_once 'DBConnect.php';
+
+use DBConnect\DBConnect;
+
+include_once 'DBConnect.php';
     require 'Company.php';
 
     const GET_ALL_FROM_COMPANIES = 'SELECT * FROM COMPANY';
