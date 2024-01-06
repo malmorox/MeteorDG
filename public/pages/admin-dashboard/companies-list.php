@@ -1,7 +1,7 @@
 <?php
-    require '../../src/php/companies-functionality.php';
-    include '../../../src/php/log-validator.php';
-    include '../../../src/php/session-controller.php';
+    require '../../../src/utils/companies-functionality.php';
+    include '../../../src/utils/log-validator.php';
+    include '../../../src/controllers/session-controller.php';
 ?>
 <!DOCTYPE html>
 <html lang="es">
