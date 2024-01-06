@@ -1,5 +1,5 @@
 <?php
-    include '../../src/php/log-validator.php';
+    include '../../../src/utils/log-validator.php';
 
     $filledEmail = isset($_SESSION['filled-email']) ? $_SESSION['filled-email'] : '';
     $filledPassword = isset($_SESSION['filled-password']) ? $_SESSION['filled-password'] : '';

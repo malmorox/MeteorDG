@@ -1,6 +1,6 @@
 <?php
-    include '../../src/php/log-validator.php'; // Asegúrate de tener un archivo para validar el registro si es necesario
-    include '../../src/php/MailSender.php';
+    include '../../../src/utils/log-validator.php'; // Asegúrate de tener un archivo para validar el registro si es necesario
+    include '../../../src/email/MailSender.php';
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -24,14 +24,15 @@
             <input type="password" placeholder="Confirmar Contraseña" name="confirm-password" id="confirm-password" class="text-input" required>
             <input type="submit" value="Registrarse" name="register" id="register" class="send-input">
             <?php if ($validationResult) { ?>
-                <label for="confirmation_code">Código de confirmación:</label>
-                <input type="text" name="confirmation_code" id="confirmation_code" required>
+                <label for="confirmation-code">Código de confirmación:</label>
+                <input type="text" name="confirmation-code" id="confirmation-code" required>
             <?php } ?>
         </form>
     </div>
     <div class="verification">
         <form action="">
             <input type="text" name="verify" id="verify" class="text-input" required>
+
         </form>
     </div>
 </div>
