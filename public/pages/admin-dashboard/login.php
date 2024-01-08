@@ -20,13 +20,13 @@
     <link rel="stylesheet" href="../../css/form-css.css">
 </head>
 <body>
-    <div class="form-container">
-        <div class="form-content">
+    <div class="meteordg-login-form-container">
+        <div class="meteordg-login-form-content">
             <form action="" method="post" class="form-login">
-                <input type="text" class="text-input" id="user-email" name="user-email" value="<?php echo $filledEmail; ?>" placeholder="Correo electrónico"/>
-                <input type="password" class="text-input" id="user-passdword" name="user-passdword" value="<?php echo $filledPassword; ?>" placeholder="Contraseña"/>
-                <label> <input type="checkbox" class="text-input" id="password-user" name="remember-me"/> Recuérdame </label>
-                <input type="submit" value="Send" name="login" id="send-user" class="send-input"/>
+                <input type="text" class="meteordg-login-fields" id="user-email" name="user-email" value="<?php echo $filledEmail; ?>" placeholder="Correo electrónico"/>
+                <input type="password" class="meteordg-login-fields" id="user-passdword" name="user-passdword" value="<?php echo $filledPassword; ?>" placeholder="Contraseña"/>
+                <label> <input type="checkbox" class="meteordg-authenticate-checkbox" id="password-user" name="remember-me"/> Recuérdame </label>
+                <input type="submit" value="Send" class="meteordg-authenticate-buttons" id="send-user" name="login"/>
             </form>
         </div>
     </div>

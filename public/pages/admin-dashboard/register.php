@@ -18,11 +18,11 @@
 <div class="form-container">
     <div class="form-content">
         <form action="../../src/php/log-validator.php" method="post" class="form-register">
-            <input type="text" placeholder="Nombre" name="name" id="name" class="text-input" required>
-            <input type="email" placeholder="Correo Electrónico" name="email" id="email" class="text-input" required>
-            <input type="password" placeholder="Contraseña" name="password" id="password" class="text-input" required>
-            <input type="password" placeholder="Confirmar Contraseña" name="confirm-password" id="confirm-password" class="text-input" required>
-            <input type="submit" value="Registrarse" name="register" id="register" class="send-input">
+            <input type="text" placeholder="Nombre" class="meteordg-register-fields" id="name" name="name" required>
+            <input type="email" placeholder="Correo Electrónico" class="meteordg-register-fields" id="email" name="email" required>
+            <input type="password" placeholder="Contraseña" class="meteordg-register-fields" id="password" name="password" required>
+            <input type="password" placeholder="Confirmar Contraseña" class="meteordg-register-fields" id="confirm-password" name="confirm-password" required>
+            <input type="submit" value="Registrarse" class="meteordg-authenticate-buttons" id="register" name="register">
             <?php if ($validationResult) { ?>
                 <label for="confirmation-code">Código de confirmación:</label>
                 <input type="text" name="confirmation-code" id="confirmation-code" required>
