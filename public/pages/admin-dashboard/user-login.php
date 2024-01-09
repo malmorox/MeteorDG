@@ -1,12 +1,12 @@
 <?php
     include '../../../src/utils/log-validator.php';
 
-    $filledEmail = isset($_SESSION['filled-email']) ? $_SESSION['filled-email'] : '';
-    $filledPassword = isset($_SESSION['filled-password']) ? $_SESSION['filled-password'] : '';
+    $filledEmail = isset($_GET['filled-email']) ? urldecode($_GET['filled-email']) : '';
+    $filledPassword = isset($_GET['filled-password']) ? urldecode($_GET['filled-password']) : '';
 
     // Limpiamos los valores después de usarlos para que no se rellenen los imputs en futuras sesiones
-    unset($_SESSION['filled-email']);
-    unset($_SESSION['filled-password']);
+    unset($_GET['filled-email']);
+    unset($_GET['filled-password']);
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -25,7 +25,7 @@
             <form action="" method="post" class="form-login">
                 <input type="text" class="meteordg-login-fields" id="user-email" name="user-email" value="<?php echo $filledEmail; ?>" placeholder="Correo electrónico"/>
                 <input type="password" class="meteordg-login-fields" id="user-passdword" name="user-passdword" value="<?php echo $filledPassword; ?>" placeholder="Contraseña"/>
-                <label> <input type="checkbox" class="meteordg-authenticate-checkbox" id="password-user" name="remember-me"/> Recuérdame </label>
+                <label> <input type="checkbox" class="meteordg-authenticate-checkbox" id="remember-me" name="remember-me"/> Recuérdame </label>
                 <input type="submit" value="Send" class="meteordg-authenticate-buttons" id="send-user" name="login"/>
             </form>
         </div>

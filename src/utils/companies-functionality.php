@@ -186,7 +186,6 @@ include_once 'DBConnect.php';
             echo '<span> No companies found. </span>';
             echo '</div>';
         }
-
         $db->closeConnection();
     }
 

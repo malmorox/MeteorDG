@@ -1,5 +1,4 @@
 <?php
-
     use email\MailSender;
 
     include 'DBConnect.php';
@@ -40,7 +39,7 @@
         // Comparar el código de confirmación ingresado con el almacenado en la sesión
         if ($enteredCode === $confirmationCode) {
             // Código de confirmación válido, por lo que redirigimos al usuario al inicio de sesión
-            header("Location: login.php");
+            header("Location: user-login.php?email=" . urlencode($filledEmail) . "&password=" . urlencode($filledPassword));
             exit();
         } else {
             $errorList['verification-code'] = "*El código introducido es incorrecto";
@@ -95,11 +94,6 @@
             return false;
         }
     }
-
-
-    $userName = "";
-    $userPassword = "";
-
 
     // Validamos que el usuario existe en la BBDD para iniciar sesión
     function checkUserInDB($userEmail, $userPassword){
