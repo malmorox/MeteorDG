@@ -15,8 +15,8 @@
     <script src="../../js/log-functionality.js"></script>
 </head>
 <body>
-<div class="form-container">
-    <div class="form-content">
+<div class="meteordg-register-form-container">
+    <div class="meteordg-register-form-content">
         <form action="../../src/php/log-validator.php" method="post" class="form-register">
             <input type="text" placeholder="Nombre" class="meteordg-register-fields" id="name" name="name" required>
             <input type="email" placeholder="Correo Electrónico" class="meteordg-register-fields" id="email" name="email" required>
